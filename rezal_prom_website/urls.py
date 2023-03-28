@@ -14,11 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import routers
+from blocks import views as blockViews
+from requests import views as requestViews
+
+router = routers.DefaultRouter()
+router.register(r'blocks/header', blockViews.HeaderBlockViewSet)
+router.register(r'blocks/main', blockViews.MainBlockViewSet)
+router.register(r'blocks/about', blockViews.AboutBlockViewSet)
+router.register(r'blocks/warming', blockViews.WarmingBlockViewSet)
+router.register(r'blocks/services', blockViews.ServicesBlockViewSet)
+router.register(r'blocks/projects', blockViews.ProjectsBlockViewSet)
+router.register(r'blocks/stages', blockViews.StagesBlockViewSet)
+router.register(r'blocks/team', blockViews.TeamBlockViewSet)
+router.register(r'blocks/questions', blockViews.QuestionsBlockViewSet)
+router.register(r'blocks/reviews', blockViews.ReviewsBlockViewSet)
+router.register(r'blocks/contacts', blockViews.ContactsBlockViewSet)
+router.register(r'blocks/footer', blockViews.FooterBlockViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/v1/', include(router.urls)),
+    path('api/v1/send_request', requestViews.OrderCreateView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
