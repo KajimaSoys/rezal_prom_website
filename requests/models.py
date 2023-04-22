@@ -8,7 +8,7 @@ class Order(models.Model):
     name = models.CharField(verbose_name='Имя', max_length=150)
     number = models.CharField(verbose_name='Номер телефона', max_length=40)
     message = models.TextField(verbose_name='Какая мебель нужна?', blank=True)
-    comfortable_time = models.CharField(verbose_name='Какая мебель нужна?', max_length=20, blank=True)
+    comfortable_time = models.CharField(verbose_name='Удобное время', max_length=20, blank=True)
 
     project_version = models.CharField(verbose_name='Версия приложения', blank=True, max_length=10)
     created = models.DateTimeField(verbose_name='Создано', auto_now_add=True)

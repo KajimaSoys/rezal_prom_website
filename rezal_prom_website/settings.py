@@ -26,8 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blocks.apps.BlocksConfig',
     'requests.apps.RequestsConfig',
+    'core.apps.CoreConfig',
     'rest_framework',
     'corsheaders',
+    'ckeditor',
+    'adminsortable2',
 ]
 
 MIDDLEWARE = [
@@ -111,6 +114,14 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': 900,
+    },
+}
 
 try:
     from .local_settings import *

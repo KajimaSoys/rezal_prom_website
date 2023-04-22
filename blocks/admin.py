@@ -16,8 +16,8 @@ class AboutBlockAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(WarmingBlock)
-class WarmingBlockAdmin(admin.ModelAdmin):
+@admin.register(ProductionBlock)
+class ProductionBlockAdmin(admin.ModelAdmin):
     pass
 
 
