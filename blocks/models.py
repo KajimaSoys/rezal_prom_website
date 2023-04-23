@@ -99,13 +99,8 @@ class ServicesBlock(models.Model):
     title = RichTextField(verbose_name='Заголовок блока')
 
     title_first = RichTextField(verbose_name='Заголовок №1')
-    image_first = models.FileField(verbose_name='Фото №1', upload_to='service/', max_length=500)
-
     title_second = RichTextField(verbose_name='Заголовок №2')
-    image_second = models.FileField(verbose_name='Фото №2', upload_to='service/', max_length=500)
-
     title_third = RichTextField(verbose_name='Заголовок №3')
-    image_third = models.FileField(verbose_name='Фото №3', upload_to='service/', max_length=500)
 
     def __str__(self):
         return 'Блок услуг'

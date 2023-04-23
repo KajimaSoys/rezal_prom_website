@@ -99,11 +99,8 @@ class ServicesBlockSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
                     'title',
                     'title_first',
-                    'image_first',
                     'title_second',
-                    'image_second',
                     'title_third',
-                    'image_third',
                   )
 
 

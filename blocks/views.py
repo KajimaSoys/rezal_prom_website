@@ -8,7 +8,7 @@ class AllBlocksView(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_queryset(self):
-        headers = HeaderBlock.objects.all()
+        header = HeaderBlock.objects.all()
         main = MainBlock.objects.all()
         about = AboutBlock.objects.all()
         production = ProductionBlock.objects.all()
@@ -21,7 +21,7 @@ class AllBlocksView(APIView):
         contacts = ContactsBlock.objects.all()
         footer = FooterBlock.objects.all()
 
-        queryset = list(headers) + list(main) + list(about) + list(production) + list(services) + list(projects) + list(stages) + list(team) + list(questions) + list(reviews) + list(contacts) + list(footer)
+        queryset = list(header) + list(main) + list(about) + list(production) + list(services) + list(projects) + list(stages) + list(team) + list(questions) + list(reviews) + list(contacts) + list(footer)
         return queryset
 
     def get(self, request):
