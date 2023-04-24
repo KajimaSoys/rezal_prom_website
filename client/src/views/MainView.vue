@@ -277,7 +277,68 @@
     </div>
 
     <div class="projects">
-      projects
+      <div class="projects-max">
+        <h2 class="projects-title" v-html="this.projects.title"></h2>
+
+        <div class="projects-content">
+          <div class="projects-content-left">
+            <div class="projects-item">
+              <div class="projects-item-preview-first">
+                <img
+                    :src="`${this.backendURL}${this.projects.image_first}`"
+                >
+                <div class="projects-item-preview-icon">
+                  <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                </div>
+                <div class="projects-item-preview-text">
+                  Смотреть видеоотзыв
+                </div>
+              </div>
+              <h3 class="projects-item-title" v-html="this.projects.title_first"></h3>
+              <div class="projects-item-description" v-html="this.projects.description_first"></div>
+            </div>
+
+            <div class="projects-item">
+              <div class="projects-item-preview-second">
+                <img
+                    :src="`${this.backendURL}${this.projects.image_second}`"
+                >
+                <div class="projects-item-preview-icon">
+                  <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                </div>
+                <div class="projects-item-preview-text">
+                  Смотреть видеоотзыв
+                </div>
+              </div>
+              <h3 class="projects-item-title" v-html="this.projects.title_second"></h3>
+              <div class="projects-item-description" v-html="this.projects.description_second"></div>
+            </div>
+          </div>
+
+          <div class="projects-content-right">
+            <div class="projects-item">
+              <div class="projects-item-preview-third">
+                <img
+                    :src="`${this.backendURL}${this.projects.image_third}`"
+                >
+                <div class="projects-item-preview-icon">
+                  <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                </div>
+                <div class="projects-item-preview-text">
+                  Смотреть видеоотзыв
+                </div>
+              </div>
+              <h3 class="projects-item-title" v-html="this.projects.title_third"></h3>
+              <div class="projects-item-description" v-html="this.projects.description_third"></div>
+            </div>
+            <div class="projects-button">
+              <div class="projects-portfolio-button">
+                Смотреть все проекты
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="stages">
@@ -793,6 +854,110 @@ export default {
   align-items: center;
   padding-top: 150px;
   padding-bottom: 150px;
+}
+
+.projects-max{
+  width: 67rem;
+}
+
+.projects-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 80px;
+}
+
+.projects-content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects-content-left{
+  width: 55%;
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 170px;
+}
+
+.projects-content-right{
+  width: 40%;
+  flex-basis: 40%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projects-item{
+
+}
+
+.projects-item-preview-first, .projects-item-preview-second, .projects-item-preview-third {
+  position: relative;
+}
+
+.projects-item-preview-first img {
+  display: block;
+  width: 90%;
+}
+
+.projects-item-preview-second img {
+  display: block;
+  width: 80%;
+}
+
+.projects-item-preview-third img {
+  display: block;
+  width: 100%;
+}
+
+.projects-item-preview-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+}
+
+.projects-item-preview-text {
+  position: absolute;
+  bottom: 4px;
+  left: 45px;
+  margin: 20px;
+  color: #ffffff;
+}
+
+.projects-item-title{
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+  color: #222222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.projects-item-description{
+  color: #686868;
+  width: 90%;
+}
+
+.projects-button{
+  padding-top: 5rem;
+}
+
+.projects-portfolio-button{
+  padding: 15px 25px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #DD1D1D;
+  border-radius: 14px;
+  font-size: 14px;
 }
 
 .stages{

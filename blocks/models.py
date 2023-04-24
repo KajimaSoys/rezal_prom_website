@@ -117,16 +117,19 @@ class ProjectsBlock(models.Model):
     title = RichTextField(verbose_name='Заголовок блока')
 
     title_first = RichTextField(verbose_name='Заголовок №1')
+    description_first = RichTextField(verbose_name='Описание №1')
     image_first = models.ImageField(verbose_name='Фото №1', upload_to='projects/', max_length=500)
-    video_link_first = models.CharField(verbose_name='Ссылка на видео №1', max_length=500)
+    video_link_first = models.CharField(verbose_name='Ссылка на видео №1', max_length=500, blank=True)
 
     title_second = RichTextField(verbose_name='Заголовок №2')
+    description_second = RichTextField(verbose_name='Описание №2')
     image_second = models.ImageField(verbose_name='Фото №2', upload_to='projects/', max_length=500)
-    video_link_second = models.CharField(verbose_name='Ссылка на видео №2', max_length=500)
+    video_link_second = models.CharField(verbose_name='Ссылка на видео №2', max_length=500, blank=True)
 
     title_third = RichTextField(verbose_name='Заголовок №3')
+    description_third = RichTextField(verbose_name='Описание №3')
     image_third = models.ImageField(verbose_name='Фото №3', upload_to='projects/', max_length=500)
-    video_link_third = models.CharField(verbose_name='Ссылка на видео №3', max_length=500)
+    video_link_third = models.CharField(verbose_name='Ссылка на видео №3', max_length=500, blank=True)
 
     # title_forth = RichTextField(verbose_name='Заголовок №4')
     # image_forth = models.ImageField(verbose_name='Фото №4', upload_to='projects/', max_length=500)

@@ -110,12 +110,15 @@ class ProjectsBlockSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
                     'title',
                     'title_first',
+                    'description_first',
                     'image_first',
                     'video_link_first',
                     'title_second',
+                    'description_second',
                     'image_second',
                     'video_link_second',
                     'title_third',
+                    'description_third',
                     'image_third',
                     'video_link_third',
                   )
