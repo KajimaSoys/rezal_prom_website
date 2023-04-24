@@ -341,24 +341,199 @@
       </div>
     </div>
 
+    <div class="request">
+      <div class="request-max">
+        <div class="request-background"></div>
+
+        <div class="request-content">
+          <div class="request-icon">
+
+          </div>
+          <div class="request-title">
+
+          </div>
+          <div class="request-description">
+
+          </div>
+          <div class="request-form">
+
+          </div>
+            <div class="request-acceptance"></div>
+        </div>
+
+      </div>
+    </div>
+
     <div class="stages">
-      stages
+      <div class="stages-max">
+        <h2>
+          <div class="stages-title" v-html="this.stages.title"></div>
+        </h2>
+        <div class="stages-grid">
+          <div v-for="(stage, index) in this.stagesArr" :key="index" class="stage">
+            <div class="stage-image">
+              <div class="stage-count">{{ index + 1 }}</div>
+              <img
+                :src="`${this.backendURL}${stage.image}`"
+                alt="stage image"
+              >
+            </div>
+
+            <div class="stage-title" v-html="stage.title"></div>
+          </div>
+        </div>
+        <div class="stages-delivery">
+          <h2 class="stages-delivery-title" v-html="this.stages.delivery_title"></h2>
+          <div class="stages-delivery-first" v-html="this.stages.delivery_first"></div>
+          <div class="stages-delivery-second" v-html="this.stages.delivery_second"></div>
+        </div>
+
+      </div>
     </div>
 
     <div class="team">
-      team
+      <div class="team-max">
+        <div class="team-introduce">
+          <div class="team-block-title">
+            <h2 class="team-title" v-html="this.team.title"></h2>
+            <div class="team-description" v-html="this.team.description"></div>
+          </div>
+
+          <div class="team-head-staff">
+            <div class="team-staff" v-if="this.staffArr.length > 0">
+              <div class="team-staff-image" v-if="this.staffArr[0].image !== null">
+                <img
+                    :src="`${this.backendURL}${this.staffArr[0].image}`"
+                    :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                >
+              </div>
+              <div v-else class="team-staff-no-image">
+                <img
+                    src="src/assets/icons/icon-photo.svg"
+                    :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                >
+              </div>
+              <h3 class="team-staff-title" v-html="this.staffArr[0].name"></h3>
+              <div class="team-staff-post" v-html="this.staffArr[0].post"></div>
+            </div>
+
+            <div class="team-staff" v-if="this.staffArr.length > 0">
+              <div class="team-staff-image" v-if="this.staffArr[1].image !== null">
+                <img
+                    :src="`${this.backendURL}${this.staffArr[1].image}`"
+                    :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                >
+              </div>
+              <div v-else class="team-staff-no-image">
+                <img
+                    src="src/assets/icons/icon-photo.svg"
+                    :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                >
+              </div>
+              <h3 class="team-staff-title" v-html="this.staffArr[1].name"></h3>
+              <div class="team-staff-post" v-html="this.staffArr[1].post"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-grid" v-if="this.staffArr.slice(2).length > 0">
+          <div class="team-staff" v-for="staff in this.staffArr.slice(2)">
+              <div class="team-staff-image" v-if="staff.image !== null">
+                <img
+                    :src="`${this.backendURL}${staff.image}`"
+                    :alt="`${staff.name} - ${staff.post}`"
+                >
+              </div>
+              <div v-else class="team-staff-no-image">
+                <img
+                    src="src/assets/icons/icon-photo.svg"
+                    :alt="`${staff.name} - ${staff.post}`"
+                >
+              </div>
+              <h3 class="team-staff-title" v-html="staff.name"></h3>
+              <div class="team-staff-post" v-html="staff.post"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="request">
+      <div class="request-max">
+        <div class="request-background"></div>
+
+        <div class="request-content">
+          <div class="request-icon">
+
+          </div>
+          <div class="request-title">
+
+          </div>
+          <div class="request-description">
+
+          </div>
+          <div class="request-form">
+
+          </div>
+            <div class="request-acceptance"></div>
+        </div>
+
+      </div>
     </div>
 
     <div class="questions">
-      questions
+      <div class="questions-max">
+        <h1 class="questions-title" v-html="this.questions.title"></h1>
+
+        <div v-for="(question, index) in this.questionsArr" :key="question.order" class="questions-tile" @click="toggleQuestion(index)">
+          <div class="questions-header">
+            <div class="questions-text" v-html="question.question"></div>
+            <img
+                src="src/assets/icons/icon-plus.svg"
+                class="toggle-icon"
+                :style="question.isOpen ? 'transform: rotate(45deg);' : ''"
+
+            >
+          </div>
+          <div :class="question.isOpen ? 'questions-answer-opened' : 'questions-answer-closed'" class="questions-answer" v-html="question.answer"></div>
+        </div>
+      </div>
     </div>
 
     <div class="reviews">
-      reviews
+      <div class="reviews-max">
+        <h2 class="reviews-title" v-html="this.reviews.title"></h2>
+        <div class="reviews-content"></div>
+      </div>
+    </div>
+
+    <div class="request">
+      <div class="request-max">
+        <div class="request-background"></div>
+
+        <div class="request-content">
+          <div class="request-icon">
+
+          </div>
+          <div class="request-title">
+
+          </div>
+          <div class="request-description">
+
+          </div>
+          <div class="request-form">
+
+          </div>
+            <div class="request-acceptance"></div>
+        </div>
+
+      </div>
     </div>
 
     <div class="contacts">
-      contacts
+      <div class="contacts-max">
+        <h2 class="contacts-title" v-html="this.contacts.title"></h2>
+        <div class="contacts-content"></div>
+      </div>
     </div>
 
     <div class="footer">
@@ -466,6 +641,9 @@ export default {
             console.log('An error occurred: ', error)
           })
     },
+    toggleQuestion(index) {
+      this.questionsArr[index].isOpen = !this.questionsArr[index].isOpen;
+    }
   },
 
   beforeMount() {
@@ -960,18 +1138,248 @@ export default {
   font-size: 14px;
 }
 
+.request{
+  width: 100%;
+    /*height: 88vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.request-max{
+  width: 90rem;
+  height: 90%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.request-background{
+  background: linear-gradient(106.5deg, #1F1F1F 12.53%, #353535 105.97%);
+  border-radius: 30px;
+  height: 38rem;
+  width: 90rem;
+  position: absolute;
+  z-index: -1;
+  transform: translateY(-10%);
+}
+
+.request-content{
+  width: 67rem;
+  display: flex;
+  flex-direction: row;
+  gap: 90px;
+  height: 500px;
+}
+
+
 .stages{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
+
+.stages-max{
+  width: 67rem;
+}
+
+.stages-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 80px;
+}
+
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px 16px;
+  margin-bottom: 150px;
+}
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.stage-image{
+  position: relative;
+}
+
+.stage-count {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #000000;
+  line-height: 0px;
+}
+
+
+.stage-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /*margin-bottom: 20px;*/
+}
+
+.stage-title {
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.4;
+  width: 90%;
+}
+
+.stages-delivery{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.stages-delivery-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  width: 16%;
+  flex-basis: 16%;
+}
+
+.stages-delivery-first{
+  flex: 1;
+  color: #000000;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.stages-delivery-second{
+  flex: 1;
+  color: #000000;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
 
 .team{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 150px;
+}
+
+.team-max{
+  width: 67rem;
+}
+
+.team-introduce{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.team-block-title{
+  width: 50%;
+  flex-basis: 50%;
+}
+
+.team-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 30px;
+}
+
+.team-description{
+  width: 80%;
+  color: #000000;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.team-head-staff{
+  width: 50%;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.team-staff{
+  /*height: 400px;*/
+  width: 100%;
+}
+
+.team-staff-image{
+  border-radius: 30px;
+  height: 350px;
+  width: 100%;
+}
+
+.team-staff-image img{
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  height: 350px;
+}
+
+.team-staff-no-image{
+  background: #ECECEC;
+  border-radius: 30px;
+  height: 350px;
+  width: 100%;
+  position: relative;
+}
+
+.team-staff-no-image img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.team-staff-title{
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  padding-top: 20px;
+  line-height: 31px;
+}
+
+.team-staff-post{
+  color: #686868;
+  font-size: 16px;
+  line-height: 1.4;
+  padding-top: 5px;
+}
+
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 60px 16px;
+  margin-bottom: 150px;
+  padding-top: 60px;
 }
 
 .questions{
@@ -979,6 +1387,83 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.questions-max{
+  width: 67rem;
+}
+
+.questions-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 80px;
+}
+
+.questions-tile{
+  border: 1px solid #BDBDBD;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  padding: 25px 35px;
+  transition: height 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.questions-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.questions-text{
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.toggle-icon {
+  /*width: 35px;*/
+  /*height: 35px;*/
+  padding: 8px;
+  border-radius: 50%;
+  border: 1px solid #BDBDBD;
+  background-color: white;
+  color: #DD1D1D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+}
+
+img.toggle-icon{
+  height: 16px;
+  width: 16px;
+  fill: white;
+}
+
+.questions-answer{
+  line-height: 1.4;
+  font-size: 15px;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+
+.questions-answer-closed{
+  padding-top: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.questions-answer-opened{
+  padding-top: 20px;
+  height: auto;
+  opacity: 1;
 }
 
 .reviews{
@@ -988,11 +1473,37 @@ export default {
   align-items: center;
 }
 
+.reviews-max{
+  width: 67rem;
+}
+
+.reviews-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 80px;
+}
+
 .contacts{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contacts-max{
+  width: 67rem;
+}
+
+.contacts-title{
+  color: #000000;
+  font-family: OnestMedium, Inter, sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 80px;
 }
 
 .footer{

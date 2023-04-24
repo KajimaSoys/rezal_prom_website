@@ -37,7 +37,7 @@ class Staff(models.Model):
 
     name = RichTextField(verbose_name='Имя')
     post = RichTextField(verbose_name='Должность')
-    image = models.ImageField(verbose_name='Фото', upload_to='team/', max_length=500)
+    image = models.ImageField(verbose_name='Фото', upload_to='team/', max_length=500, blank=True)
 
     order = models.PositiveIntegerField(
         default=0,
