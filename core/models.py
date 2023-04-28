@@ -85,7 +85,7 @@ class ReviewText(models.Model):
     author_name = RichTextField(verbose_name='Имя автора отзыва')
     review_text = RichTextField(verbose_name='Текст отзыва')
     author_photo = models.ImageField(verbose_name='Фото автора отзыва', upload_to='authors/', blank=True)
-    review_link = models.CharField(verbose_name='Ссылка на отзыв', max_length=1000, blank=True)
+    review_link = models.FileField(verbose_name='Ссылка на отзыв', upload_to='reviews/', max_length=1000, blank=True)
 
     order = models.PositiveIntegerField(
         default=0,
@@ -107,7 +107,7 @@ class ReviewVideo(models.Model):
         verbose_name_plural = 'видео отзывы'
         ordering = ['order']
 
-    image = models.ImageField(verbose_name='Превью отзыва', upload_to='projects/', max_length=500)
+    image = models.ImageField(verbose_name='Превью отзыва', upload_to='reviews-preview/', max_length=500)
     video_link = models.CharField(verbose_name='Ссылка на видео отзыв', max_length=1000)
 
     order = models.PositiveIntegerField(

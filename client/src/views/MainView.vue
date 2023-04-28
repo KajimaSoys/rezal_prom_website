@@ -502,7 +502,17 @@
     <div class="reviews">
       <div class="reviews-max">
         <h2 class="reviews-title" v-html="this.reviews.title"></h2>
-        <div class="reviews-content"></div>
+        <div class="reviews-content">
+
+          <div class="reviews-text">
+            <TextReviews :reviewTextArr="this.reviewTextArr"></TextReviews>
+          </div>
+
+
+          <div class="reviews-video">
+            <VideoReviews :reviewVideoArr="this.reviewVideoArr"></VideoReviews>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -531,13 +541,100 @@
 
     <div class="contacts">
       <div class="contacts-max">
-        <h2 class="contacts-title" v-html="this.contacts.title"></h2>
-        <div class="contacts-content"></div>
+        <div class="contacts-content">
+          <h2 class="contacts-title" v-html="this.contacts.title"></h2>
+          <div class="contacts-info">
+            <div class="contacts-info-item">
+              <div class="contacts-info-icon">
+                <img src="src/assets/icons/icon-location.svg">
+              </div>
+
+              <div v-html="this.contacts.address"></div>
+            </div>
+
+            <div class="contacts-info-item">
+              <div class="contacts-info-icon">
+                <img src="src/assets/icons/icon-clock.svg">
+              </div>
+
+              <div v-html="this.contacts.schedule"></div>
+            </div>
+
+            <div class="contacts-info-item">
+              <div class="contacts-info-icon">
+                <img src="src/assets/icons/phone.svg" width="16" height="16">
+              </div>
+
+              <div v-html="this.contacts.number"></div>
+            </div>
+
+            <div class="contacts-info-links">
+              <a class="contacts-link" :href="this.contacts.inst_link" target="_blank">Instagram*</a>
+
+              <a class="contacts-link" :href="this.contacts.vk_link" target="_blank">ВКонтакте</a>
+            </div>
+
+          </div>
+          <div class="contacts-photo">
+            <img src="src/assets/images/image-contacts-1.png" width="180" height="180">
+            <img src="src/assets/images/image-contacts-2.png" width="180" height="180">
+          </div>
+        </div>
+        <div class="contacts-map">
+           <GMapMap :center="center" :zoom="18" style="height: 600px">
+             <GMapMarker :key="marker.id" v-for="marker in markers" :position="marker.position" />
+           </GMapMap>
+        </div>
       </div>
     </div>
 
     <div class="footer">
-      footer
+      <div class="footer-max">
+        <div class="footer-left">
+          <div class="">
+            <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="138" height="34" />
+          </div>
+
+          <div class="footer-left-content">
+            *организация «Meta» признана экстремистской и запрещена на территории России
+          </div>
+        </div>
+
+        <div class="footer-center">
+          <div class="footer-menu-item">
+            О компании
+          </div>
+          <div class="footer-menu-item">
+            Отзывы
+          </div>
+          <div class="footer-menu-item">
+            Доставка и оплата
+          </div>
+          <div class="footer-menu-item">
+            Портфолио
+          </div>
+          <div class="footer-menu-item">
+            Контакты
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-call-block">
+            <div class="phone-number">
+              <img src="src/assets/icons/phone.svg" alt="" width="16" height="16" />
+              {{ this.header.number }}
+            </div>
+
+            <div class="phone-text">
+              Заказать звонок
+            </div>
+          </div>
+
+          <div class="footer-privacy">
+            Политика конфиденциальности
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -547,10 +644,19 @@
 
 <script>
 import axios from "axios";
+import TextReviews from "../components/reviews/TextReviews.vue";
+import VideoReviews from "../components/reviews/VideoReviews.vue";
 
 export default {
   name: "MainView",
   inject: ['backendURL'],
+  components: {
+    // Swiper,
+    // SwiperSlide,
+    TextReviews,
+    VideoReviews
+  },
+
   data(){
     return {
       stagesArr: [],
@@ -571,6 +677,17 @@ export default {
       reviews: {},
       contacts: {},
       footer: {},
+
+      center: { lat: 55.767724482181045, lng: 49.1041059787604 },
+      markers: [
+        {
+          id: 'dfsldjl3r',
+          position: {
+            lat: 55.767724482181045,
+            lng: 49.1041059787604,
+          },
+        },
+      ],
     }
   },
 
@@ -1474,7 +1591,7 @@ img.toggle-icon{
 }
 
 .reviews-max{
-  width: 67rem;
+  max-width: 67rem;
 }
 
 .reviews-title{
@@ -1483,6 +1600,16 @@ img.toggle-icon{
   font-weight: 500;
   font-size: 36px;
   line-height: 54px;
+  margin-bottom: 40px;
+}
+
+.reviews-text {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.reviews-video {
+  position: relative;
   margin-bottom: 80px;
 }
 
@@ -1491,10 +1618,20 @@ img.toggle-icon{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 150px;
 }
 
 .contacts-max{
   width: 67rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.contacts-content{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  flex-basis: 40%;
 }
 
 .contacts-title{
@@ -1506,10 +1643,128 @@ img.toggle-icon{
   margin-bottom: 80px;
 }
 
+.contacts-info{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.contacts-info-item{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  color: black;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.contacts-info-icon{
+  display: flex;
+  width: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts-info-links{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.contacts-info-links a{
+  color: #DD1D1D;
+  text-decoration: none;
+}
+
+.contacts-photo{
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.contacts-map{
+  width: 60%;
+  flex-basis: 60%;
+  height: 600px;
+}
+
 .footer{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 60px;
+}
+
+.footer-max{
+  width: 67rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.footer-left{
+  width: 20%;
+  flex-basis: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-left-content{
+  color: #BBBBBB;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer-center{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px 16px;
+}
+
+
+.footer-menu-item{
+  width: auto;
+  font-color: #000;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.footer-right{
+  width: 20%;
+  flex-basis: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-call-block{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.footer-privacy{
+  color: #BBBBBB;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+</style>
+
+<style>
+.swiper-pagination-bullet {
+  margin: 0;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #DD1D1D;
 }
 </style>
