@@ -4,10 +4,14 @@ import router from './router'
 import './assets/style.css'
 import axios from "axios";
 import VueGoogleMaps from 'vue-google-maps-community-fork'
+import ElementPlus from "element-plus";
+import 'element-plus/dist/index.css'
 
 const app = createApp(App)
 
 app.use(router, axios)
+
+app.use(ElementPlus)
 
 let backendURL = import.meta.env.VITE_BACKEND_HOST
 axios.defaults.baseURL = backendURL
@@ -23,6 +27,6 @@ app.mount('#app')
 
 app.provide('backendURL', backendURL)
 
-
+app.config.globalProperties.$projectVersion = '1.0'
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:5173'; // Set the allowed origin
 // axios.defaults.headers.post['Content-Type'] = 'application/json'; // Set the Content-Type header for POST requests
