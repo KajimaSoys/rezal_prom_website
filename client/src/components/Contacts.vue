@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts">
+  <div class="contacts" id="contacts">
     <div class="contacts-max">
       <div class="contacts-content">
         <h2 class="contacts-title" v-html="this.contacts.title"></h2>

@@ -1,26 +1,26 @@
 <template>
   <div class="header">
     <div class="header-max">
-      <div class="logo">
-        <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="138" height="34" />
-      </div>
+      <a class="logo" href="#">
+        <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+      </a>
 
       <div class="menu">
-        <div class="menu-item">
+        <a class="menu-item" @click="this.scrollToElement('about')">
           О компании
-        </div>
-        <div class="menu-item">
+        </a>
+        <a class="menu-item" @click="this.scrollToElement('projects')">
           Портфолио
-        </div>
-        <div class="menu-item">
+        </a>
+        <a class="menu-item" @click="this.scrollToElement('delivery')">
           Доставка и оплата
-        </div>
-        <div class="menu-item">
+        </a>
+        <a class="menu-item" @click="this.scrollToElement('reviews')">
           Отзывы
-        </div>
-        <div class="menu-item">
+        </a>
+        <a class="menu-item" @click="this.scrollToElement('contacts')">
           Контакты
-        </div>
+        </a>
       </div>
 
 
@@ -45,7 +45,13 @@ export default {
   inject: ['backendURL'],
   props: [
     'header',
-  ]
+  ],
+  methods: {
+    scrollToElement(elementId) {
+      const element = document.getElementById(elementId);
+      element.scrollIntoView({ behavior: "smooth" });
+    },
+  }
 }
 </script>
 
@@ -81,6 +87,31 @@ export default {
 
 .menu-item{
   font-size: 18px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+.menu-item:hover{
+  color: #DD1D1D;
+}
+
+.menu-item:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  background: #DD1D1D;
+  height: 2px;
+  transition: all .4s ease;
+}
+
+.menu-item:hover:before {
+  left: 0;
+  right: 0;
 }
 
 .call-block{
@@ -100,5 +131,10 @@ export default {
 
 .phone-text{
   color: #DD1D1D;
+  transition: color 0.2s ease-in-out;
+}
+
+.phone-text:hover{
+  color: #C20D0D;;
 }
 </style>

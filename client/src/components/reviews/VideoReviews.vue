@@ -11,7 +11,7 @@
         :key="index"
         class="review-card"
     >
-      <div class="review-video">
+      <div class="review-video" @click="showVideoWrapper(review.video_link)">
         <img
             :src="`${this.backendURL}${review.image}`"
             alt=""
@@ -55,7 +55,7 @@ export default {
     Swiper,
     SwiperSlide,
   },
-  inject: ['backendURL'],
+  inject: ['backendURL', 'showVideo'],
   props: [
     'reviewVideoArr'
   ],
@@ -64,6 +64,13 @@ export default {
       modules: [Navigation, Pagination, A11y],
     };
   },
+
+  methods: {
+    showVideoWrapper(video_link) {
+      const videoId = video_link.split('/')[video_link.split('/').length - 1];
+      this.showVideo(videoId);
+    },
+  }
 }
 </script>
 
@@ -127,6 +134,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .review-preview-icon {

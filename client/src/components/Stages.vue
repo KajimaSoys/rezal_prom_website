@@ -17,7 +17,7 @@
           <div class="stage-title" v-html="stage.title"></div>
         </div>
       </div>
-      <div class="stages-delivery">
+      <div class="stages-delivery" id="delivery">
         <h2 class="stages-delivery-title" v-html="this.stages.delivery_title"></h2>
         <div class="stages-delivery-first" v-html="this.stages.delivery_first"></div>
         <div class="stages-delivery-second" v-html="this.stages.delivery_second"></div>

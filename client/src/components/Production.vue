@@ -4,7 +4,7 @@
       <div class="production-background"> </div>
 
       <div class="production-content">
-        <div class="production-video">
+        <div class="production-video" @click="showVideoWrapper">
           <img
               :src="`${this.backendURL}${this.production.video_preview}`"
               alt=""
@@ -20,6 +20,7 @@
               class="production-preview-icon"
           >
         </div>
+<!--        <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo" />-->
 
         <div class="production-subcontent">
           <div class="production-text">
@@ -63,12 +64,27 @@
 </template>
 
 <script>
+
 export default {
   name: "Production",
-  inject: ['backendURL'],
+  inject: ['backendURL', 'showVideo'],
   props: [
     'production',
   ],
+  components: {
+
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    showVideoWrapper() {
+      const videoId = this.production.video_link.split('/')[this.production.video_link.split('/').length - 1];
+      this.showVideo(videoId);
+    },
+  },
 }
 </script>
 
@@ -112,6 +128,7 @@ export default {
 .production-video{
   position: relative;
   height: 620px;
+  cursor: pointer;
 }
 
 .production-preview-icon{

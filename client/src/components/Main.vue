@@ -104,6 +104,12 @@ export default {
   align-items: center;
   background: #DD1D1D;
   border-radius: 14px;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+
+.main-request-button:hover{
+  background-color: #C20D0D;
 }
 
 .main-count-button{
@@ -116,5 +122,13 @@ export default {
   align-items: center;
   border: 2px solid #B4B4B4;
   border-radius: 14px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.main-count-button:hover{
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #000000;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about" id="about">
     <div class="about-max">
       <div class="about-head">
         <div class="about-image-container">

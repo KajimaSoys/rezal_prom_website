@@ -1,12 +1,12 @@
 <template>
-  <div class="projects">
+  <div class="projects" id="projects">
     <div class="projects-max">
       <h2 class="projects-title" v-html="this.projects.title"></h2>
 
       <div class="projects-content">
         <div class="projects-content-left">
           <div class="projects-item">
-            <div class="projects-item-preview-first">
+            <div class="projects-item-preview-first" @click="showVideoWrapper(this.projects.video_link_first)">
               <img
                   :src="`${this.backendURL}${this.projects.image_first}`"
               >
@@ -22,7 +22,7 @@
           </div>
 
           <div class="projects-item">
-            <div class="projects-item-preview-second">
+            <div class="projects-item-preview-second" @click="showVideoWrapper(this.projects.video_link_second)">
               <img
                   :src="`${this.backendURL}${this.projects.image_second}`"
               >
@@ -40,7 +40,7 @@
 
         <div class="projects-content-right">
           <div class="projects-item">
-            <div class="projects-item-preview-third">
+            <div class="projects-item-preview-third" @click="showVideoWrapper(this.projects.video_link_third)">
               <img
                   :src="`${this.backendURL}${this.projects.image_third}`"
               >
@@ -66,12 +66,27 @@
 </template>
 
 <script>
+
 export default {
   name: "Projects",
-  inject: ['backendURL'],
+  inject: ['backendURL', 'showVideo'],
   props: [
     'projects',
   ],
+  components: {
+
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    showVideoWrapper(video_link) {
+      const videoId = video_link.split('/')[video_link.split('/').length - 1];
+      this.showVideo(videoId);
+    },
+  },
 }
 </script>
 
@@ -126,6 +141,7 @@ export default {
 
 .projects-item-preview-first, .projects-item-preview-second, .projects-item-preview-third {
   position: relative;
+  cursor: pointer;
 }
 
 .projects-item-preview-first img {

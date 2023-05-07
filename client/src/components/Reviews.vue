@@ -1,5 +1,5 @@
 <template>
-  <div class="reviews">
+  <div class="reviews" id="reviews">
     <div class="reviews-max">
       <h2 class="reviews-title" v-html="this.reviews.title"></h2>
       <div class="reviews-content">
