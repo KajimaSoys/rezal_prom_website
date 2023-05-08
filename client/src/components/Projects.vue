@@ -11,7 +11,10 @@
                   :src="`${this.backendURL}${this.projects.image_first}`"
               >
               <div class="projects-item-preview-icon">
-                <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="30" cy="30" r="30" fill="white"/>
+                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                </svg>
               </div>
               <div class="projects-item-preview-text">
                 Смотреть видеоотзыв
@@ -27,7 +30,10 @@
                   :src="`${this.backendURL}${this.projects.image_second}`"
               >
               <div class="projects-item-preview-icon">
-                <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="30" cy="30" r="30" fill="white"/>
+                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                </svg>
               </div>
               <div class="projects-item-preview-text">
                 Смотреть видеоотзыв
@@ -45,7 +51,10 @@
                   :src="`${this.backendURL}${this.projects.image_third}`"
               >
               <div class="projects-item-preview-icon">
-                <img src="src/assets/icons/icon-play.svg" width="36" height="36">
+                <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="30" cy="30" r="30" fill="white"/>
+                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                </svg>
               </div>
               <div class="projects-item-preview-text">
                 Смотреть видеоотзыв
@@ -55,9 +64,9 @@
             <div class="projects-item-description" v-html="this.projects.description_third"></div>
           </div>
           <div class="projects-button">
-            <div class="projects-portfolio-button">
+            <a class="projects-portfolio-button" href="https://mebel-rezal.clients.site/" target="_blank">
               Смотреть все проекты
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -96,8 +105,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 .projects-max{
@@ -166,9 +175,17 @@ export default {
   margin: 20px;
 }
 
+svg path{
+  transition: fill 0.2s ease-in-out;
+}
+
+svg:hover path{
+  fill: #EB7777;
+}
+
 .projects-item-preview-text {
   position: absolute;
-  bottom: 4px;
+  bottom: 10px;
   left: 45px;
   margin: 20px;
   color: #ffffff;
@@ -203,5 +220,12 @@ export default {
   background: #DD1D1D;
   border-radius: 14px;
   font-size: 14px;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+  text-decoration: none;
+}
+
+.projects-portfolio-button:hover{
+  background-color: #C20D0D;
 }
 </style>

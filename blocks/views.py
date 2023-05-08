@@ -1,3 +1,6 @@
+from rest_framework import viewsets, permissions
+from rest_framework.decorators import permission_classes
+
 from .serializers import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -30,13 +33,13 @@ class AllBlocksView(APIView):
         return Response(serializer.data)
 
 
-# @permission_classes((permissions.IsAuthenticatedOrReadOnly,))
-# class HeaderBlockViewSet(viewsets.ModelViewSet):
-#     """
-#     Api endpoint that returns information about
-#     """
-#     serializer_class = HeaderBlockSerializer
-#     queryset = HeaderBlock.objects.all()
+@permission_classes((permissions.IsAuthenticatedOrReadOnly,))
+class HeaderBlockViewSet(viewsets.ModelViewSet):
+    """
+    Api endpoint that returns information about Header
+    """
+    serializer_class = HeaderBlockSerializer
+    queryset = HeaderBlock.objects.all()
 #
 #
 # @permission_classes((permissions.IsAuthenticatedOrReadOnly,))

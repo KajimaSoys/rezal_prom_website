@@ -4,14 +4,19 @@ import router from './router'
 import './assets/style.css'
 import axios from "axios";
 import VueGoogleMaps from 'vue-google-maps-community-fork'
+
 import ElementPlus from "element-plus";
 import 'element-plus/dist/index.css'
+
+// import { TheMask } from 'vue-the-mask';
 
 const app = createApp(App)
 
 app.use(router, axios)
 
 app.use(ElementPlus)
+
+// app.directive('mask', TheMask);
 
 let backendURL = import.meta.env.VITE_BACKEND_HOST
 axios.defaults.baseURL = backendURL

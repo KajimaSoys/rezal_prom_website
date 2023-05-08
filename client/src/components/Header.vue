@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-max">
-      <a class="logo" href="#">
+      <a class="logo" href="/">
         <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
       </a>
 
@@ -49,7 +49,12 @@ export default {
   methods: {
     scrollToElement(elementId) {
       const element = document.getElementById(elementId);
-      element.scrollIntoView({ behavior: "smooth" });
+
+      if (this.$route.path === "/"){
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        this.$router.push({ path: "/", hash: `#${elementId}` });
+      }
     },
   }
 }
@@ -135,6 +140,6 @@ export default {
 }
 
 .phone-text:hover{
-  color: #C20D0D;;
+  color: #C20D0D;
 }
 </style>

@@ -22,8 +22,8 @@ from blocks import views as blockViews
 from requests import views as requestViews
 from core import views as coreViews
 
-# router = routers.DefaultRouter()
-# router.register(r'blocks/header', blockViews.HeaderBlockViewSet)
+router = routers.DefaultRouter()
+router.register(r'blocks/header', blockViews.HeaderBlockViewSet)
 # router.register(r'blocks/main', blockViews.MainBlockViewSet)
 # router.register(r'blocks/about', blockViews.AboutBlockViewSet)
 # router.register(r'blocks/production', blockViews.ProductionBlockViewSet)
@@ -38,7 +38,7 @@ from core import views as coreViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/', include(router.urls)),
+    path('api/v1/', include(router.urls)),
     path('api/v1/all_blocks/', blockViews.AllBlocksView.as_view()),
     path('api/v1/core_objects/', coreViews.AllObjectsView.as_view()),
     path('api/v1/send_request', requestViews.OrderCreateView.as_view()),

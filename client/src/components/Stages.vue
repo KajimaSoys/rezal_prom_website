@@ -44,7 +44,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 75px;
   padding-bottom: 150px;
 }
 
@@ -65,7 +65,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 60px 16px;
-  margin-bottom: 150px;
+  padding-bottom: 75px;
 }
 
 .stage {
@@ -115,6 +115,7 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 100px;
+  padding-top: 75px;
 }
 
 .stages-delivery-title{

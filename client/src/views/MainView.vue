@@ -29,7 +29,7 @@
 
     <Contacts :contacts="this.contacts"/>
 
-    <Footer :header="this.header"/>
+    <Footer :header="this.header" :meta="true"/>
 
     <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo" />
 
@@ -139,7 +139,7 @@ export default {
               }
             });
 
-            console.log(response.data)
+            // console.log(response.data)
           })
           .catch( error => {
             console.log('An error occurred: ', error)
@@ -165,7 +165,7 @@ export default {
               }
             });
 
-            console.log(response.data)
+            // console.log(response.data)
           })
           .catch( error => {
             console.log('An error occurred: ', error)

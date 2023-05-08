@@ -83,7 +83,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 150px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 
 .team-max{

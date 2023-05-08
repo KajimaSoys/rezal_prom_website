@@ -14,22 +14,35 @@
         <div class="request-description">
           Оставьте заявку на изготовление мебели и получите скидку 5% при заказе 3 и более элементов мебели
         </div>
-        <div class="request-form">
+        <div class="request-form" v-if="!request1.isSubmitted">
           <div class="request-form-item">
             <div class="request-form-label">
-              Ваше имя
+              Ваше имя<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request1.name" type="text" name="input1" placeholder="Введите имя">
+              <input
+                  v-model="this.request1.name"
+                  type="text"
+                  name="input1"
+                  placeholder="Введите имя"
+                  required
+              >
             </div>
           </div>
 
           <div class="request-form-item">
             <div class="request-form-label">
-              Куда позвонить?
+              Куда позвонить?<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request1.phone" type="tel" name="input1" placeholder="+7 ___ ___-__-__">
+              <input
+                  type="text"
+                  name="input1"
+                  placeholder="+7 (___) ___-__-__"
+                  v-mask="'+7 (###) ###-##-##'"
+                  required
+                  v-model="this.request1.phone"
+              >
             </div>
           </div>
 
@@ -38,7 +51,12 @@
               Какая мебель нужна?
             </div>
             <div class="request-form-input">
-              <input v-model="this.request1.message" type="text" name="input1" placeholder="Расскажите, что Вас интересует">
+              <input
+                  v-model="this.request1.message"
+                  type="text"
+                  name="input1"
+                  placeholder="Расскажите, что Вас интересует"
+              >
             </div>
           </div>
 
@@ -51,9 +69,18 @@
             </div>
           </div>
         </div>
-          <div class="request-acceptance">
-            Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <a>политики конфиденциальности</a>
-          </div>
+
+        <div class="request-error" v-if="request1.nameError || request1.phoneError">
+          Пожалуйста, заполните обязательные поля
+        </div>
+
+        <div class="request-acceptance" v-if="!request1.isSubmitted">
+          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+        </div>
+        <div class="request-success" v-else>
+          <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+        </div>
       </div>
 
     </div>
@@ -73,22 +100,33 @@
         <div class="request-description">
           Оставьте заявку и получите предварительный расчёт стоимости вашей будущей мебели
         </div>
-        <div class="request-form">
+        <div class="request-form" v-if="!request2.isSubmitted">
           <div class="request-form-item">
             <div class="request-form-label">
-              Ваше имя
+              Ваше имя<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request2.name" type="text" name="input1" placeholder="Введите имя">
+              <input
+                  v-model="this.request2.name"
+                  type="text"
+                  name="input1"
+                  placeholder="Введите имя"
+              >
             </div>
           </div>
 
           <div class="request-form-item">
             <div class="request-form-label">
-              Куда позвонить?
+              Куда позвонить?<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request2.phone" type="tel" name="input1" placeholder="+7 ___ ___-__-__">
+              <input
+                  v-model="this.request2.phone"
+                  type="tel"
+                  name="input1"
+                  placeholder="+7 (___) ___-__-__"
+                  v-mask="'+7 (###) ###-##-##'"
+              >
             </div>
           </div>
 
@@ -97,7 +135,12 @@
               Какая мебель нужна?
             </div>
             <div class="request-form-input">
-              <input v-model="this.request2.message" type="text" name="input1" placeholder="Расскажите, что Вас интересует">
+              <input
+                  v-model="this.request2.message"
+                  type="text"
+                  name="input1"
+                  placeholder="Расскажите, что Вас интересует"
+              >
             </div>
           </div>
 
@@ -110,9 +153,18 @@
             </div>
           </div>
         </div>
-          <div class="request-acceptance">
-            Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <a>политики конфиденциальности</a>
-          </div>
+
+        <div class="request-error" v-if="request2.nameError || request2.phoneError">
+          Пожалуйста, заполните обязательные поля
+        </div>
+
+        <div class="request-acceptance" v-if="!request2.isSubmitted">
+          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+        </div>
+        <div class="request-success" v-else>
+          <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+        </div>
       </div>
 
     </div>
@@ -132,22 +184,33 @@
         <div class="request-description">
           Вы сможете задать все вопросы нам лично и посмотреть выставочные образцы
         </div>
-        <div class="request-form">
+        <div class="request-form" v-if="!request3.isSubmitted">
           <div class="request-form-item">
             <div class="request-form-label">
-              Ваше имя
+              Ваше имя<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request3.name" type="text" name="input1" placeholder="Введите имя">
+              <input
+                  v-model="this.request3.name"
+                  type="text"
+                  name="input1"
+                  placeholder="Введите имя"
+              >
             </div>
           </div>
 
           <div class="request-form-item">
             <div class="request-form-label">
-              Куда позвонить?
+              Куда позвонить?<span style="color: #DD1D1D; font-size: 24px">*</span>
             </div>
             <div class="request-form-input">
-              <input v-model="this.request3.phone" type="tel" name="input1" placeholder="+7 ___ ___-__-__">
+              <input
+                  v-model="this.request3.phone"
+                  type="tel"
+                  name="input1"
+                  placeholder="+7 (___) ___-__-__"
+                  v-mask="'+7 (###) ###-##-##'"
+              >
             </div>
           </div>
 
@@ -175,8 +238,17 @@
             </div>
           </div>
         </div>
-        <div class="request-acceptance">
-          Нажимая кнопку «Записаться на встречу» вы даете согласие на обработку персональных данных и принимаете условия <a>политики конфиденциальности</a>
+
+        <div class="request-error" v-if="request3.nameError || request3.phoneError">
+          Пожалуйста, заполните обязательные поля
+        </div>
+
+        <div class="request-acceptance" v-if="!request3.isSubmitted">
+          Нажимая кнопку «Записаться на встречу» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+        </div>
+        <div class="request-success" v-else>
+          <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
         </div>
 
         <div class="request-additional">
@@ -191,52 +263,81 @@
 
 <script>
 import axios from "axios";
+import {mask} from 'vue-the-mask'
 
 export default {
   name: "Request",
   props: [
     'requestNum',
   ],
+
+  directives: {mask},
+
   data(){
     return {
       request1: {
         name: '',
         phone: '',
         message: '',
+        nameError: false,
+        phoneError: false,
+        isSubmitted: false,
       },
 
       request2: {
         name: '',
         phone: '',
         message: '',
+        nameError: false,
+        phoneError: false,
+        isSubmitted: false,
       },
 
       request3: {
         name: '',
         phone: '',
         selectedTime: '',
+        nameError: false,
+        phoneError: false,
+        isSubmitted: false,
       },
     }
   },
 
   methods: {
     async sendRequest(request){
-      let body = {
-        request: {
-          name: request.name,
-          number: request.phone,
-          message: request.message || '',
-          comfortable_time: request.selectedTime || '',
-          project_version: this.$projectVersion,
-          user_agent: navigator.userAgent,
-          screen_resolution: `${window.screen.width}x${window.screen.height}`,
-          browser_language: navigator.language,
-          timezone: new Date().getTimezoneOffset(),
-          cookie: document.cookie
-        }
+      request.nameError = false;
+      request.phoneError = false;
+
+      if (request.name.length < 3) {
+        request.nameError = true;
       }
-      console.log(body)
-      await axios.post('api/v1/send_request', body)
+
+      if (request.phone.length !== 18) {
+        request.phoneError = true;
+      }
+
+      if (!request.nameError && !request.phoneError) {
+        let body = {
+          request: {
+            name: request.name,
+            number: request.phone,
+            message: request.message || '',
+            comfortable_time: request.selectedTime || '',
+            project_version: this.$projectVersion,
+            user_agent: navigator.userAgent,
+            screen_resolution: `${window.screen.width}x${window.screen.height}`,
+            browser_language: navigator.language,
+            timezone: new Date().getTimezoneOffset(),
+            cookie: document.cookie
+          }
+        }
+        // TODO delete log
+        console.log(body)
+        await axios.post('api/v1/send_request', body)
+
+        request.isSubmitted = true;
+      }
     },
   },
 }
@@ -249,7 +350,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 75px;
   padding-bottom: 150px;
 }
 
@@ -342,7 +443,7 @@ input[type="text"], input[type="tel"] {
 }
 
 input[type="text"]:focus, input[type="tel"]:focus {
-  border-color: #DD1D1D;;
+  border-color: #DD1D1D;
 }
 
 .request-form-submit{
@@ -362,6 +463,28 @@ input[type="text"]:focus, input[type="tel"]:focus {
   background-color: #C20D0D;
 }
 
+.request-error {
+    margin-bottom: -50px;
+    color: #DD1D1D;
+}
+
+.request-success {
+  color: #FFFFFF;
+}
+
+.request-success-title{
+  text-align: center;
+  font-family: 'OnestMedium', Inter, sans-serif;
+  font-size: 28px;
+  padding-top: 40px;
+}
+
+.request-success-description{
+  text-align: center;
+  padding-top: 20px;
+}
+
+
 .request-acceptance {
   color: #888888;
   font-size: 14px;
@@ -370,7 +493,24 @@ input[type="text"]:focus, input[type="tel"]:focus {
 
 .request-acceptance a{
   color: #DEDEDE;
-  text-decoration: underline;
+  position: relative;
+  text-decoration: none;
+}
+
+.request-acceptance a:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  background: #DEDEDE;
+  height: 1px;
+  transition: all .4s ease;
+}
+
+.request-acceptance a:hover:before {
+  left: 0;
+  right: 0;
 }
 
 .request-additional {

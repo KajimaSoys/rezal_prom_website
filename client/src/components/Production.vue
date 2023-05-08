@@ -12,15 +12,11 @@
               height="620"
               class="production-preview-image"
           >
-          <img
-              src="src/assets/icons/icon-play.svg"
-              alt=""
-              width="60"
-              height="60"
-              class="production-preview-icon"
-          >
+          <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="production-preview-icon">
+            <circle cx="30" cy="30" r="30" fill="white"/>
+            <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+          </svg>
         </div>
-<!--        <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo" />-->
 
         <div class="production-subcontent">
           <div class="production-text">
@@ -95,8 +91,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 150px;
+  padding-top: 150px;
+  padding-bottom: 75px;
 }
 
 .production-max{
@@ -137,6 +133,14 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.production-preview-icon path{
+  transition: fill 0.2s ease-in-out;
+}
+
+.production-preview-icon:hover path{
+  fill: #EB7777;
 }
 
 .production-subcontent{

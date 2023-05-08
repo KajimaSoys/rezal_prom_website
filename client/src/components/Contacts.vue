@@ -79,7 +79,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 75px;
   padding-bottom: 150px;
 }
 
@@ -137,6 +137,11 @@ export default {
 .contacts-info-links a{
   color: #DD1D1D;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contacts-info-links a:hover{
+  color: #EB7777;
 }
 
 .contacts-photo{

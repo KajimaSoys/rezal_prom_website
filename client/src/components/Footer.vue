@@ -2,31 +2,31 @@
   <div class="footer">
     <div class="footer-max">
       <div class="footer-left">
-        <div class="">
-          <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="138" height="34" />
-        </div>
+        <a class="footer-logo" href="/">
+          <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+        </a>
 
-        <div class="footer-left-content">
+        <div class="footer-left-content" v-if="this.meta">
           *организация «Meta» признана экстремистской и запрещена на территории России
         </div>
       </div>
 
       <div class="footer-center">
-        <div class="footer-menu-item">
+        <a class="footer-menu-item" @click="this.scrollToElement('about')">
           О компании
-        </div>
-        <div class="footer-menu-item">
+        </a>
+        <a class="footer-menu-item" @click="this.scrollToElement('projects')">
           Отзывы
-        </div>
-        <div class="footer-menu-item">
+        </a>
+        <a class="footer-menu-item" @click="this.scrollToElement('delivery')">
           Доставка и оплата
-        </div>
-        <div class="footer-menu-item">
+        </a>
+        <a class="footer-menu-item" @click="this.scrollToElement('reviews')">
           Портфолио
-        </div>
-        <div class="footer-menu-item">
+        </a>
+        <a class="footer-menu-item" @click="this.scrollToElement('contacts')">
           Контакты
-        </div>
+        </a>
       </div>
 
       <div class="footer-right">
@@ -41,9 +41,9 @@
           </div>
         </div>
 
-        <div class="footer-privacy">
+        <router-link to="policy" class="footer-privacy">
           Политика конфиденциальности
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -55,7 +55,19 @@ export default {
   inject: ['backendURL'],
   props: [
     'header',
+    'meta',
   ],
+  methods: {
+    scrollToElement(elementId) {
+      const element = document.getElementById(elementId);
+
+      if (this.$route.path === "/"){
+        element.scrollIntoView({ behavior: "smooth" });
+      } else {
+        this.$router.push({ path: "/", hash: `#${elementId}` });
+      }
+    },
+  }
 }
 </script>
 
@@ -104,6 +116,13 @@ export default {
   font-color: #000;
   font-size: 16px;
   line-height: 23px;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.footer-menu-item:hover{
+  color: #7A7A7A;
 }
 
 .footer-right{
@@ -122,9 +141,24 @@ export default {
   cursor: pointer;
 }
 
+.phone-text{
+  color: #DD1D1D;
+  transition: color 0.2s ease-in-out;
+}
+
+.phone-text:hover{
+  color: #C20D0D;
+}
+
 .footer-privacy{
   color: #BBBBBB;
   font-size: 14px;
   line-height: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-privacy:hover{
+  color: #888888;
 }
 </style>
