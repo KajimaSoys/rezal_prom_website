@@ -55,7 +55,7 @@
 
 
 
-      <div class="call-block nav-menu">
+      <div class="call-block nav-menu" @click="this.$emit('popUpCall')">
         <div class="phone-number">
           <img src="src/assets/icons/phone.svg" alt="" width="16" height="16" />
           {{ this.header.number }}
@@ -71,6 +71,8 @@
         <span></span>
         <span></span>
       </div>
+
+      <div :class="isBurgerMenuOpen ? 'overlay' : 'overlay-hidden'" @click="toggleBurgerMenu"></div>
 
       <div class="burger-menu-items" :class="{ open: isBurgerMenuOpen }">
         <div class="side-menu">
@@ -119,6 +121,9 @@ export default {
   props: [
     'header',
   ],
+  emits: [
+    'popUpCall'
+  ],
   data(){
     return{
       isBurgerMenuOpen: false
@@ -130,7 +135,13 @@ export default {
 
       if (this.$route.path === "/"){
         element.scrollIntoView({ behavior: "smooth" });
-        this.toggleBurgerMenu()
+
+        this.isBurgerMenuOpen = false;
+        if (this.isBurgerMenuOpen) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
       } else {
         this.$router.push({ path: "/", hash: `#${elementId}` });
       }
@@ -138,6 +149,11 @@ export default {
 
     toggleBurgerMenu() {
       this.isBurgerMenuOpen = !this.isBurgerMenuOpen;
+      if (this.isBurgerMenuOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
     }
   }
 }
@@ -149,6 +165,14 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  background-color: white;
+  background-color: rgba(255,255,255, 0.8);
+  backdrop-filter: blur(4px) brightness(100%);
 }
 
 .header-max{
@@ -290,7 +314,7 @@ export default {
 }
 
 .burger-menu.cross span:nth-child(3) {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-3px) rotate(-45deg);
 }
 
 
@@ -301,7 +325,7 @@ export default {
   right: 0; /* Change from 'left: 0' to 'right: 0' */
   width: 70%;
   max-width: 300px;
-  height: 100%;
+  height: 100vh;
   background-color: #2d2d2d;
   flex-direction: column;
   gap: 30%;
@@ -345,6 +369,21 @@ export default {
   transition: color 0.3s ease-in-out;
 }
 
+.overlay-hidden{
+ display: none;
+}
+
+.overlay {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
+  z-index: 999; /* Keep the overlay below the menu and header */
+}
 
 @media screen and (min-width: 1200px) {
   .logo{

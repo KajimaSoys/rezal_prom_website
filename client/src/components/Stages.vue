@@ -66,7 +66,6 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 60px 16px;
-  padding-bottom: 75px;
 }
 
 .stage {
@@ -116,7 +115,7 @@ export default {
   display: flex;
   flex-direction: row;
   gap: 100px;
-  padding-top: 75px;
+  padding-top: 150px;
 }
 
 .stages-delivery-title{

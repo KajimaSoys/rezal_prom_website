@@ -11,11 +11,11 @@
         </div>
 
         <div class="main-buttons">
-          <div class="main-request-button">
+          <div class="main-request-button" @click="this.$emit('popUpCall')">
             Оставить заявку
           </div>
 
-          <div class="main-count-button">
+          <div class="main-count-button" @click="this.$emit('popUpCall')">
             Рассчитать стоимость
           </div>
         </div>
@@ -32,6 +32,9 @@ export default {
   props: [
     'main',
   ],
+  emits: [
+    'popUpCall'
+  ],
 }
 </script>
 
@@ -42,8 +45,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 75px;
-  margin-top: -1rem;
+  /*padding-bottom: 75px;*/
+  margin-top: 10vh;
 }
 
 .main-max{

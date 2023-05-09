@@ -9,9 +9,11 @@ export default {
     showVideo(videoId) {
       this.videoId = videoId;
       this.videoVisible = true;
+      document.body.style.overflow = "hidden";
     },
     hideVideo() {
       this.videoVisible = false;
+      document.body.style.overflow = "";
     },
   },
   provide() {

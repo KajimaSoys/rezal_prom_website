@@ -79,9 +79,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 75px;
+  padding-top: 150px;
   padding-bottom: 150px;
-  margin-top: 75px;
 }
 
 .contacts-max{

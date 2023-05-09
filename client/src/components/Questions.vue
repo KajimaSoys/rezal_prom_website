@@ -42,7 +42,6 @@ export default {
   justify-content: center;
   align-items: center;
   padding-top: 150px;
-  padding-bottom: 75px;
 }
 
 .questions-max{

@@ -1,9 +1,9 @@
 <template>
   <div class="content">
 
-    <Header :header="this.header"/>
+    <Header :header="this.header" @popUpCall="popUpCall()"/>
 
-    <Main :main="this.main"/>
+    <Main :main="this.main" @popUpCall="popUpCall()"/>
 
     <About :about="this.about"/>
 
@@ -29,9 +29,11 @@
 
     <Contacts :contacts="this.contacts"/>
 
-    <Footer :header="this.header" :meta="true"/>
+    <Footer :header="this.header" :meta="true" @popUpCall="popUpCall()"/>
 
     <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo" />
+
+    <PopUp :visible="popUpVisible" @close="hidePopUp" />
 
   </div>
 </template>
@@ -54,6 +56,7 @@ import Reviews from "../components/Reviews.vue";
 import Contacts from "../components/Contacts.vue";
 import Footer from "../components/Footer.vue";
 import VideoPlayer from '../components/VideoPlayer.vue';
+import PopUp from "../components/PopUp.vue";
 
 
 export default {
@@ -74,6 +77,7 @@ export default {
     Contacts,
     Footer,
     VideoPlayer,
+    PopUp
   },
   mixins: [provideVideoPlayer],
 
@@ -100,7 +104,7 @@ export default {
 
       videoVisible: false,
       videoId: '',
-
+      popUpVisible: false,
     }
   },
 
@@ -170,6 +174,15 @@ export default {
           .catch( error => {
             console.log('An error occurred: ', error)
           })
+    },
+
+    popUpCall() {
+      this.popUpVisible = true;
+      document.body.style.overflow = "hidden";
+    },
+    hidePopUp() {
+      this.popUpVisible = false;
+      document.body.style.overflow = "";
     },
 
   },

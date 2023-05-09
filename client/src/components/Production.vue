@@ -201,6 +201,9 @@ export default {
 
   .production-background{
     height: 50rem;
+    padding: 0;
+    margin: 0 2rem;
+    border-radius: 0;
   }
 
   .production-content{

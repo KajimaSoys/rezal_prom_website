@@ -30,7 +30,7 @@
       </div>
 
       <div class="footer-right">
-        <div class="footer-call-block">
+        <div class="footer-call-block" @click="this.$emit('popUpCall')">
           <div class="phone-number">
             <img src="src/assets/icons/phone.svg" alt="" width="16" height="16" />
             {{ this.header.number }}
@@ -56,6 +56,9 @@ export default {
   props: [
     'header',
     'meta',
+  ],
+  emits: [
+    'popUpCall'
   ],
   methods: {
     scrollToElement(elementId) {

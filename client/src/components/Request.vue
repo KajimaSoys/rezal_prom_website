@@ -332,8 +332,6 @@ export default {
             cookie: document.cookie
           }
         }
-        // TODO delete log
-        console.log(body)
         await axios.post('api/v1/send_request', body)
 
         request.isSubmitted = true;
@@ -565,6 +563,10 @@ select:focus {
 @media screen and (max-width: 990px){
   .request-background{
     height: 51rem;
+
+    padding: 0;
+    margin: 0 2rem;
+    border-radius: 0;
   }
 
   #request-time > div > div.request-background{
@@ -575,7 +577,7 @@ select:focus {
     width: 12%;
   }
 
-  .request-title[data-v-ffbafa4b] {
+  .request-title {
     font-size: 36px;
     line-height: 40px;
 }

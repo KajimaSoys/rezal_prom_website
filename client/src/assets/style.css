@@ -38,6 +38,7 @@ body {
   font-family: 'OnestRegular', Inter, sans-serif;
   margin: 0;
   overflow-x: hidden;
+  scroll-margin-top: 7rem;
 }
 
 p {
