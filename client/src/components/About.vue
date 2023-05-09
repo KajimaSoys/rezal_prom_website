@@ -111,12 +111,13 @@ export default {
 }
 
 .about-max{
-  width: 67rem;
+  max-width: 67rem;
   /*height: 90%;*/
   /*border-radius: 30px;*/
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  margin: 0 2rem;
 }
 
 .about-head{
@@ -198,5 +199,63 @@ export default {
 
 .about-card-description{
  color: #686868;
+}
+
+@media screen and (max-width: 990px) {
+  .about-max{
+    gap: 13rem;
+  }
+  
+  .about-head{
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+  }
+
+  .about-description{
+    position: absolute;
+    top: 190px;
+    margin: 0;
+    width: 75%;
+  }
+
+  .about-content-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-thick,
+  .about-thin {
+    width: auto;
+    flex-basis: 100%;
+  }
+
+  .about-image-container {
+    height: 150px;
+    width: 150px;
+  }
+
+  .about-head > div:nth-child(2){
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .about-max{
+    gap: 17rem;
+  }
+  .about-description{
+    top: 130px;
+    width: 100%;
+  }
+
+  .about-image-container {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>

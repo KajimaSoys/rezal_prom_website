@@ -71,8 +71,20 @@ iframe {
 }
 
 .close-button:hover {
-
   color: rgba(255, 255, 255, 1);
+}
 
+@media screen and (max-width: 990px) {
+  .close-button{
+    top: -70px;
+    right: -60px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .close-button{
+    top: -70px;
+    right: -40px;
+  }
 }
 </style>

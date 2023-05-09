@@ -49,7 +49,8 @@ export default {
 }
 
 .stages-max{
-  width: 67rem;
+  max-width: 67rem;
+  margin: 0 2rem;
 }
 
 .stages-title{
@@ -140,5 +141,67 @@ export default {
   color: #000000;
   line-height: 1.4;
   font-size: 16px;
+}
+
+@media screen and (max-width: 990px){
+  .stages {
+    padding-top: 110px;
+  }
+
+  .stages-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stages-delivery {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stages-delivery-title {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .stages-delivery-first,
+  .stages-delivery-second {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .stages-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .stages-grid{
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
+
+  .stage-title{
+    font-size: 16px;
+  }
+
+  .stages {
+    max-width: 100%;
+    margin: 0 2rem;
+    width: auto;
+  }
+
+  .stages-max {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .stages-delivery-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>

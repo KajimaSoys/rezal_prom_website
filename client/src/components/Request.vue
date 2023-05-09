@@ -170,9 +170,9 @@
     </div>
   </div>
 
-  <div class="request" v-if="this.requestNum==3">
+  <div class="request" v-if="this.requestNum==3" id="request-time">
     <div class="request-max">
-      <div class="request-background" style="height: 38rem;"></div>
+      <div class="request-background"></div>
 
       <div class="request-content">
         <div class="request-icon">
@@ -351,7 +351,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding-top: 75px;
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 }
 
 .request-max{
@@ -361,24 +361,32 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 2rem;
 }
 
 .request-background{
   background: linear-gradient(106.5deg, #1F1F1F 12.53%, #353535 105.97%);
   border-radius: 30px;
   height: 35rem;
-  width: 90rem;
+  width: 100%;
+  max-width: 90rem;
+  padding: 0 2rem;
   position: absolute;
   z-index: -1;
   transform: translateY(5%);
 }
 
+#request-time > div > div.request-background{
+  height: 38rem;
+}
+
 .request-content{
-  width: 67rem;
+  max-width: 67rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 60px;
-  height: 500px;
+  /*height: 500px;*/
   position: relative;
 }
 
@@ -409,7 +417,7 @@ export default {
   color: #fff;
   font-size: 18px;
   line-height: 1.4;
-  width: 50%;
+  width: 70%;
 }
 
 .request-form{
@@ -552,5 +560,92 @@ select {
 
 select:focus {
   border-color: #DD1D1D;
+}
+
+@media screen and (max-width: 990px){
+  .request-background{
+    height: 51rem;
+  }
+
+  #request-time > div > div.request-background{
+    height: 54rem;
+  }
+
+  .request-icon{
+    width: 12%;
+  }
+
+  .request-title[data-v-ffbafa4b] {
+    font-size: 36px;
+    line-height: 40px;
+}
+
+  .request-description{
+    margin-bottom: -40px;
+    font-size: 16px;
+  }
+
+  .request-form{
+    flex-direction: column;
+    width: 40%;
+  }
+
+  .request-acceptance{
+    width: 90%;
+  }
+
+  .request-form-submit{
+    width: 75%;
+    margin: 1rem auto auto;
+  }
+
+  input[type="text"], input[type="tel"]{
+    width: 90%;
+  }
+
+  .el-select{
+    width: 100%;
+  }
+
+  .request-additional{
+    visibility: hidden;
+  }
+
+  .request-success {
+    padding-bottom: 18rem;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .request-background{
+    height: 53rem;
+  }
+
+  #request-time > div > div.request-background{
+    height: 57rem;
+  }
+
+  .request-icon{
+    width: 20%;
+  }
+
+  .request-title{
+    font-size: 32px;
+    line-height: 40px;
+}
+
+  .request-description{
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .request-form{
+    width: 100%;
+  }
+
+  .request-acceptance{
+    width: 100%;
+    font-size: 12px;
+  }
 }
 </style>

@@ -80,8 +80,9 @@ export default {
   padding-bottom: 60px;
 }
 
-.footer-max{
+.footer-max {
   width: 67rem;
+  margin: 0 2rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -160,5 +161,93 @@ export default {
 
 .footer-privacy:hover{
   color: #888888;
+}
+
+@media screen and (max-width: 990px) {
+  .footer-max {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-top: 30px;
+  }
+
+  .footer-left {
+    width: 100%;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-center {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    width: 100%;
+    flex-basis: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-call-block {
+    margin-bottom: 10px;
+    align-items: center
+  }
+}
+
+/* When the screen size is less than or equal to 640px */
+@media screen and (max-width: 640px) {
+  .footer-max {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-top: 30px;
+  }
+
+  .footer-left {
+    width: 100%;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-left-content{
+    text-align: center;
+  }
+
+  .footer-center {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-menu-item {
+    margin-bottom: 10px;
+  }
+
+  .footer-right {
+    width: 100%;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-call-block {
+    margin-bottom: 10px;
+    align-items: center
+  }
 }
 </style>

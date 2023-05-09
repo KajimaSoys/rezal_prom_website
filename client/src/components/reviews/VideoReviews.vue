@@ -1,7 +1,7 @@
 <template>
   <swiper
     :modules="modules"
-    :slides-per-view="4"
+    :slides-per-view="slidesPerView"
     :space-between="16"
     :navigation="{ nextEl: '.swiper-button-next-2', prevEl: '.swiper-button-prev-2' }"
     :pagination="{ el: '.swiper-pagination-2', clickable: true, bulletClass: 'swiper-pagination-bullet', bulletActiveClass: 'swiper-pagination-bullet-active' }"
@@ -49,6 +49,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import {computed, onBeforeUnmount, onMounted, ref} from "vue";
 
 export default {
   name: "VideoReviews",
@@ -61,8 +62,25 @@ export default {
     'reviewVideoArr'
   ],
   setup() {
+    const modules = [Navigation, Pagination, A11y];
+    const windowWidth = ref(window.innerWidth);
+    const slidesPerView = computed(() => windowWidth.value < 990 ? 2 : 4);
+
+    const updateWindowWidth = () => {
+      windowWidth.value = window.innerWidth;
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', updateWindowWidth);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', updateWindowWidth);
+    });
+
     return {
-      modules: [Navigation, Pagination, A11y],
+      modules,
+      slidesPerView,
     };
   },
 
@@ -175,5 +193,22 @@ svg:hover path{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 990px){
+  .review-card{
+    height: 500px;
+  }
+
+}
+
+@media screen and (max-width: 640px){
+  .review-card{
+    height: 300px;
+  }
+
+  .swiper-controls{
+    gap: 10px;
+  }
 }
 </style>

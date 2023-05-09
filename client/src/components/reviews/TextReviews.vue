@@ -1,7 +1,7 @@
 <template>
   <swiper
     :modules="modules"
-    :slides-per-view="3"
+    :slides-per-view="slidesPerView"
     :space-between="16"
     :navigation="{ nextEl: '.swiper-button-next-1', prevEl: '.swiper-button-prev-1' }"
     :pagination="{ el: '.swiper-pagination-1', clickable: true, bulletClass: 'swiper-pagination-bullet', bulletActiveClass: 'swiper-pagination-bullet-active' }"
@@ -44,14 +44,12 @@
 
 <script>
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 
 export default {
   name: "TextReviews",
@@ -64,8 +62,25 @@ export default {
     'reviewTextArr'
   ],
   setup() {
+    const modules = [Navigation, Pagination, A11y];
+    const windowWidth = ref(window.innerWidth);
+    const slidesPerView = computed(() => windowWidth.value < 990 ? 1 : 3);
+
+    const updateWindowWidth = () => {
+      windowWidth.value = window.innerWidth;
+    };
+
+    onMounted(() => {
+      window.addEventListener('resize', updateWindowWidth);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('resize', updateWindowWidth);
+    });
+
     return {
-      modules: [Navigation, Pagination, A11y],
+      modules,
+      slidesPerView,
     };
   },
 }
@@ -204,4 +219,25 @@ svg path{
 .review-link a:hover {
   color: #EB7777;
 }
+
+@media screen and (max-width: 990px){
+  .review-card{
+    height: 300px;
+  }
+
+  .review-head{
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .review-card{
+    height: 400px;
+  }
+
+  .swiper-controls{
+    gap: 10px;
+  }
+}
+
 </style>

@@ -36,8 +36,8 @@
 
         </div>
         <div class="contacts-photo">
-          <img src="src/assets/images/image-contacts-1.png" width="180" height="180">
-          <img src="src/assets/images/image-contacts-2.png" width="180" height="180">
+          <img src="src/assets/images/image-contacts-1.png" width="160" height="160">
+          <img src="src/assets/images/image-contacts-2.png" width="160" height="160">
         </div>
       </div>
       <div class="contacts-map">
@@ -81,10 +81,12 @@ export default {
   align-items: center;
   padding-top: 75px;
   padding-bottom: 150px;
+  margin-top: 75px;
 }
 
 .contacts-max{
   width: 67rem;
+  margin: 0 2rem;
   display: flex;
   flex-direction: row;
 }
@@ -154,5 +156,42 @@ export default {
   width: 60%;
   flex-basis: 60%;
   height: 600px;
+}
+
+@media screen and (max-width: 990px){
+  .contacts{
+    padding-bottom: 17rem;
+  }
+
+  .contacts-max{
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .contacts-map {
+    width: 100%;
+    flex-basis: 100%;
+  }
+  
+  .contacts-content{
+    position: relative;
+    width: auto;
+  }
+
+  .contacts-title{
+    margin-bottom: 2rem;
+  }
+
+  .contacts-photo{
+    position: absolute;
+    bottom: -54rem;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .contacts-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
 }
 </style>

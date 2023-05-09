@@ -40,15 +40,17 @@ export default {
 <style scoped>
 .reviews{
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
   padding-top: 75px;
   padding-bottom: 75px;
 }
 
 .reviews-max{
   max-width: 67rem;
+  margin: auto;
+  padding: 0 2rem;
 }
 
 .reviews-title{
@@ -63,11 +65,25 @@ export default {
 .reviews-text {
   position: relative;
   margin-bottom: 80px;
+  width: 100%;
 }
 
 .reviews-video {
   position: relative;
   margin-bottom: 80px;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 640px){
+  .reviews-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>
 

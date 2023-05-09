@@ -41,12 +41,13 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 75px;
+  padding-top: 150px;
   padding-bottom: 75px;
 }
 
 .questions-max{
   width: 67rem;
+  margin: 0 2rem;
 }
 
 .questions-title{
@@ -72,6 +73,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
 }
 
 .questions-text{
@@ -118,5 +120,16 @@ img.toggle-icon{
   padding-top: 20px;
   height: auto;
   opacity: 1;
+}
+
+@media screen and (max-width: 640px){
+  .questions-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>

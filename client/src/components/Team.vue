@@ -88,7 +88,8 @@ export default {
 }
 
 .team-max{
-  width: 67rem;
+  max-width: 67rem;
+  margin: 0 2rem;
 }
 
 .team-introduce{
@@ -133,7 +134,7 @@ export default {
 
 .team-staff-image{
   border-radius: 30px;
-  height: 350px;
+  /*height: 350px;*/
   width: 100%;
 }
 
@@ -180,5 +181,63 @@ export default {
   grid-gap: 60px 16px;
   margin-bottom: 150px;
   padding-top: 60px;
+}
+
+@media screen and (max-width: 990px){
+  .team-introduce{
+    flex-direction: column;
+  }
+
+  .team-block-title{
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .team-head-staff{
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .team-staff-image img{
+    height: 500px;
+  }
+
+  .team-staff-no-image{
+    height: 500px;
+  }
+
+  .team-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px){
+  .team{
+    max-width: 100%;
+    margin: 0 2rem;
+    width: auto;
+  }
+
+  .team-max{
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .team-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .team-staff-image img{
+    height: 250px;
+  }
+
+  .team-staff-no-image{
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>

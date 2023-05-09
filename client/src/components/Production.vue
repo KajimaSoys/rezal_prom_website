@@ -8,8 +8,8 @@
           <img
               :src="`${this.backendURL}${this.production.video_preview}`"
               alt=""
-              width="450"
-              height="620"
+              height="580"
+              width="420"
               class="production-preview-image"
           >
           <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="production-preview-icon">
@@ -102,20 +102,23 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 2rem;
 }
 
 .production-background{
   background: linear-gradient(106.5deg, #1F1F1F 12.53%, #353535 105.97%);
   border-radius: 30px;
-  height: 38rem;
-  width: 90rem;
+  height: 35rem;
+  width: 100%;
+  max-width: 90rem;
+  padding: 0 2rem;
   position: absolute;
   z-index: -1;
   transform: translateY(-10%);
 }
 
 .production-content{
-  width: 67rem;
+  max-width: 67rem;
   display: flex;
   flex-direction: row;
   gap: 90px;
@@ -123,7 +126,8 @@ export default {
 
 .production-video{
   position: relative;
-  height: 620px;
+  width: 50%;
+  flex-basis: 50%;
   cursor: pointer;
 }
 
@@ -147,6 +151,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
+  flex-basis: 50%;
 }
 
 .production-text{
@@ -156,7 +162,7 @@ export default {
 .production-title{
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
-  font-size: 38px;
+  font-size: 35px;
   line-height: 53.55px;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
@@ -168,8 +174,84 @@ export default {
 }
 
 .production-photo{
-  display: flex;
-  flex-direction: row;
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*gap: 16px;*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.production-photo img, .production-video img{
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1200px){
+  .production-title{
+    font-size: 32px;
+    line-height: 43.55px;
+  }
+}
+
+@media screen and (max-width: 990px){
+  .production{
+    padding-bottom: 42rem;
+  }
+
+  .production-background{
+    height: 50rem;
+  }
+
+  .production-content{
+    position: relative;
+  }
+
+  .production-video{
+    position: absolute;
+    top: 17rem;
+  }
+
+  .production-subcontent{
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .production-photo{
+    grid-template-columns: repeat(1, 1fr);
+    position: absolute;
+    top: 17rem;
+    left: 48vw;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .production-video{
+    top: 23rem;
+  }
+
+  .production-photo{
+    top: 23rem;
+  }
+
+  .production-title{
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .production-description{
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 385px){
+  .production-video{
+    top: 25rem;
+  }
+
+  .production-photo{
+    top: 25rem;
+  }
 }
 </style>

@@ -80,7 +80,8 @@ export default {
 }
 
 .services-max{
-  width: 67rem;
+  max-width: 67rem;
+  margin: 0 2rem;
 }
 
 .services-title{
@@ -126,5 +127,37 @@ export default {
   line-height: 31px;
   color: #222222;
   width: 80%;
+}
+
+@media screen and (max-width: 990px){
+  .services-items{
+    flex-direction: column;
+  }
+
+  .services-item{
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 640px){
+  .services{
+    max-width: 100%;
+    margin: 0 2rem;
+    width: auto;
+  }
+
+  .services-max{
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .services-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
 }
 </style>

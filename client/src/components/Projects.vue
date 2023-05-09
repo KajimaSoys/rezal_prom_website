@@ -110,7 +110,8 @@ export default {
 }
 
 .projects-max{
-  width: 67rem;
+  max-width: 67rem;
+  margin: 0 2rem;
 }
 
 .projects-title{
@@ -227,5 +228,66 @@ svg:hover path{
 
 .projects-portfolio-button:hover{
   background-color: #C20D0D;
+}
+
+@media screen and (max-width: 990px){
+  .projects-content{
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .projects-content-left {
+    width: 100%;
+    flex-basis: 100%;
+    gap: 4rem;
+  }
+  .projects-item-preview-first img{
+    width: 80%;
+  }
+
+  .projects-item-preview-second img{
+    width: 100%;
+  }
+
+  .projects-content-left > div:nth-child(2){
+    margin-left: 30%;
+  }
+
+  .projects-content-right {
+    width: 80%;
+  }
+}
+
+
+
+@media screen and (max-width: 640px){
+  .projects-title{
+    line-height: 38px;
+    font-size: 30px;
+  }
+
+  .projects-item-preview-first img{
+    width: 100%;
+  }
+
+  .projects-item-preview-second img{
+    width: 100%;
+  }
+
+  .projects-content-left > div:nth-child(2){
+    margin-left: 0;
+  }
+
+  .projects-content-right {
+    width: 100%;
+  }
+
+  .projects-button{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px){
+
 }
 </style>
