@@ -3,7 +3,7 @@
     <div class="main-max"
          :style="{ 'background-image': `linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 48.37%, rgba(0, 0, 0, 0.8) 100%), url(${this.backendURL}${this.main.image})`, 'background-size': 'cover', 'background-position': 'center center', 'transform': 'scale(1)' }">
       <div class="main-title" >
-        <h1 v-html="this.main.description"></h1>
+        <h1 v-html="this.main.title"></h1>
       </div>
       <div class="main-secondary">
         <div class="main-description" v-html="this.main.description">
