@@ -7,14 +7,23 @@ from rest_framework import permissions
 from django.core.mail import send_mail
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authentication import SessionAuthentication
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+class CsrfExemptSessionAuthentication(SessionAuthentication):
+
+    def enforce_csrf(self, request):
+        return  # Do not enforce CSRF checks
+
+
+
 @permission_classes((permissions.AllowAny,))
 class OrderCreateView(APIView):
     """
     API endpoint that allows Orders to be created
     """
+
+    authentication_classes = (CsrfExemptSessionAuthentication,)
 
     def post(self, request):
         request_data = request.data.get('request')
