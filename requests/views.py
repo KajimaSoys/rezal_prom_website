@@ -5,13 +5,16 @@ from django.http import JsonResponse
 from rest_framework.decorators import permission_classes
 from rest_framework import permissions
 from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
 
 
+@csrf_exempt
 @permission_classes((permissions.AllowAny,))
 class OrderCreateView(APIView):
     """
     API endpoint that allows Orders to be created
     """
+
     def post(self, request):
         request_data = request.data.get('request')
         serializer = RequestsOrderSerializer(data=request_data)
