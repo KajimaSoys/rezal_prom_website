@@ -1,0 +1,72 @@
+  version: '3.8'
+
+  services:
+    django:
+      build:
+        context: .
+      container_name: django-rezal
+      environment:
+        - DEBUG=${DEBUG}
+        - SECRET_KEY=${SECRET_KEY}
+        - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+        - DB_NAME=${DB_NAME}
+        - DB_USER=${DB_USER}
+        - DB_PASSWORD=${DB_PASSWORD}
+        - DB_HOST=${DB_HOST}
+        - DB_PORT=${DB_PORT}
+        - CSRF_COOKIE_SECURE=${CSRF_COOKIE_SECURE}
+        - SESSION_COOKIE_SECURE=${SESSION_COOKIE_SECURE}
+        - CSRF_TRUSTED=${CSRF_TRUSTED}
+        - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+        - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      volumes:
+        - ./:/app
+        - ./media:/app/media
+      depends_on:
+        - db
+      networks:
+        - rezal_network
+
+    vue:
+      build: ./client
+      container_name: vue-rezal
+      environment:
+        - VITE_BACKEND_HOST=${VITE_BACKEND_HOST}
+        - VITE_GOOGLE_API_KEY=${VITE_GOOGLE_API_KEY}
+      volumes:
+        - ./client:/app
+      networks:
+        - rezal_network
+
+    nginx:
+      build: ./nginx
+      container_name: nginx-rezal
+      ports:
+        - "8081:80"
+      depends_on:
+        - django
+        - vue
+      networks:
+        - rezal_network
+      volumes:
+        - ./static:/app/static
+        - ./media:/app/media
+
+    db:
+      image: postgres:13
+      container_name: db-rezal
+      restart: always
+      environment:
+        - POSTGRES_DB=${DB_NAME}
+        - POSTGRES_USER=${DB_USER}
+        - POSTGRES_PASSWORD=${DB_PASSWORD}
+      volumes:
+        - db_data:/var/lib/postgresql/data
+      networks:
+        - rezal_network
+
+  volumes:
+    db_data:
+
+  networks:
+    rezal_network:

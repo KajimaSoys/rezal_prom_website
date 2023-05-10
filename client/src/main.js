@@ -32,6 +32,6 @@ app.mount('#app')
 
 app.provide('backendURL', backendURL)
 
-app.config.globalProperties.$projectVersion = '1.0'
+app.config.globalProperties.$projectVersion = '1.6'
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:5173'; // Set the allowed origin
 // axios.defaults.headers.post['Content-Type'] = 'application/json'; // Set the Content-Type header for POST requests

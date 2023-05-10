@@ -7,7 +7,7 @@
         <div class="questions-header">
           <div class="questions-text" v-html="question.question"></div>
           <img
-              src="src/assets/icons/icon-plus.svg"
+              src="/icons/icon-plus.svg"
               class="toggle-icon"
               :style="question.isOpen ? 'transform: rotate(45deg);' : ''"
 

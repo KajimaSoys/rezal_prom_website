@@ -3,16 +3,16 @@
     <div class="about-max">
       <div class="about-head">
         <div class="about-image-container">
-          <img src="src/assets/images/image-about-1.png" class="about-image-1">
+          <img src="/image/image-about-1.png" class="about-image-1">
         </div>
         <div class="about-image-container">
-          <img src="src/assets/images/image-about-2.png" class="about-image-2">
+          <img src="/image/image-about-2.png" class="about-image-2">
         </div>
         <div class="about-description">
           <div v-html="this.about.description"></div>
         </div>
         <div class="about-image-container">
-          <img src="src/assets/images/image-about-3.png" class="about-image-3">
+          <img src="/image/image-about-3.png" class="about-image-3">
         </div>
       </div>
 

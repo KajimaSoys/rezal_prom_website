@@ -17,7 +17,7 @@
             </div>
             <div v-else class="team-staff-no-image">
               <img
-                  src="src/assets/icons/icon-photo.svg"
+                  src="/icons/icon-photo.svg"
                   :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
               >
             </div>
@@ -34,7 +34,7 @@
             </div>
             <div v-else class="team-staff-no-image">
               <img
-                  src="src/assets/icons/icon-photo.svg"
+                  src="/icons/icon-photo.svg"
                   :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
               >
             </div>
@@ -54,7 +54,7 @@
             </div>
             <div v-else class="team-staff-no-image">
               <img
-                  src="src/assets/icons/icon-photo.svg"
+                  src="/icons/icon-photo.svg"
                   :alt="`${staff.name} - ${staff.post}`"
               >
             </div>

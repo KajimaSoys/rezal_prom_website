@@ -10,7 +10,7 @@
         <div class="services-item">
           <div class="services-item-icon">
             <img
-                src="src/assets/icons/icon-cabinet.svg"
+                src="/icons/icon-cabinet.svg"
                 alt=""
                 width="36"
                 height="36"
@@ -26,7 +26,7 @@
         <div class="services-item">
           <div class="services-item-icon">
             <img
-                src="src/assets/icons/icon-measure.svg"
+                src="/icons/icon-measure.svg"
                 alt=""
                 width="36"
                 height="36"
@@ -42,7 +42,7 @@
         <div class="services-item">
           <div class="services-item-icon">
             <img
-                src="src/assets/icons/icon-pencil.svg"
+                src="/icons/icon-pencil.svg"
                 alt=""
                 width="36"
                 height="36"

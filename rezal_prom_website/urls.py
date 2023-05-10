@@ -41,6 +41,6 @@ urlpatterns = [
     path('api/v1/', include(router.urls)),
     path('api/v1/all_blocks/', blockViews.AllBlocksView.as_view()),
     path('api/v1/core_objects/', coreViews.AllObjectsView.as_view()),
-    path('api/v1/send_request', requestViews.OrderCreateView.as_view()),
+    path('api/v1/send_request/', requestViews.OrderCreateView.as_view()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

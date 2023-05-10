@@ -57,8 +57,8 @@
                 <div class="popup-form-label">
 
                 </div>
-                <div class="popup-form-submit" @click="this.sendPopUp(this.popup)">
-                  Оставить заявку
+                <div class="popup-form-submit" :class="{ 'pending': pending}" @click="this.sendPopUp(this.popup)">
+                  {{ this.sendButton }}
                 </div>
               </div>
             </div>
@@ -113,6 +113,8 @@ export default {
         phoneError: false,
         isSubmitted: false,
       },
+      sendButton: 'Оставить заявку',
+      pending: false,
     }
   },
 
@@ -130,6 +132,9 @@ export default {
       }
 
       if (!popup.nameError && !popup.phoneError) {
+        this.sendButton = 'Пожалуйста, подождите..'
+        this.pending = true
+
         let body = {
           request: {
             name: popup.name,
@@ -144,7 +149,15 @@ export default {
             cookie: document.cookie
           }
         }
-        await axios.post('api/v1/send_request', body)
+        await axios
+            .post('api/v1/send_request/', body)
+            .then(response => {
+              this.pending = false
+              console.log(response)
+            })
+            .catch(error => {
+              console.log(error)
+            })
 
         popup.isSubmitted = true;
       }
@@ -278,6 +291,10 @@ input[type="text"]:focus, input[type="tel"]:focus {
 
 .popup-form-submit:hover{
   background-color: #C20D0D;
+}
+
+.pending{
+  pointer-events: none;
 }
 
 .popup-error {

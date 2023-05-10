@@ -64,8 +64,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" @click="this.sendRequest(this.request1)">
-              Оставить заявку
+            <div class="request-form-submit" :class="{ 'pending': request1.pending}" @click="this.sendRequest(this.request1)">
+              {{ this.request1.sendButton }}
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@
 
       <div class="request-content">
         <div class="request-icon">
-          <img src="src/assets/icons/icon-calculator.svg">
+          <img src="/icons/icon-calculator.svg">
         </div>
         <div class="request-title">
           Получите расчёт стоимости
@@ -148,8 +148,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" @click="this.sendRequest(this.request2)">
-              Оставить заявку
+            <div class="request-form-submit" :class="{ 'pending': request2.pending}" @click="this.sendRequest(this.request2)">
+              {{ this.request2.sendButton }}
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@
 
       <div class="request-content">
         <div class="request-icon">
-          <img src="src/assets/icons/icon-placeholder.svg">
+          <img src="/icons/icon-placeholder.svg">
         </div>
         <div class="request-title">
           Остались вопросы? <br> Приезжайте к нам в офис!
@@ -233,8 +233,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" @click="this.sendRequest(this.request3)">
-              Записаться на встречу
+            <div class="request-form-submit" :class="{ 'pending': request3.pending}" @click="this.sendRequest(this.request3)">
+              {{ this.request3.sendButton }}
             </div>
           </div>
         </div>
@@ -252,9 +252,9 @@
         </div>
 
         <div class="request-additional">
-          <img src="src/assets/images/image-office-1.png" alt="" width="160" height="160" class="request-image">
-          <img src="src/assets/images/image-office-2.png" alt="" width="160" height="160" class="request-image">
-          <img src="src/assets/images/image-office-3.png" alt="" width="160" height="160" class="request-image">
+          <img src="/image/image-office-1.png" alt="" width="160" height="160" class="request-image">
+          <img src="/image/image-office-2.png" alt="" width="160" height="160" class="request-image">
+          <img src="/image/image-office-3.png" alt="" width="160" height="160" class="request-image">
         </div>
       </div>
     </div>
@@ -282,6 +282,8 @@ export default {
         nameError: false,
         phoneError: false,
         isSubmitted: false,
+        sendButton: 'Оставить заявку',
+        pending: false,
       },
 
       request2: {
@@ -291,6 +293,8 @@ export default {
         nameError: false,
         phoneError: false,
         isSubmitted: false,
+        sendButton: 'Оставить заявку',
+        pending: false,
       },
 
       request3: {
@@ -300,6 +304,8 @@ export default {
         nameError: false,
         phoneError: false,
         isSubmitted: false,
+        sendButton: 'Записаться на встречу',
+        pending: false,
       },
     }
   },
@@ -318,6 +324,9 @@ export default {
       }
 
       if (!request.nameError && !request.phoneError) {
+        request.sendButton = 'Пожалуйста, подождите..'
+        request.pending = true
+
         let body = {
           request: {
             name: request.name,
@@ -332,7 +341,15 @@ export default {
             cookie: document.cookie
           }
         }
-        await axios.post('api/v1/send_request', body)
+        await axios
+            .post('api/v1/send_request/', body)
+            .then(response => {
+              request.pending = false
+              console.log(response)
+            })
+            .catch(error => {
+              console.log(error)
+            })
 
         request.isSubmitted = true;
       }
@@ -467,6 +484,10 @@ input[type="text"]:focus, input[type="tel"]:focus {
 
 .request-form-submit:hover{
   background-color: #C20D0D;
+}
+
+.pending{
+  pointer-events: none;
 }
 
 .request-error {
