@@ -64,7 +64,8 @@ export default {
   setup() {
     const modules = [Navigation, Pagination, A11y];
     const windowWidth = ref(window.innerWidth);
-    const slidesPerView = computed(() => windowWidth.value < 990 ? 2 : 4);
+    // TODO return ? 2 : 4 after video review add
+    const slidesPerView = computed(() => windowWidth.value < 990 ? 2 : 3);
 
     const updateWindowWidth = () => {
       windowWidth.value = window.innerWidth;
@@ -89,18 +90,22 @@ export default {
       const videoId = video_link.split('/')[video_link.split('/').length - 1];
       this.showVideo(videoId);
     },
+
   }
 }
 </script>
 
 <style scoped>
 .swiper-controls {
-  display: flex;
+
   justify-content: center;
   align-items: flex-start;
   margin-top: 50px;
   flex-direction: row;
   gap: 30px;
+
+  /* TODO replace with display: flex; when video review count 4 */
+  display: none;
 }
 
 
@@ -198,6 +203,11 @@ svg:hover path{
 @media screen and (max-width: 990px){
   .review-card{
     height: 500px;
+  }
+
+  /* TODO delete when 4 video review */
+  .swiper-controls{
+    display: flex;
   }
 
 }
