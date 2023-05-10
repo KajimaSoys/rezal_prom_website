@@ -179,7 +179,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 60px 16px;
-  margin-bottom: 150px;
+  margin-bottom: 40px;
   padding-top: 60px;
 }
 

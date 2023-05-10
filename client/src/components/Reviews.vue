@@ -43,7 +43,7 @@ export default {
   /*display: flex;*/
   /*justify-content: center;*/
   /*align-items: center;*/
-  padding-top: 150px;
+  padding-top: 120px;
   padding-bottom: 75px;
 }
 
@@ -59,7 +59,7 @@ export default {
   font-weight: 500;
   font-size: 36px;
   line-height: 54px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .reviews-text {

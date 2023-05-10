@@ -126,8 +126,8 @@ export default {
 
 .production-video{
   position: relative;
-  width: 50%;
-  flex-basis: 50%;
+  /*width: 50%;*/
+  /*flex-basis: 50%;*/
   cursor: pointer;
 }
 
@@ -213,6 +213,8 @@ export default {
   .production-video{
     position: absolute;
     top: 17rem;
+    width: 50%;
+    flex-basis: 50%;
   }
 
   .production-subcontent{

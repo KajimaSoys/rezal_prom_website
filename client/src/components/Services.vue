@@ -89,7 +89,7 @@ export default {
   font-weight: 500;
   font-size: 36px;
   line-height: 54px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .services-items{

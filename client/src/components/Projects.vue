@@ -17,7 +17,7 @@
                 </svg>
               </div>
               <div class="projects-item-preview-text">
-                Смотреть видеоотзыв
+                Смотреть видеообзор
               </div>
             </div>
             <h3 class="projects-item-title" v-html="this.projects.title_first"></h3>
@@ -36,7 +36,7 @@
                 </svg>
               </div>
               <div class="projects-item-preview-text">
-                Смотреть видеоотзыв
+                Смотреть видеообзор
               </div>
             </div>
             <h3 class="projects-item-title" v-html="this.projects.title_second"></h3>
@@ -57,7 +57,7 @@
                 </svg>
               </div>
               <div class="projects-item-preview-text">
-                Смотреть видеоотзыв
+                Смотреть видеообзор
               </div>
             </div>
             <h3 class="projects-item-title" v-html="this.projects.title_third"></h3>

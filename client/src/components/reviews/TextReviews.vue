@@ -12,9 +12,8 @@
         class="review-card"
     >
       <div class="review-head">
-        <div class="review-author-photo">
+        <div class="review-author-photo" v-if="review.author_photo">
           <img
-              v-if="review.author_photo"
               :src="`${this.backendURL}${review.author_photo}`"
               :alt="review.author_name" />
         </div>

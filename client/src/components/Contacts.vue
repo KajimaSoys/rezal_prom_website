@@ -79,7 +79,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
+  padding-top: 175px;
   padding-bottom: 150px;
 }
 
