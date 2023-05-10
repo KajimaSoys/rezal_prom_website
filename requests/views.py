@@ -5,10 +5,11 @@ from django.http import JsonResponse
 from rest_framework.decorators import permission_classes
 from rest_framework import permissions
 from django.core.mail import send_mail
+from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 
 
-@csrf_exempt
+@method_decorator(csrf_exempt, name='dispatch')
 @permission_classes((permissions.AllowAny,))
 class OrderCreateView(APIView):
     """
