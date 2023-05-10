@@ -132,22 +132,27 @@
   </div>
 
   <Footer :header="this.header" :meta="false" @popUpCall="popUpCall()"/>
+
+  <PopUp :visible="popUpVisible" @close="hidePopUp" />
 </template>
 
 <script>
 import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import PopUp from "../components/PopUp.vue";
 import axios from "axios";
 
 export default {
   name: "PolicyView",
   components: {
     Header,
-    Footer
+    Footer,
+    PopUp,
   },
   data() {
     return {
-      header: ''
+      header: '',
+      popUpVisible: false,
     }
   },
 
@@ -167,9 +172,14 @@ export default {
           })
     },
 
-    popUpCall(){
-
-    }
+    popUpCall() {
+      this.popUpVisible = true;
+      document.body.style.overflow = "hidden";
+    },
+    hidePopUp() {
+      this.popUpVisible = false;
+      document.body.style.overflow = "";
+    },
   },
 
   beforeMount() {
