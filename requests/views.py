@@ -75,7 +75,7 @@ class OrderCreateView(APIView):
             </html>"""
 
             from_email = 'rezal.mebel@mail.ru'
-            recipient_list = ['rezal.mebel@mail.ru']
+            recipient_list = ['rezal.mebel@gmail.com']
 
             send_mail(subject, plain_message, from_email, recipient_list, html_message=html_message)
 
