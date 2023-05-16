@@ -30,11 +30,9 @@
     vue:
       build: ./client
       container_name: vue-rezal
-      environment:
-        - VITE_BACKEND_HOST=${VITE_BACKEND_HOST}
-        - VITE_GOOGLE_API_KEY=${VITE_GOOGLE_API_KEY}
       volumes:
         - ./client:/app
+        - vue_dist:/app/dist
       networks:
         - rezal_network
 
@@ -51,6 +49,7 @@
       volumes:
         - ./static:/app/static
         - ./media:/app/media
+        - vue_dist:/usr/share/nginx/html
 
     db:
       image: postgres:13
@@ -67,6 +66,7 @@
 
   volumes:
     db_data:
+    vue_dist:
 
   networks:
     rezal_network:

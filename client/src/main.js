@@ -18,10 +18,10 @@ app.use(ElementPlus)
 
 // app.directive('mask', TheMask);
 
-let backendURL = import.meta.env.VITE_BACKEND_HOST
+let backendURL = import.meta.env.VITE_BACKEND_HOST;
 axios.defaults.baseURL = backendURL
 
-let api_key = import.meta.env.VITE_GOOGLE_API_KEY
+let api_key = import.meta.env.VITE_GOOGLE_API_KEY;
 app.use(VueGoogleMaps, {
     load: {
         key: api_key,

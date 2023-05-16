@@ -17,7 +17,7 @@ CSRF_TRUSTED_ORIGINS = [os.environ.get("CSRF_TRUSTED")]
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",# from nginx in prod
+    "http://localhost:8081",# from nginx in prod
 ]
 
 DATABASES = {
