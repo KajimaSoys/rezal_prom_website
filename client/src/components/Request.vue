@@ -341,6 +341,9 @@ export default {
             cookie: document.cookie
           }
         }
+
+        this.$metrika.reachGoal('Заявка отправлена (элемент на странице)')
+
         await axios
             .post('api/v1/send_request/', body)
             .then(response => {

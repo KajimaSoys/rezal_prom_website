@@ -8,6 +8,8 @@ import VueGoogleMaps from 'vue-google-maps-community-fork'
 import ElementPlus from "element-plus";
 import 'element-plus/dist/index.css'
 
+import VueYandexMetrika from 'vue-yandex-metrika'
+
 // import { TheMask } from 'vue-the-mask';
 
 const app = createApp(App)
@@ -16,7 +18,11 @@ app.use(router, axios)
 
 app.use(ElementPlus)
 
-// app.directive('mask', TheMask);
+app.use(VueYandexMetrika, {
+    id: '93839626',
+    router: router,
+    env: process.env.NODE_ENV
+  })
 
 let backendURL = import.meta.env.VITE_BACKEND_HOST;
 axios.defaults.baseURL = backendURL
