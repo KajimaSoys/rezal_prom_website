@@ -263,7 +263,8 @@
 
 <script>
 import axios from "axios";
-import {mask} from 'vue-the-mask'
+import { mask } from 'vue-the-mask'
+import { useYandexMetrika } from 'yandex-metrika-vue3'
 
 export default {
   name: "Request",
@@ -342,7 +343,8 @@ export default {
           }
         }
 
-        this.$metrika.reachGoal('Заявка отправлена (элемент на странице)')
+        const yandexMetrika = useYandexMetrika()
+        yandexMetrika.reachGoal('Заявка отправлена (элемент на странице)')
 
         await axios
             .post('api/v1/send_request/', body)

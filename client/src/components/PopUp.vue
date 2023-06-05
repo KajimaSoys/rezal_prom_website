@@ -93,6 +93,7 @@
 <script>
 import {mask} from "vue-the-mask";
 import axios from "axios";
+import { useYandexMetrika } from 'yandex-metrika-vue3'
 
 export default {
   name: "PopUp",
@@ -150,7 +151,8 @@ export default {
           }
         }
 
-        this.$metrika.reachGoal('Заявка отправлена (всплывающее окно)')
+        const yandexMetrika = useYandexMetrika()
+        yandexMetrika.reachGoal('Заявка отправлена (всплывающее окно)')
 
         await axios
             .post('api/v1/send_request/', body)
