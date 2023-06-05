@@ -8,7 +8,7 @@ import VueGoogleMaps from 'vue-google-maps-community-fork'
 import ElementPlus from "element-plus";
 import 'element-plus/dist/index.css'
 
-import { initYandexMetrika } from 'yandex-metrika-vue3';
+import VueYandexMetrika from 'vue3-yandex-metrika'
 
 // import { TheMask } from 'vue-the-mask';
 
@@ -18,7 +18,7 @@ app.use(router, axios)
 
 app.use(ElementPlus)
 
-app.use(initYandexMetrika, {
+app.use(VueYandexMetrika, {
     id: 93839626,
     router: router,
     env: process.env.NODE_ENV
