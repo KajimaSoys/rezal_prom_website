@@ -10,11 +10,11 @@
         </div>
 
         <div class="main-buttons">
-          <div class="main-request-button" @click="this.requestClick(this.$emit('popUpCall'))">
+          <div class="main-request-button" @click="this.requestClick()">
             Оставить заявку
           </div>
 
-          <div class="main-count-button" @click="this.countClick(this.$emit('popUpCall'))">
+          <div class="main-count-button" @click="this.countClick()">
             Рассчитать стоимость
           </div>
         </div>
