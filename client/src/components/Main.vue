@@ -10,11 +10,11 @@
         </div>
 
         <div class="main-buttons">
-          <div class="main-request-button" @click="this.$emit('popUpCall')">
+          <div class="main-request-button" @click="this.requestClick(this.$emit('popUpCall'))">
             Оставить заявку
           </div>
 
-          <div class="main-count-button" @click="this.$emit('popUpCall')">
+          <div class="main-count-button" @click="this.countClick(this.$emit('popUpCall'))">
             Рассчитать стоимость
           </div>
         </div>
@@ -34,6 +34,17 @@ export default {
   emits: [
     'popUpCall'
   ],
+  methods: {
+    requestClick(){
+      window.ym(93839626, 'reachGoal', 'Нажал на кнопку \'Оставить заявку\'');
+      this.$emit('popUpCall')
+    },
+
+    countClick(){
+      window.ym(93839626, 'reachGoal', 'Нажал на кнопку \'Рассчитать стоимость\'');
+      this.$emit('popUpCall')
+    }
+  }
 }
 </script>
 

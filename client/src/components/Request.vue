@@ -342,7 +342,8 @@ export default {
           }
         }
 
-        this.$metrika.reachGoal('Заявка отправлена (элемент на странице)')
+        // this.$metrika.reachGoal('Заявка отправлена (элемент на странице)')
+        window.ym(93839626, 'reachGoal', 'Заявка отправлена (элемент на странице)')
 
         await axios
             .post('api/v1/send_request/', body)
