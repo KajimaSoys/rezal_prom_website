@@ -39,7 +39,7 @@ class OrderCreateView(APIView):
             created = order_saved.created.strftime('%d-%m-%Y %H:%M:%S')
 
             subject = 'Новая заявка'
-            plain_message = f"""Поступила новая заявка с сайта mebel-rezal.online
+            plain_message = f"""Поступила новая заявка с сайта mebel-rezal.com
 Имя: {name}
 Номер телефона: {number}
 Какая мебель нужна: {order_message}
@@ -63,14 +63,14 @@ class OrderCreateView(APIView):
             </style>
             </head>
             <body>
-            <p>Поступила новая заявка с сайта <a href="https://mebel-rezal.online" target="_blank">mebel-rezal.online</a></p>
+            <p>Поступила новая заявка с сайта <a href="https://mebel-rezal.com" target="_blank">mebel-rezal.com</a></p>
             <p>Имя: {name}<br/>
             Номер телефона: {number}<br/>
             Какая мебель нужна: {order_message}<br/>
             Удобное время: {comfortable_time}<br/>
             Создано: {created}</p>
             <p>Пожалуйста, свяжитесь с клиентом в ближайшее время!</p>
-            <p>Для получения подробной информации проверьте <a href="https://mebel-rezal.online/admin" target="_blank">панель администрирования</a>.</p>
+            <p>Для получения подробной информации проверьте <a href="https://mebel-rezal.com/admin" target="_blank">панель администрирования</a>.</p>
             </body>
             </html>"""
 

@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-# CSRF_TRUSTED_ORIGINS = ["https://mebel-rezal.online"]
+# CSRF_TRUSTED_ORIGINS = ["https://mebel-rezal.com"]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

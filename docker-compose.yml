@@ -3,7 +3,8 @@
   services:
     django:
       build:
-        context: .
+        context: .        
+        dockerfile: ./Dockerfile.backend
       container_name: django-rezal
       environment:
         - DEBUG=${DEBUG}
@@ -24,32 +25,30 @@
         - ./media:/app/media
       depends_on:
         - db
-      networks:
-        - rezal_network
-
-    vue:
-      build: ./client
-      container_name: vue-rezal
-      volumes:
-        - ./client:/app
-        - vue_dist:/app/dist
-      networks:
-        - rezal_network
-
+      
+    # vue:
+    #   build:
+    #     context: ./client
+    #     dockerfile: Dockerfile
+    #   container_name: vue-rezal
+    #   volumes:
+    #     - ./client:/app
+    #     - vue_dist:/app/dist
+      
     nginx:
-      build: ./nginx
+      build:
+        context: .
+        dockerfile: ./Dockerfile.frontend
       container_name: nginx-rezal
       ports:
         - "8081:80"
       depends_on:
         - django
-        - vue
-      networks:
-        - rezal_network
+    #     - vue
       volumes:
         - ./static:/app/static
         - ./media:/app/media
-        - vue_dist:/usr/share/nginx/html
+    #     - vue_dist:/usr/share/nginx/html
 
     db:
       image: postgres:13
@@ -61,12 +60,12 @@
         - POSTGRES_PASSWORD=${DB_PASSWORD}
       volumes:
         - db_data:/var/lib/postgresql/data
-      networks:
-        - rezal_network
-
+      
   volumes:
     db_data:
-    vue_dist:
+  #   vue_dist:
 
   networks:
-    rezal_network:
+    default:
+        name: rezal_network
+        external: true
