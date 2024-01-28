@@ -6,7 +6,7 @@
         <div class="contacts-info">
           <div class="contacts-info-item">
             <div class="contacts-info-icon">
-              <img src="/icons/icon-location.svg">
+              <img src="/icons/icon-location.svg" loading="lazy">
             </div>
 
             <div v-html="this.contacts.address"></div>
@@ -14,7 +14,7 @@
 
           <div class="contacts-info-item">
             <div class="contacts-info-icon">
-              <img src="/icons/icon-clock.svg">
+              <img src="/icons/icon-clock.svg" loading="lazy">
             </div>
 
             <div v-html="this.contacts.schedule"></div>
@@ -22,7 +22,7 @@
 
           <div class="contacts-info-item">
             <div class="contacts-info-icon">
-              <img src="/icons/phone.svg" width="16" height="16">
+              <img src="/icons/phone.svg" width="16" height="16" loading="lazy">
             </div>
 
             <div v-html="this.contacts.number"></div>
@@ -36,8 +36,8 @@
 
         </div>
         <div class="contacts-photo">
-          <img src="/image/image-contacts-1.png" width="160" height="160">
-          <img src="/image/image-contacts-2.png" width="160" height="160">
+          <img src="/image/image-contacts-1.png" width="160" height="160" loading="lazy">
+          <img src="/image/image-contacts-2.png" width="160" height="160" loading="lazy">
         </div>
       </div>
       <div class="contacts-map">

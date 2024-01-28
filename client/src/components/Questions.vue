@@ -10,7 +10,7 @@
               src="/icons/icon-plus.svg"
               class="toggle-icon"
               :style="question.isOpen ? 'transform: rotate(45deg);' : ''"
-
+              loading="lazy"
           >
         </div>
         <div :class="question.isOpen ? 'questions-answer-opened' : 'questions-answer-closed'" class="questions-answer" v-html="question.answer"></div>

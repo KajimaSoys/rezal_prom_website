@@ -11,6 +11,7 @@
             <img
               :src="`${this.backendURL}${stage.image}`"
               alt="stage image"
+              loading="lazy"
             >
           </div>
 

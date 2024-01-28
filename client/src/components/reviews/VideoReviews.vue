@@ -16,6 +16,7 @@
             :src="`${this.backendURL}${review.image}`"
             alt=""
             class="review-preview-image"
+            loading="lazy"
         >
         <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="review-preview-icon">
           <circle cx="30" cy="30" r="30" fill="white"/>

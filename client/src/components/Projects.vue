@@ -9,6 +9,7 @@
             <div class="projects-item-preview-first" @click="showVideoWrapper(this.projects.video_link_first)">
               <img
                   :src="`${this.backendURL}${this.projects.image_first}`"
+                  loading="lazy"
               >
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,6 +29,7 @@
             <div class="projects-item-preview-second" @click="showVideoWrapper(this.projects.video_link_second)">
               <img
                   :src="`${this.backendURL}${this.projects.image_second}`"
+                  loading="lazy"
               >
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -14,6 +14,7 @@
                 alt=""
                 width="36"
                 height="36"
+                loading="lazy"
             >
           </div>
           <div class="services-item-title">
@@ -30,6 +31,7 @@
                 alt=""
                 width="36"
                 height="36"
+                loading="lazy"
             >
           </div>
           <div class="services-item-title">
@@ -46,6 +48,7 @@
                 alt=""
                 width="36"
                 height="36"
+                loading="lazy"
             >
           </div>
           <div class="services-item-title">

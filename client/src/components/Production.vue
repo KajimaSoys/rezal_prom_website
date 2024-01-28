@@ -11,6 +11,7 @@
               height="580"
               width="420"
               class="production-preview-image"
+              loading="lazy"
           >
           <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="production-preview-icon">
             <circle cx="30" cy="30" r="30" fill="white"/>
@@ -37,6 +38,7 @@
               width="160"
               height="160"
               class="production-image"
+              loading="lazy"
           >
             <img
               :src="`${this.backendURL}${this.production.image_two}`"
@@ -44,6 +46,7 @@
               width="160"
               height="160"
               class="production-image"
+              loading="lazy"
           >
             <img
               :src="`${this.backendURL}${this.production.image_three}`"
@@ -51,6 +54,7 @@
               width="160"
               height="160"
               class="production-image"
+              loading="lazy"
           >
           </div>
         </div>

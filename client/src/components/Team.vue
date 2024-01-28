@@ -13,12 +13,14 @@
               <img
                   :src="`${this.backendURL}${this.staffArr[0].image}`"
                   :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                  loading="lazy"
               >
             </div>
             <div v-else class="team-staff-no-image">
               <img
                   src="/icons/icon-photo.svg"
                   :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                  loading="lazy"
               >
             </div>
             <h3 class="team-staff-title" v-html="this.staffArr[0].name"></h3>
@@ -30,12 +32,14 @@
               <img
                   :src="`${this.backendURL}${this.staffArr[1].image}`"
                   :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                  loading="lazy"
               >
             </div>
             <div v-else class="team-staff-no-image">
               <img
                   src="/icons/icon-photo.svg"
                   :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                  loading="lazy"
               >
             </div>
             <h3 class="team-staff-title" v-html="this.staffArr[1].name"></h3>
@@ -50,12 +54,14 @@
               <img
                   :src="`${this.backendURL}${staff.image}`"
                   :alt="`${staff.name} - ${staff.post}`"
+                  loading="lazy"
               >
             </div>
             <div v-else class="team-staff-no-image">
               <img
                   src="/icons/icon-photo.svg"
                   :alt="`${staff.name} - ${staff.post}`"
+                  loading="lazy"
               >
             </div>
             <h3 class="team-staff-title" v-html="staff.name"></h3>

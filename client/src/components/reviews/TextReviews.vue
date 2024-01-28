@@ -15,7 +15,9 @@
         <div class="review-author-photo" v-if="review.author_photo">
           <img
               :src="`${this.backendURL}${review.author_photo}`"
-              :alt="review.author_name" />
+              :alt="review.author_name"
+              loading="lazy"
+          />
         </div>
         <div class="review-author-name" v-html="review.author_name"></div>
       </div>

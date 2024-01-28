@@ -176,7 +176,7 @@
 
       <div class="request-content">
         <div class="request-icon">
-          <img src="/icons/icon-placeholder.svg">
+          <img src="/icons/icon-placeholder.svg" loading="lazy">
         </div>
         <div class="request-title">
           Остались вопросы? <br> Приезжайте к нам в офис!
@@ -252,9 +252,9 @@
         </div>
 
         <div class="request-additional">
-          <img src="/image/image-office-1.png" alt="" width="160" height="160" class="request-image">
-          <img src="/image/image-office-2.png" alt="" width="160" height="160" class="request-image">
-          <img src="/image/image-office-3.png" alt="" width="160" height="160" class="request-image">
+          <img src="/image/image-office-1.png" alt="" width="160" height="160" class="request-image" loading="lazy">
+          <img src="/image/image-office-2.png" alt="" width="160" height="160" class="request-image" loading="lazy">
+          <img src="/image/image-office-3.png" alt="" width="160" height="160" class="request-image" loading="lazy">
         </div>
       </div>
     </div>
