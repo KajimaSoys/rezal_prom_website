@@ -16,7 +16,6 @@ class CsrfExemptSessionAuthentication(SessionAuthentication):
         return  # Do not enforce CSRF checks
 
 
-
 @permission_classes((permissions.AllowAny,))
 class OrderCreateView(APIView):
     """

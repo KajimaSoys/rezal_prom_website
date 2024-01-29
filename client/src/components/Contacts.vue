@@ -50,9 +50,9 @@
         </div>
       </div>
       <div class="contacts-map">
-         <GMapMap :center="center" :zoom="18" style="height: 600px">
-           <GMapMarker :key="marker.id" v-for="marker in markers" :position="marker.position" />
-         </GMapMap>
+        <GMapMap :center="center" :zoom="18" style="height: 600px">
+          <GMapMarker :key="marker.id" v-for="marker in markers" :position="marker.position"/>
+        </GMapMap>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@ export default {
   ],
   data() {
     return {
-      center: { lat: 55.767724482181045, lng: 49.1041059787604 },
+      center: {lat: 55.767724482181045, lng: 49.1041059787604},
       markers: [
         {
           id: 'dfsldjl3r',
@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style scoped>
-.contacts{
+.contacts {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -92,21 +92,21 @@ export default {
   padding-bottom: 150px;
 }
 
-.contacts-max{
+.contacts-max {
   width: 67rem;
   margin: 0 2rem;
   display: flex;
   flex-direction: row;
 }
 
-.contacts-content{
+.contacts-content {
   display: flex;
   flex-direction: column;
   width: 40%;
   flex-basis: 40%;
 }
 
-.contacts-title{
+.contacts-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -115,14 +115,14 @@ export default {
   margin-bottom: 80px;
 }
 
-.contacts-info{
+.contacts-info {
   display: flex;
   flex-direction: column;
   gap: 16px;
   flex: 1;
 }
 
-.contacts-info-item{
+.contacts-info-item {
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -131,26 +131,26 @@ export default {
   font-size: 16px;
 }
 
-.contacts-info-icon{
+.contacts-info-icon {
   display: flex;
   width: 24px;
   justify-content: center;
   align-items: center;
 }
 
-.contacts-info-links{
+.contacts-info-links {
   display: flex;
   flex-direction: row;
   gap: 16px;
 }
 
-.contacts-info-links a{
+.contacts-info-links a {
   color: #DD1D1D;
   text-decoration: none;
   transition: opacity 0.2s ease-in-out;
 }
 
-.contacts-info-links a:hover{
+.contacts-info-links a:hover {
   opacity: 0.5;
 }
 
@@ -164,24 +164,24 @@ export default {
   opacity: 0.5;
 }
 
-.contacts-photo{
+.contacts-photo {
   display: flex;
   flex-direction: row;
   gap: 16px;
 }
 
-.contacts-map{
+.contacts-map {
   width: 60%;
   flex-basis: 60%;
   height: 600px;
 }
 
-@media screen and (max-width: 990px){
-  .contacts{
+@media screen and (max-width: 990px) {
+  .contacts {
     padding-bottom: 17rem;
   }
 
-  .contacts-max{
+  .contacts-max {
     flex-direction: column;
     gap: 3rem;
   }
@@ -190,24 +190,24 @@ export default {
     width: 100%;
     flex-basis: 100%;
   }
-  
-  .contacts-content{
+
+  .contacts-content {
     position: relative;
     width: auto;
   }
 
-  .contacts-title{
+  .contacts-title {
     margin-bottom: 2rem;
   }
 
-  .contacts-photo{
+  .contacts-photo {
     position: absolute;
     bottom: -54rem;
   }
 }
 
-@media screen and (max-width: 640px){
-  .contacts-title{
+@media screen and (max-width: 640px) {
+  .contacts-title {
     line-height: 38px;
     font-size: 30px;
   }

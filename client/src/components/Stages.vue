@@ -9,9 +9,9 @@
           <div class="stage-image">
             <div class="stage-count">{{ index + 1 }}</div>
             <img
-              :src="`${backendURL}${stage.image}`"
-              alt="stage image"
-              loading="lazy"
+                :src="`${backendURL}${stage.image}`"
+                alt="stage image"
+                loading="lazy"
             >
           </div>
 
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style scoped>
-.stages{
+.stages {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -49,12 +49,12 @@ export default {
   padding-bottom: 150px;
 }
 
-.stages-max{
+.stages-max {
   max-width: 67rem;
   margin: 0 2rem;
 }
 
-.stages-title{
+.stages-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -76,7 +76,7 @@ export default {
   align-items: flex-start;
 }
 
-.stage-image{
+.stage-image {
   position: relative;
 }
 
@@ -112,14 +112,14 @@ export default {
   width: 90%;
 }
 
-.stages-delivery{
+.stages-delivery {
   display: flex;
   flex-direction: row;
   gap: 100px;
   padding-top: 150px;
 }
 
-.stages-delivery-title{
+.stages-delivery-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -129,26 +129,26 @@ export default {
   flex-basis: 16%;
 }
 
-.stages-delivery-first{
+.stages-delivery-first {
   flex: 1;
   color: #000000;
   line-height: 1.4;
   font-size: 16px;
 }
 
-.stages-delivery-second{
+.stages-delivery-second {
   flex: 1;
   color: #000000;
   line-height: 1.4;
   font-size: 16px;
 }
 
-@media screen and (max-width: 990px){
+@media screen and (max-width: 990px) {
   .stages {
     padding-top: 110px;
   }
 
-  .stages-grid{
+  .stages-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -169,18 +169,18 @@ export default {
   }
 }
 
-@media screen and (max-width: 640px){
-  .stages-title{
+@media screen and (max-width: 640px) {
+  .stages-title {
     line-height: 38px;
     font-size: 30px;
   }
 
-  .stages-grid{
+  .stages-grid {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 2rem;
   }
 
-  .stage-title{
+  .stage-title {
     font-size: 16px;
   }
 
@@ -195,13 +195,13 @@ export default {
     margin: 0;
   }
 
-  .stages-delivery-title{
+  .stages-delivery-title {
     line-height: 38px;
     font-size: 30px;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

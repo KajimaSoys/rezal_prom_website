@@ -25,16 +25,7 @@
         - ./media:/app/media
       depends_on:
         - db
-      
-    # vue:
-    #   build:
-    #     context: ./client
-    #     dockerfile: Dockerfile
-    #   container_name: vue-rezal
-    #   volumes:
-    #     - ./client:/app
-    #     - vue_dist:/app/dist
-      
+
     nginx:
       build:
         context: .
@@ -44,11 +35,9 @@
         - "8081:80"
       depends_on:
         - django
-    #     - vue
       volumes:
         - ./static:/app/static
         - ./media:/app/media
-    #     - vue_dist:/usr/share/nginx/html
 
     db:
       image: postgres:13
@@ -63,7 +52,6 @@
       
   volumes:
     db_data:
-  #   vue_dist:
 
   networks:
     default:

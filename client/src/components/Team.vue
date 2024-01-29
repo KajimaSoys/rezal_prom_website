@@ -50,23 +50,23 @@
 
       <div class="team-grid" v-if="staffArr.slice(2).length > 0">
         <div class="team-staff" v-for="staff in staffArr.slice(2)">
-            <div class="team-staff-image" v-if="staff.image !== null">
-              <img
-                  :src="`${backendURL}${staff.image}`"
-                  :alt="`${staff.name} - ${staff.post}`"
-                  loading="lazy"
-              >
-            </div>
-            <div v-else class="team-staff-no-image">
-              <img
-                  src="/icons/icon-photo.svg"
-                  :alt="`${staff.name} - ${staff.post}`"
-                  loading="lazy"
-              >
-            </div>
-            <h3 class="team-staff-title" v-html="staff.name"></h3>
-            <div class="team-staff-post" v-html="staff.post"></div>
+          <div class="team-staff-image" v-if="staff.image !== null">
+            <img
+                :src="`${backendURL}${staff.image}`"
+                :alt="`${staff.name} - ${staff.post}`"
+                loading="lazy"
+            >
           </div>
+          <div v-else class="team-staff-no-image">
+            <img
+                src="/icons/icon-photo.svg"
+                :alt="`${staff.name} - ${staff.post}`"
+                loading="lazy"
+            >
+          </div>
+          <h3 class="team-staff-title" v-html="staff.name"></h3>
+          <div class="team-staff-post" v-html="staff.post"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -84,7 +84,7 @@ export default {
 </script>
 
 <style scoped>
-.team{
+.team {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -93,23 +93,23 @@ export default {
   padding-bottom: 75px;
 }
 
-.team-max{
+.team-max {
   max-width: 67rem;
   margin: 0 2rem;
 }
 
-.team-introduce{
+.team-introduce {
   display: flex;
   flex-direction: row;
   gap: 16px;
 }
 
-.team-block-title{
+.team-block-title {
   width: 50%;
   flex-basis: 50%;
 }
 
-.team-title{
+.team-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -118,14 +118,14 @@ export default {
   margin-bottom: 30px;
 }
 
-.team-description{
+.team-description {
   width: 80%;
   color: #000000;
   line-height: 1.4;
   font-size: 16px;
 }
 
-.team-head-staff{
+.team-head-staff {
   width: 50%;
   flex-basis: 50%;
   display: flex;
@@ -133,25 +133,25 @@ export default {
   gap: 16px;
 }
 
-.team-staff{
+.team-staff {
   /*height: 400px;*/
   width: 100%;
 }
 
-.team-staff-image{
+.team-staff-image {
   border-radius: 30px;
   /*height: 350px;*/
   width: 100%;
 }
 
-.team-staff-image img{
+.team-staff-image img {
   width: 100%;
   border-radius: 30px;
   object-fit: cover;
   height: 350px;
 }
 
-.team-staff-no-image{
+.team-staff-no-image {
   background: #ECECEC;
   border-radius: 30px;
   height: 350px;
@@ -159,14 +159,14 @@ export default {
   position: relative;
 }
 
-.team-staff-no-image img{
+.team-staff-no-image img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.team-staff-title{
+.team-staff-title {
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
   font-size: 22px;
@@ -174,14 +174,14 @@ export default {
   line-height: 31px;
 }
 
-.team-staff-post{
+.team-staff-post {
   color: #686868;
   font-size: 16px;
   line-height: 1.4;
   padding-top: 5px;
 }
 
-.team-grid{
+.team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 60px 16px;
@@ -189,61 +189,61 @@ export default {
   padding-top: 60px;
 }
 
-@media screen and (max-width: 990px){
-  .team-introduce{
+@media screen and (max-width: 990px) {
+  .team-introduce {
     flex-direction: column;
   }
 
-  .team-block-title{
+  .team-block-title {
     width: 100%;
     flex-basis: 100%;
   }
 
-  .team-head-staff{
+  .team-head-staff {
     width: 100%;
     flex-basis: 100%;
   }
 
-  .team-staff-image img{
+  .team-staff-image img {
     height: 500px;
   }
 
-  .team-staff-no-image{
+  .team-staff-no-image {
     height: 500px;
   }
 
-  .team-grid{
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 640px){
-  .team{
+@media screen and (max-width: 640px) {
+  .team {
     max-width: 100%;
     margin: 0 2rem;
     width: auto;
   }
 
-  .team-max{
+  .team-max {
     max-width: 100%;
     margin: 0;
   }
 
-  .team-title{
+  .team-title {
     line-height: 38px;
     font-size: 30px;
   }
 
-  .team-staff-image img{
+  .team-staff-image img {
     height: 250px;
   }
 
-  .team-staff-no-image{
+  .team-staff-no-image {
     height: 250px;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

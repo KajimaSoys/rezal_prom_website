@@ -1,7 +1,7 @@
 <script setup>
-import { watch } from 'vue';
-import { useRouter, useRoute, RouterView } from 'vue-router';
-import { ref } from 'vue';
+import {watch} from 'vue';
+import {useRouter, useRoute, RouterView} from 'vue-router';
+import {ref} from 'vue';
 
 const scrollToHash = (hash) => {
   if (hash.value) {
@@ -9,7 +9,7 @@ const scrollToHash = (hash) => {
     setTimeout(() => {
       const element = document.getElementById(elementId)
       if (element) {
-        element.scrollIntoView({ behavior: "auto" });
+        element.scrollIntoView({behavior: "auto"});
       }
     }, 200)
 
@@ -26,7 +26,7 @@ watch(() => route.fullPath, () => {
 </script>
 
 <template>
-  <RouterView />
+  <RouterView/>
 </template>
 
 <style scoped>

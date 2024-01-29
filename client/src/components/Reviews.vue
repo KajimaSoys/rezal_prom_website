@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.reviews{
+.reviews {
   width: 100%;
   /*display: flex;*/
   /*justify-content: center;*/
@@ -47,13 +47,13 @@ export default {
   padding-bottom: 75px;
 }
 
-.reviews-max{
+.reviews-max {
   max-width: 67rem;
   margin: auto;
   padding: 0 2rem;
 }
 
-.reviews-title{
+.reviews-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -75,14 +75,14 @@ export default {
 }
 
 
-@media screen and (max-width: 640px){
-  .reviews-title{
+@media screen and (max-width: 640px) {
+  .reviews-title {
     line-height: 38px;
     font-size: 30px;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

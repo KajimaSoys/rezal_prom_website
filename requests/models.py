@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Order(models.Model):
     """
     Description of Order Model of Requests App

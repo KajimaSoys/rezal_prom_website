@@ -3,7 +3,7 @@
     <div class="footer-max">
       <div class="footer-left">
         <a class="footer-logo" href="/">
-          <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+          <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60"/>
         </a>
 
         <div class="footer-left-content" v-if="meta">
@@ -32,7 +32,7 @@
       <div class="footer-right">
         <div class="footer-call-block" @click="$emit('popUpCall')">
           <div class="phone-number">
-            <img src="/icons/phone.svg" alt="" width="16" height="16" />
+            <img src="/icons/phone.svg" alt="" width="16" height="16"/>
             {{ header.number }}
           </div>
 
@@ -66,7 +66,7 @@ export default {
     }
   },
   watch: {
-    header(newVal){
+    header(newVal) {
       this.logo = this.backendURL + newVal.logo
     }
   },
@@ -74,10 +74,10 @@ export default {
     scrollToElement(elementId) {
       const element = document.getElementById(elementId);
 
-      if (this.$route.path === "/"){
-        element.scrollIntoView({ behavior: "smooth" });
+      if (this.$route.path === "/") {
+        element.scrollIntoView({behavior: "smooth"});
       } else {
-        this.$router.push({ path: "/", hash: `#${elementId}` });
+        this.$router.push({path: "/", hash: `#${elementId}`});
       }
     },
   }
@@ -85,7 +85,7 @@ export default {
 </script>
 
 <style scoped>
-.footer{
+.footer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -103,7 +103,7 @@ export default {
   height: 150px;
 }
 
-.footer-left{
+.footer-left {
   width: 20%;
   flex-basis: 20%;
   height: 100%;
@@ -112,20 +112,20 @@ export default {
   justify-content: space-between;
 }
 
-.footer-left-content{
+.footer-left-content {
   color: #BBBBBB;
   font-size: 14px;
   line-height: 20px;
 }
 
-.footer-center{
+.footer-center {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px 16px;
 }
 
 
-.footer-menu-item{
+.footer-menu-item {
   width: auto;
   font-color: #000;
   font-size: 16px;
@@ -135,11 +135,11 @@ export default {
   cursor: pointer;
 }
 
-.footer-menu-item:hover{
+.footer-menu-item:hover {
   color: #7A7A7A;
 }
 
-.footer-right{
+.footer-right {
   width: 20%;
   flex-basis: 20%;
   height: 100%;
@@ -148,23 +148,23 @@ export default {
   justify-content: space-between;
 }
 
-.footer-call-block{
+.footer-call-block {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   cursor: pointer;
 }
 
-.phone-text{
+.phone-text {
   color: #DD1D1D;
   transition: color 0.2s ease-in-out;
 }
 
-.phone-text:hover{
+.phone-text:hover {
   color: #C20D0D;
 }
 
-.footer-privacy{
+.footer-privacy {
   color: #BBBBBB;
   font-size: 14px;
   line-height: 20px;
@@ -172,7 +172,7 @@ export default {
   transition: color 0.2s ease-in-out;
 }
 
-.footer-privacy:hover{
+.footer-privacy:hover {
   color: #888888;
 }
 
@@ -234,7 +234,7 @@ export default {
     margin-bottom: 20px;
   }
 
-  .footer-left-content{
+  .footer-left-content {
     text-align: center;
   }
 

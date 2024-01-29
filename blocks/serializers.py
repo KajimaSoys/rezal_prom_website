@@ -41,139 +41,139 @@ class HeaderBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HeaderBlock
         fields = (
-                     'logo',
-                     'address',
-                     'yandex_map_link',
-                     'schedule',
-                     'number',
-                     'tg_link',
-                     'whatsapp_link',
-                     'instagram_link',
-                     'vk_link',
-                 )
+            'logo',
+            'address',
+            'yandex_map_link',
+            'schedule',
+            'number',
+            'tg_link',
+            'whatsapp_link',
+            'instagram_link',
+            'vk_link',
+        )
 
 
 class MainBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = MainBlock
         fields = (
-                    'title',
-                    'description',
-                    'image',
-                 )
+            'title',
+            'description',
+            'image',
+        )
 
 
 class AboutBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = AboutBlock
         fields = (
-                    'title',
-                    'description',
-                    'title_first',
-                    'description_first',
-                    'title_second',
-                    'description_second',
-                    'title_third',
-                    'description_third',
-                    'title_fourth',
-                    'description_fourth',
-                    'title_fifth',
-                    'description_fifth',
-                    'title_sixth',
-                    'description_sixth',
-                 )
+            'title',
+            'description',
+            'title_first',
+            'description_first',
+            'title_second',
+            'description_second',
+            'title_third',
+            'description_third',
+            'title_fourth',
+            'description_fourth',
+            'title_fifth',
+            'description_fifth',
+            'title_sixth',
+            'description_sixth',
+        )
 
 
 class ProductionBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ProductionBlock
         fields = (
-                    'title',
-                    'description',
-                    'video_preview',
-                    'video_link',
-                    'image_one',
-                    'image_two',
-                    'image_three',
-                  )
+            'title',
+            'description',
+            'video_preview',
+            'video_link',
+            'image_one',
+            'image_two',
+            'image_three',
+        )
 
 
 class ServicesBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ServicesBlock
         fields = (
-                    'title',
-                    'title_first',
-                    'title_second',
-                    'title_third',
-                  )
+            'title',
+            'title_first',
+            'title_second',
+            'title_third',
+        )
 
 
 class ProjectsBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ProjectsBlock
         fields = (
-                    'title',
-                    'title_first',
-                    'description_first',
-                    'image_first',
-                    'video_link_first',
-                    'title_second',
-                    'description_second',
-                    'image_second',
-                    'video_link_second',
-                    'title_third',
-                    'description_third',
-                    'image_third',
-                    'video_link_third',
-                  )
+            'title',
+            'title_first',
+            'description_first',
+            'image_first',
+            'video_link_first',
+            'title_second',
+            'description_second',
+            'image_second',
+            'video_link_second',
+            'title_third',
+            'description_third',
+            'image_third',
+            'video_link_third',
+        )
 
 
 class StagesBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = StagesBlock
         fields = (
-                    'title',
-                    'delivery_title',
-                    'delivery_first',
-                    'delivery_second',
-                  )
+            'title',
+            'delivery_title',
+            'delivery_first',
+            'delivery_second',
+        )
 
 
 class TeamBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = TeamBlock
         fields = (
-                    'title',
-                    'description',
-                  )
+            'title',
+            'description',
+        )
 
 
 class QuestionsBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = QuestionsBlock
         fields = (
-                    'title',
-                  )
+            'title',
+        )
 
 
 class ReviewsBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ReviewsBlock
         fields = (
-                    'title',
-                  )
+            'title',
+        )
 
 
 class ContactsBlockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ContactsBlock
         fields = (
-                    'title',
-                    'address',
-                    'yandex_map_link',
-                    'schedule',
-                    'number',
-                    'instagram_link',
-                    'vk_link',
-                  )
+            'title',
+            'address',
+            'yandex_map_link',
+            'schedule',
+            'number',
+            'instagram_link',
+            'vk_link',
+        )

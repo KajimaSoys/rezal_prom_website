@@ -29,50 +29,50 @@ class StagesSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Stages
         fields = (
-                     'title',
-                     'image',
-                     'order',
-                 )
+            'title',
+            'image',
+            'order',
+        )
 
 
 class StaffSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Staff
         fields = (
-                     'name',
-                     'post',
-                     'image',
-                     'order',
-                 )
+            'name',
+            'post',
+            'image',
+            'order',
+        )
 
 
 class QuestionsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Questions
         fields = (
-                     'question',
-                     'answer',
-                     'order',
-                 )
+            'question',
+            'answer',
+            'order',
+        )
 
 
 class ReviewTextSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ReviewText
         fields = (
-                     'author_name',
-                     'review_text',
-                     'author_photo',
-                     'review_link',
-                     'order',
-                 )
+            'author_name',
+            'review_text',
+            'author_photo',
+            'review_link',
+            'order',
+        )
 
 
 class ReviewVideoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ReviewVideo
         fields = (
-                     'image',
-                     'video_link',
-                     'order',
-                 )
+            'image',
+            'video_link',
+            'order',
+        )

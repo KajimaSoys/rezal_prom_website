@@ -6,6 +6,7 @@ class HeaderBlock(models.Model):
     """
     Description of HeaderBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Навигационная панель'
         verbose_name_plural = 'Навигационная панель'
@@ -30,6 +31,7 @@ class MainBlock(models.Model):
     """
     Description of MainBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Главный блок'
         verbose_name_plural = 'Главный блок'
@@ -46,6 +48,7 @@ class AboutBlock(models.Model):
     """
     Description of AboutBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок о компании'
         verbose_name_plural = 'Блок о компании'
@@ -79,6 +82,7 @@ class ProductionBlock(models.Model):
     """
     Description of ProductionBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок производства'
         verbose_name_plural = 'Блок производства'
@@ -101,6 +105,7 @@ class ServicesBlock(models.Model):
     """
     Description of ServicesBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок услуг'
         verbose_name_plural = 'Блок услуг'
@@ -119,6 +124,7 @@ class ProjectsBlock(models.Model):
     """
     Description of ProjectsBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок проектов'
         verbose_name_plural = 'Блок проектов'
@@ -152,6 +158,7 @@ class StagesBlock(models.Model):
     """
     Description of StagesBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок стадий работ'
         verbose_name_plural = 'Блок стадий работ'
@@ -196,6 +203,7 @@ class TeamBlock(models.Model):
     """
     Description of TeamBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок команды'
         verbose_name_plural = 'Блок команды'
@@ -219,6 +227,7 @@ class QuestionsBlock(models.Model):
     """
     Description of QuestionsBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок часто задаваемых вопросов'
         verbose_name_plural = 'Блок часто задаваемых вопросов'
@@ -248,6 +257,7 @@ class ReviewsBlock(models.Model):
     """
     Description of ReviewsBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок отзывов клиентов'
         verbose_name_plural = 'Блок отзывов клиентов'
@@ -262,6 +272,7 @@ class ContactsBlock(models.Model):
     """
     Description of ContactsBlock Model of Blocks App
     """
+
     class Meta:
         verbose_name = 'Блок контактов'
         verbose_name_plural = 'Блок контактов'

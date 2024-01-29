@@ -1,39 +1,39 @@
 <template>
   <div class="content">
 
-    <Header :header="this.header" @popUpCall="popUpCall()"/>
+    <Header :header="header" @popUpCall="popUpCall()"/>
 
-    <Main :main="this.main" @popUpCall="popUpCall()"/>
+    <Main :main="main" @popUpCall="popUpCall()"/>
 
-    <About :about="this.about"/>
+    <About :about="about"/>
 
-    <Production :production="this.production"/>
+    <Production :production="production"/>
 
-    <Services :services="this.services"/>
+    <Services :services="services"/>
 
-    <Projects :projects="this.projects"/>
+    <Projects :projects="projects"/>
 
     <Request requestNum="1"/>
 
-    <Stages :stages="this.stages" :stagesArr="this.stagesArr"/>
+    <Stages :stages="stages" :stagesArr="stagesArr"/>
 
-    <Team :team="this.team" :staffArr="this.staffArr"/>
+    <Team :team="team" :staffArr="staffArr"/>
 
     <Request requestNum="2"/>
 
-    <Questions :questions="this.questions" :questionsArr="this.questionsArr"/>
+    <Questions :questions="questions" :questionsArr="questionsArr"/>
 
-    <Reviews :reviews="this.reviews" :reviewTextArr="this.reviewTextArr" :reviewVideoArr="this.reviewVideoArr"/>
+    <Reviews :reviews="reviews" :reviewTextArr="reviewTextArr" :reviewVideoArr="reviewVideoArr"/>
 
     <Request requestNum="3"/>
 
-    <Contacts :contacts="this.contacts"/>
+    <Contacts :contacts="contacts"/>
 
-    <Footer :header="this.header" :meta="true" @popUpCall="popUpCall()"/>
+    <Footer :header="header" :meta="true" @popUpCall="popUpCall()"/>
 
-    <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo" />
+    <VideoPlayer :visible="videoVisible" :videoId="videoId" @close="hideVideo"/>
 
-    <PopUp :visible="popUpVisible" @close="hidePopUp" />
+    <PopUp :visible="popUpVisible" @close="hidePopUp"/>
 
   </div>
 </template>
@@ -81,7 +81,7 @@ export default {
   },
   mixins: [provideVideoPlayer],
 
-  data(){
+  data() {
     return {
       stagesArr: [],
       staffArr: [],
@@ -109,10 +109,10 @@ export default {
   },
 
   methods: {
-    async getPageData(){
+    async getPageData() {
       await axios
           .get('api/v1/all_blocks/')
-          .then( response => {
+          .then(response => {
             let receivedData = response.data
 
             receivedData.forEach(block => {
@@ -143,17 +143,17 @@ export default {
 
             // console.log(response.data)
           })
-          .catch( error => {
+          .catch(error => {
             console.log('An error occurred: ', error)
           })
     },
 
-    async getObjectsData(){
+    async getObjectsData() {
       await axios
           .get('api/v1/core_objects/')
-          .then( response => {
+          .then(response => {
             let receivedData = response.data
-            receivedData.forEach( block => {
+            receivedData.forEach(block => {
               if (block.type === 'Stages') {
                 this.stagesArr.push(block.data)
               } else if (block.type === 'Staff') {
@@ -169,7 +169,7 @@ export default {
 
             // console.log(response.data)
           })
-          .catch( error => {
+          .catch(error => {
             console.log('An error occurred: ', error)
           })
     },

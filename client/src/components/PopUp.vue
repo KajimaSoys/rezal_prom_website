@@ -68,11 +68,13 @@
             </div>
 
             <div class="popup-acceptance" v-if="!popup.isSubmitted">
-              Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="popup-link">политики конфиденциальности</router-link>
+              Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия
+              <router-link to="policy" class="popup-link">политики конфиденциальности</router-link>
             </div>
             <div class="popup-success" v-else>
               <div class="popup-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
-              <div class="popup-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+              <div class="popup-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей
+              </div>
               <div class="popup-form-submit" @click="close">
                 Закрыть
               </div>
@@ -103,7 +105,7 @@ export default {
       default: false,
     },
   },
-  data(){
+  data() {
     return {
       popup: {
         name: '',
@@ -119,7 +121,7 @@ export default {
   },
 
   methods: {
-    async sendPopUp(popup){
+    async sendPopUp(popup) {
       popup.nameError = false;
       popup.phoneError = false;
 
@@ -178,6 +180,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.2s;
 }
+
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
@@ -226,7 +229,7 @@ export default {
   color: rgba(255, 255, 255, 1);
 }
 
-.popup-content{
+.popup-content {
   max-width: 24rem;
   width: 100%;
   display: flex;
@@ -237,7 +240,7 @@ export default {
   align-items: center;
 }
 
-.popup-title{
+.popup-title {
   color: #000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -245,14 +248,14 @@ export default {
   line-height: 54px;
 }
 
-.popup-form{
+.popup-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.popup-form-item{
+.popup-form-item {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -260,7 +263,7 @@ export default {
   gap: 8px;
 }
 
-.popup-form-label{
+.popup-form-label {
   height: 25%;
   flex-basis: 25%;
   color: #888888;
@@ -279,7 +282,7 @@ input[type="text"]:focus, input[type="tel"]:focus {
   border-color: #DD1D1D;
 }
 
-.popup-form-submit{
+.popup-form-submit {
   background-color: #DD1D1D;
   border-radius: 13px;
   color: #fff;
@@ -292,30 +295,30 @@ input[type="text"]:focus, input[type="tel"]:focus {
   transition: all .1s ease-in-out;
 }
 
-.popup-form-submit:hover{
+.popup-form-submit:hover {
   background-color: #C20D0D;
 }
 
-.pending{
+.pending {
   pointer-events: none;
 }
 
 .popup-error {
-    color: #DD1D1D;
+  color: #DD1D1D;
 }
 
 .popup-success {
   color: #000000;
 }
 
-.popup-success-title{
+.popup-success-title {
   text-align: center;
   font-family: 'OnestMedium', Inter, sans-serif;
   font-size: 28px;
   /*padding-top: 40px;*/
 }
 
-.popup-success-description{
+.popup-success-description {
   text-align: center;
   padding: 30px 0;
   width: 80%;
@@ -329,7 +332,7 @@ input[type="text"]:focus, input[type="tel"]:focus {
   line-height: 1.4;
 }
 
-.popup-acceptance a{
+.popup-acceptance a {
   color: #3a3a3a;
   position: relative;
   text-decoration: none;
@@ -352,8 +355,8 @@ input[type="text"]:focus, input[type="tel"]:focus {
 }
 
 :deep(.el-input__wrapper) {
-  padding: 10px 21px!important;
-  border-radius: 13px!important;
+  padding: 10px 21px !important;
+  border-radius: 13px !important;
 }
 
 :deep(.el-select .el-input.is-focus .el-input__wrapper) {
@@ -361,52 +364,52 @@ input[type="text"]:focus, input[type="tel"]:focus {
   box-shadow: none !important;
 }
 
-:deep(.el-select .el-input__wrapper.is-focus){
+:deep(.el-select .el-input__wrapper.is-focus) {
   border: 1px solid #DD1D1D;
   box-shadow: none !important;
 }
 
-:deep(li.el-select-dropdown__item.selected){
-  color: #DD1D1D!important;
+:deep(li.el-select-dropdown__item.selected) {
+  color: #DD1D1D !important;
 }
 
-@media screen and (max-width: 990px){
-  .popup-title{
+@media screen and (max-width: 990px) {
+  .popup-title {
     font-size: 36px;
     line-height: 40px;
   }
 
-  .close-btn{
+  .close-btn {
     top: -70px;
     right: -60px;
   }
 }
 
-@media screen and (max-width: 640px){
-  .popup{
+@media screen and (max-width: 640px) {
+  .popup {
     margin: 0 2rem;
   }
 
-  .popup-title{
+  .popup-title {
     font-size: 26px;
     line-height: 30px;
   }
 
-  .close-btn{
+  .close-btn {
     top: -70px;
     right: -40px;
   }
 
-  .popup-form{
+  .popup-form {
     width: 100%;
     gap: 10px;
   }
 
-  .popup-form-label{
+  .popup-form-label {
     font-size: 14px;
   }
 
-  .popup-acceptance{
+  .popup-acceptance {
     width: 100%;
     font-size: 12px;
   }

@@ -3,9 +3,9 @@
     <div class="video-container" @click.stop>
       <button class="close-button" @click="hideVideo" ref="closeButton">×</button>
       <iframe
-        :src="videoSrc"
-        frameborder="0"
-        allowfullscreen
+          :src="videoSrc"
+          frameborder="0"
+          allowfullscreen
       ></iframe>
     </div>
   </div>
@@ -75,14 +75,14 @@ iframe {
 }
 
 @media screen and (max-width: 990px) {
-  .close-button{
+  .close-button {
     top: -70px;
     right: -60px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  .close-button{
+  .close-button {
     top: -70px;
     right: -40px;
   }

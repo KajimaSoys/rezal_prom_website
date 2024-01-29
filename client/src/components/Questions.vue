@@ -3,7 +3,8 @@
     <div class="questions-max">
       <h1 class="questions-title" v-html="questions.title"></h1>
 
-      <div v-for="(question, index) in questionsArr" :key="question.order" class="questions-tile" @click="toggleQuestion(index)">
+      <div v-for="(question, index) in questionsArr" :key="question.order" class="questions-tile"
+           @click="toggleQuestion(index)">
         <div class="questions-header">
           <div class="questions-text" v-html="question.question"></div>
           <img
@@ -13,7 +14,8 @@
               loading="lazy"
           >
         </div>
-        <div :class="question.isOpen ? 'questions-answer-opened' : 'questions-answer-closed'" class="questions-answer" v-html="question.answer"></div>
+        <div :class="question.isOpen ? 'questions-answer-opened' : 'questions-answer-closed'" class="questions-answer"
+             v-html="question.answer"></div>
       </div>
     </div>
   </div>
@@ -36,7 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.questions{
+.questions {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -44,12 +46,12 @@ export default {
   padding-top: 150px;
 }
 
-.questions-max{
+.questions-max {
   width: 67rem;
   margin: 0 2rem;
 }
 
-.questions-title{
+.questions-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -58,7 +60,7 @@ export default {
   margin-bottom: 80px;
 }
 
-.questions-tile{
+.questions-tile {
   border: 1px solid #BDBDBD;
   border-radius: 20px;
   margin-bottom: 30px;
@@ -67,7 +69,7 @@ export default {
   cursor: pointer;
 }
 
-.questions-header{
+.questions-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -75,7 +77,7 @@ export default {
   gap: 16px;
 }
 
-.questions-text{
+.questions-text {
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
   font-size: 22px;
@@ -96,39 +98,39 @@ export default {
   transition: all 0.1s ease-in-out;
 }
 
-img.toggle-icon{
+img.toggle-icon {
   height: 16px;
   width: 16px;
   fill: white;
 }
 
-.questions-answer{
+.questions-answer {
   line-height: 1.4;
   font-size: 15px;
   color: #000000;
   transition: all 0.2s ease-in-out;
 }
 
-.questions-answer-closed{
+.questions-answer-closed {
   padding-top: 0;
   height: 0;
   opacity: 0;
 }
 
-.questions-answer-opened{
+.questions-answer-opened {
   padding-top: 20px;
   height: auto;
   opacity: 1;
 }
 
-@media screen and (max-width: 640px){
-  .questions-title{
+@media screen and (max-width: 640px) {
+  .questions-title {
     line-height: 38px;
     font-size: 30px;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

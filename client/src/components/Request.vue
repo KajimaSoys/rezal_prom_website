@@ -75,11 +75,13 @@
         </div>
 
         <div class="request-acceptance" v-if="!request1.isSubmitted">
-          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия
+          <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
         </div>
         <div class="request-success" v-else>
           <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
-          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей
+          </div>
         </div>
       </div>
 
@@ -159,11 +161,13 @@
         </div>
 
         <div class="request-acceptance" v-if="!request2.isSubmitted">
-          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+          Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия
+          <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
         </div>
         <div class="request-success" v-else>
           <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
-          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей
+          </div>
         </div>
       </div>
 
@@ -220,11 +224,11 @@
             </div>
             <div class="request-form-input">
               <el-time-select
-                v-model="request3.selectedTime"
-                start="09:00"
-                step="00:30"
-                end="18:00"
-                placeholder="Выберите время"
+                  v-model="request3.selectedTime"
+                  start="09:00"
+                  step="00:30"
+                  end="18:00"
+                  placeholder="Выберите время"
               />
             </div>
           </div>
@@ -244,11 +248,13 @@
         </div>
 
         <div class="request-acceptance" v-if="!request3.isSubmitted">
-          Нажимая кнопку «Записаться на встречу» вы даете согласие на обработку персональных данных и принимаете условия <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
+          Нажимая кнопку «Записаться на встречу» вы даете согласие на обработку персональных данных и принимаете условия
+          <router-link to="policy" class="request-link">политики конфиденциальности</router-link>
         </div>
         <div class="request-success" v-else>
           <div class="request-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
-          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей</div>
+          <div class="request-success-description">Наш менеджер позвонит вам в ближайшее время для уточнения деталей
+          </div>
         </div>
 
         <div class="request-additional">
@@ -273,7 +279,7 @@ export default {
 
   directives: {mask},
 
-  data(){
+  data() {
     return {
       request1: {
         name: '',
@@ -311,7 +317,7 @@ export default {
   },
 
   methods: {
-    async sendRequest(request){
+    async sendRequest(request) {
       request.nameError = false;
       request.phoneError = false;
 
@@ -363,9 +369,9 @@ export default {
 </script>
 
 <style scoped>
-.request{
+.request {
   width: 100%;
-    /*height: 88vh;*/
+  /*height: 88vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -373,7 +379,7 @@ export default {
   padding-bottom: 75px;
 }
 
-.request-max{
+.request-max {
   width: 90rem;
   height: 90%;
   border-radius: 30px;
@@ -383,7 +389,7 @@ export default {
   margin: 0 2rem;
 }
 
-.request-background{
+.request-background {
   background: linear-gradient(106.5deg, #1F1F1F 12.53%, #353535 105.97%);
   border-radius: 30px;
   height: 35rem;
@@ -395,11 +401,11 @@ export default {
   transform: translateY(5%);
 }
 
-#request-time > div > div.request-background{
+#request-time > div > div.request-background {
   height: 38rem;
 }
 
-.request-content{
+.request-content {
   max-width: 67rem;
   width: 100%;
   display: flex;
@@ -409,7 +415,7 @@ export default {
   position: relative;
 }
 
-.request-icon{
+.request-icon {
   color: #fff;
   background-color: #DD1D1D;
   border-radius: 20px;
@@ -424,7 +430,7 @@ export default {
   justify-content: center;
 }
 
-.request-title{
+.request-title {
   color: #fff;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -432,21 +438,21 @@ export default {
   line-height: 54px;
 }
 
-.request-description{
+.request-description {
   color: #fff;
   font-size: 18px;
   line-height: 1.4;
   width: 70%;
 }
 
-.request-form{
+.request-form {
   display: flex;
   flex-direction: row;
   gap: 16px;
   margin-bottom: -40px;
 }
 
-.request-form-item{
+.request-form-item {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -454,7 +460,7 @@ export default {
   gap: 8px;
 }
 
-.request-form-label{
+.request-form-label {
   height: 25%;
   flex-basis: 25%;
   color: #888888;
@@ -473,7 +479,7 @@ input[type="text"]:focus, input[type="tel"]:focus {
   border-color: #DD1D1D;
 }
 
-.request-form-submit{
+.request-form-submit {
   background-color: #DD1D1D;
   border-radius: 13px;
   color: #fff;
@@ -486,31 +492,31 @@ input[type="text"]:focus, input[type="tel"]:focus {
   transition: all .1s ease-in-out;
 }
 
-.request-form-submit:hover{
+.request-form-submit:hover {
   background-color: #C20D0D;
 }
 
-.pending{
+.pending {
   pointer-events: none;
 }
 
 .request-error {
-    margin-bottom: -50px;
-    color: #DD1D1D;
+  margin-bottom: -50px;
+  color: #DD1D1D;
 }
 
 .request-success {
   color: #FFFFFF;
 }
 
-.request-success-title{
+.request-success-title {
   text-align: center;
   font-family: 'OnestMedium', Inter, sans-serif;
   font-size: 28px;
   padding-top: 40px;
 }
 
-.request-success-description{
+.request-success-description {
   text-align: center;
   padding-top: 20px;
 }
@@ -522,7 +528,7 @@ input[type="text"]:focus, input[type="tel"]:focus {
   line-height: 1.4;
 }
 
-.request-acceptance a{
+.request-acceptance a {
   color: #DEDEDE;
   position: relative;
   text-decoration: none;
@@ -553,8 +559,8 @@ input[type="text"]:focus, input[type="tel"]:focus {
 }
 
 :deep(.el-input__wrapper) {
-  padding: 10px 21px!important;
-  border-radius: 13px!important;
+  padding: 10px 21px !important;
+  border-radius: 13px !important;
 }
 
 :deep(.el-select .el-input.is-focus .el-input__wrapper) {
@@ -562,13 +568,13 @@ input[type="text"]:focus, input[type="tel"]:focus {
   box-shadow: none !important;
 }
 
-:deep(.el-select .el-input__wrapper.is-focus){
+:deep(.el-select .el-input__wrapper.is-focus) {
   border: 1px solid #DD1D1D;
   box-shadow: none !important;
 }
 
-:deep(li.el-select-dropdown__item.selected){
-  color: #DD1D1D!important;
+:deep(li.el-select-dropdown__item.selected) {
+  color: #DD1D1D !important;
 }
 
 select {
@@ -585,8 +591,8 @@ select:focus {
   border-color: #DD1D1D;
 }
 
-@media screen and (max-width: 990px){
-  .request-background{
+@media screen and (max-width: 990px) {
+  .request-background {
     height: 51rem;
 
     padding: 0;
@@ -594,47 +600,47 @@ select:focus {
     border-radius: 0;
   }
 
-  #request-time > div > div.request-background{
+  #request-time > div > div.request-background {
     height: 54rem;
   }
 
-  .request-icon{
+  .request-icon {
     width: 12%;
   }
 
   .request-title {
     font-size: 36px;
     line-height: 40px;
-}
+  }
 
-  .request-description{
+  .request-description {
     margin-bottom: -40px;
     font-size: 16px;
   }
 
-  .request-form{
+  .request-form {
     flex-direction: column;
     width: 40%;
   }
 
-  .request-acceptance{
+  .request-acceptance {
     width: 90%;
   }
 
-  .request-form-submit{
+  .request-form-submit {
     width: 75%;
     margin: 1rem auto auto;
   }
 
-  input[type="text"], input[type="tel"]{
+  input[type="text"], input[type="tel"] {
     width: 90%;
   }
 
-  .el-select{
+  .el-select {
     width: 100%;
   }
 
-  .request-additional{
+  .request-additional {
     visibility: hidden;
   }
 
@@ -643,34 +649,34 @@ select:focus {
   }
 }
 
-@media screen and (max-width: 640px){
-  .request-background{
+@media screen and (max-width: 640px) {
+  .request-background {
     height: 53rem;
   }
 
-  #request-time > div > div.request-background{
+  #request-time > div > div.request-background {
     height: 57rem;
   }
 
-  .request-icon{
+  .request-icon {
     width: 20%;
   }
 
-  .request-title{
+  .request-title {
     font-size: 32px;
     line-height: 40px;
-}
+  }
 
-  .request-description{
+  .request-description {
     width: 100%;
     font-size: 14px;
   }
 
-  .request-form{
+  .request-form {
     width: 100%;
   }
 
-  .request-acceptance{
+  .request-acceptance {
     width: 100%;
     font-size: 12px;
   }

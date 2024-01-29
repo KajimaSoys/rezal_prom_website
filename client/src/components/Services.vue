@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-.services{
+.services {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -81,12 +81,12 @@ export default {
   padding-top: 75px;
 }
 
-.services-max{
+.services-max {
   max-width: 67rem;
   margin: 0 2rem;
 }
 
-.services-title{
+.services-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -95,13 +95,13 @@ export default {
   margin-bottom: 80px;
 }
 
-.services-items{
- display: flex;
+.services-items {
+  display: flex;
   flex-direction: row;
   gap: 16px;
 }
 
-.services-item{
+.services-item {
   flex: 1;
   height: 200px;
   border: 1px solid #BDBDBD;
@@ -112,7 +112,7 @@ export default {
   justify-content: space-between;
 }
 
-.services-item-icon{
+.services-item-icon {
   width: 67px;
   height: 54px;
   background: #DD1D1D;
@@ -122,7 +122,7 @@ export default {
   justify-content: center;
 }
 
-.services-item-title{
+.services-item-title {
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
   font-size: 22px;
@@ -131,12 +131,12 @@ export default {
   width: 80%;
 }
 
-@media screen and (max-width: 990px){
-  .services-items{
+@media screen and (max-width: 990px) {
+  .services-items {
     flex-direction: column;
   }
 
-  .services-item{
+  .services-item {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -145,19 +145,19 @@ export default {
 
 }
 
-@media screen and (max-width: 640px){
-  .services{
+@media screen and (max-width: 640px) {
+  .services {
     max-width: 100%;
     margin: 0 2rem;
     width: auto;
   }
 
-  .services-max{
+  .services-max {
     max-width: 100%;
     margin: 0;
   }
 
-  .services-title{
+  .services-title {
     line-height: 38px;
     font-size: 30px;
   }

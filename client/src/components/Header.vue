@@ -3,34 +3,35 @@
     <div class="header-max">
 
       <a class="logo" href="/">
-        <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+        <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60"/>
       </a>
 
       <div class="menu nav-menu" :class="{ open: isBurgerMenuOpen }">
-<!--        <div class="menu">-->
-<!--          -->
-<!--        </div>-->
+        <!--        <div class="menu">-->
+        <!--          -->
+        <!--        </div>-->
         <a class="menu-item" @click="scrollToElement('about')">
-            О компании
-          </a>
-          <a class="menu-item" @click="scrollToElement('projects')">
-            Портфолио
-          </a>
-          <a class="menu-item" @click="scrollToElement('delivery')">
-            Доставка и оплата
-          </a>
-          <a class="menu-item" @click="scrollToElement('reviews')">
-            Отзывы
-          </a>
-          <a class="menu-item" @click="scrollToElement('contacts')">
-            Контакты
-          </a>
+          О компании
+        </a>
+        <a class="menu-item" @click="scrollToElement('projects')">
+          Портфолио
+        </a>
+        <a class="menu-item" @click="scrollToElement('delivery')">
+          Доставка и оплата
+        </a>
+        <a class="menu-item" @click="scrollToElement('reviews')">
+          Отзывы
+        </a>
+        <a class="menu-item" @click="scrollToElement('contacts')">
+          Контакты
+        </a>
       </div>
 
       <div class="messenger nav-menu">
         <a id="whatsapp" :href="header.whatsapp_link" target="_blank">
-          <svg height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-             viewBox="0 0 418.135 418.135" xml:space="preserve">
+          <svg height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               viewBox="0 0 418.135 418.135" xml:space="preserve">
             <g>
               <path style="fill:#919191;" d="M198.929,0.242C88.5,5.5,1.356,97.466,1.691,208.02c0.102,33.672,8.231,65.454,22.571,93.536
                 L2.245,408.429c-1.191,5.781,4.023,10.843,9.766,9.483l104.723-24.811c26.905,13.402,57.125,21.143,89.108,21.631
@@ -49,15 +50,17 @@
         </a>
 
         <a id="telegram" :href="header.tg_link" target="_blank">
-          <svg width="26" height="26" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="#919191FF" stroke-width="12" d="M23.073 88.132s65.458-26.782 88.16-36.212c8.702-3.772 38.215-15.843 38.215-15.843s13.621-5.28 12.486 7.544c-.379 5.281-3.406 23.764-6.433 43.756-4.54 28.291-9.459 59.221-9.459 59.221s-.756 8.676-7.188 10.185c-6.433 1.509-17.027-5.281-18.919-6.79-1.513-1.132-28.377-18.106-38.214-26.404-2.649-2.263-5.676-6.79.378-12.071 13.621-12.447 29.891-27.913 39.728-37.72 4.54-4.527 9.081-15.089-9.837-2.264-26.864 18.483-53.35 35.835-53.35 35.835s-6.053 3.772-17.404.377c-11.351-3.395-24.594-7.921-24.594-7.921s-9.08-5.659 6.433-11.693Z"/></svg>
+          <svg width="26" height="26" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path stroke="#919191FF" stroke-width="12"
+                  d="M23.073 88.132s65.458-26.782 88.16-36.212c8.702-3.772 38.215-15.843 38.215-15.843s13.621-5.28 12.486 7.544c-.379 5.281-3.406 23.764-6.433 43.756-4.54 28.291-9.459 59.221-9.459 59.221s-.756 8.676-7.188 10.185c-6.433 1.509-17.027-5.281-18.919-6.79-1.513-1.132-28.377-18.106-38.214-26.404-2.649-2.263-5.676-6.79.378-12.071 13.621-12.447 29.891-27.913 39.728-37.72 4.54-4.527 9.081-15.089-9.837-2.264-26.864 18.483-53.35 35.835-53.35 35.835s-6.053 3.772-17.404.377c-11.351-3.395-24.594-7.921-24.594-7.921s-9.08-5.659 6.433-11.693Z"/>
+          </svg>
         </a>
       </div>
 
 
-
       <div class="call-block nav-menu" @click="$emit('popUpCall')">
         <div class="phone-number">
-          <img src="/icons/phone.svg" alt="" width="16" height="16" />
+          <img src="/icons/phone.svg" alt="" width="16" height="16"/>
           {{ header.number }}
         </div>
 
@@ -78,48 +81,48 @@
         <div class="side-menu">
           <div class="top-menu">
             <a class="menu-item" @click="scrollToElement('about')">
-            О компании
-          </a>
-          <a class="menu-item" @click="scrollToElement('projects')">
-            Портфолио
-          </a>
-          <a class="menu-item" @click="scrollToElement('delivery')">
-            Доставка и оплата
-          </a>
-          <a class="menu-item" @click="scrollToElement('reviews')">
-            Отзывы
-          </a>
-          <a class="menu-item" @click="scrollToElement('contacts')">
-            Контакты
-          </a>
+              О компании
+            </a>
+            <a class="menu-item" @click="scrollToElement('projects')">
+              Портфолио
+            </a>
+            <a class="menu-item" @click="scrollToElement('delivery')">
+              Доставка и оплата
+            </a>
+            <a class="menu-item" @click="scrollToElement('reviews')">
+              Отзывы
+            </a>
+            <a class="menu-item" @click="scrollToElement('contacts')">
+              Контакты
+            </a>
           </div>
           <div class="bottom-menu">
             <div class="side-menu-info-item">
-            <a :href="header.yandex_map_link" target="_blank">
-              {{ header.address }}
-            </a>
-          </div>
+              <a :href="header.yandex_map_link" target="_blank">
+                {{ header.address }}
+              </a>
+            </div>
 
-          <div class="side-menu-info-item">
-            <a :href="header.yandex_map_link" target="_blank">
-              {{ header.schedule }}
-            </a>
-          </div>
+            <div class="side-menu-info-item">
+              <a :href="header.yandex_map_link" target="_blank">
+                {{ header.schedule }}
+              </a>
+            </div>
 
-          <div class="side-menu-info-item">
-            <a :href="`tel:${header.number}`" target="_blank">
-              {{ header.number }}
-            </a>
-          </div>
+            <div class="side-menu-info-item">
+              <a :href="`tel:${header.number}`" target="_blank">
+                {{ header.number }}
+              </a>
+            </div>
 
-          <div class="side-menu-info-item">
-            <a :href="header.instagram_link" target="_blank">
-              Instagram*
-            </a>
-            <a :href="header.vk_link" target="_blank">
-              ВКонтакте
-            </a>
-          </div>
+            <div class="side-menu-info-item">
+              <a :href="header.instagram_link" target="_blank">
+                Instagram*
+              </a>
+              <a :href="header.vk_link" target="_blank">
+                ВКонтакте
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -137,14 +140,14 @@ export default {
   emits: [
     'popUpCall'
   ],
-  data(){
-    return{
+  data() {
+    return {
       isBurgerMenuOpen: false,
       logo: this.frontendURL + '/image/logo.svg',
     }
   },
   watch: {
-    header(newVal){
+    header(newVal) {
       this.logo = this.backendURL + newVal.logo
     }
   },
@@ -158,8 +161,8 @@ export default {
     scrollToElement(elementId) {
       const element = document.getElementById(elementId);
 
-      if (this.$route.path === "/"){
-        element.scrollIntoView({ behavior: "smooth" });
+      if (this.$route.path === "/") {
+        element.scrollIntoView({behavior: "smooth"});
 
         this.isBurgerMenuOpen = false;
         if (this.isBurgerMenuOpen) {
@@ -168,7 +171,7 @@ export default {
           document.body.style.overflow = "";
         }
       } else {
-        this.$router.push({ path: "/", hash: `#${elementId}` });
+        this.$router.push({path: "/", hash: `#${elementId}`});
       }
     },
 
@@ -192,7 +195,7 @@ export default {
 </script>
 
 <style scoped>
-.header{
+.header {
   height: 12vh;
   width: 100%;
   display: flex;
@@ -203,11 +206,11 @@ export default {
   right: 0;
   z-index: 1010;
   background-color: white;
-  background-color: rgba(255,255,255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(4px) brightness(100%);
 }
 
-.header-max{
+.header-max {
   width: 85rem;
   display: flex;
   flex-direction: row;
@@ -217,7 +220,7 @@ export default {
   gap: 10px;
 }
 
-.logo{
+.logo {
   width: 15%;
   flex-basis: 15%;
   display: flex;
@@ -225,13 +228,13 @@ export default {
   align-items: center;
 }
 
-.menu{
+.menu {
   flex: 1;
   display: flex;
   gap: 30px;
 }
 
-.menu-item{
+.menu-item {
   font-size: 18px;
   text-decoration: none;
   color: black;
@@ -240,7 +243,7 @@ export default {
   transition: color 0.4s ease;
 }
 
-.menu-item:hover{
+.menu-item:hover {
   color: #DD1D1D;
 }
 
@@ -260,22 +263,22 @@ export default {
   right: 0;
 }
 
-.messenger{
+.messenger {
   display: flex;
   flex-direction: row;
   gap: 16px;
   align-items: center;
 }
 
-#whatsapp svg g path{
+#whatsapp svg g path {
   transition: all 0.2s ease-in-out;
 }
 
 #whatsapp:hover svg g path {
-  fill: #6e6e6e!important;
+  fill: #6e6e6e !important;
 }
 
-#telegram svg path{
+#telegram svg path {
   transition: all 0.2s ease-in-out;
 }
 
@@ -283,7 +286,7 @@ export default {
   stroke: #6e6e6e;
 }
 
-.call-block{
+.call-block {
   width: 15%;
   flex-basis: 15%;
   display: flex;
@@ -293,21 +296,22 @@ export default {
   min-width: 17%;
 }
 
-.phone-number{
+.phone-number {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 14px;
 }
 
-.phone-text{
+.phone-text {
   color: #DD1D1D;
   transition: color 0.2s ease-in-out;
 }
 
-.phone-text:hover{
+.phone-text:hover {
   color: #C20D0D;
 }
+
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -325,15 +329,15 @@ export default {
   transition: 0.2s;
 }
 
-.burger-menu.cross{
+.burger-menu.cross {
   z-index: 1001;
 }
 
-.burger-menu.cross span{
+.burger-menu.cross span {
   background-color: white;
 }
 
-.burger-menu.cross:hover span{
+.burger-menu.cross:hover span {
   background-color: #DD1D1D;
 }
 
@@ -372,37 +376,37 @@ export default {
   transform: translateX(0); /* Add this line */
 }
 
-.side-menu{
+.side-menu {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.side-menu-info{
+.side-menu-info {
   width: 90%;
   gap: 16px;
   display: flex;
   flex-direction: column;
 }
 
-.side-menu-info-item{
+.side-menu-info-item {
   color: #6e6e6e;
 }
 
-.side-menu-info-item a{
+.side-menu-info-item a {
   text-decoration: none;
   color: #6e6e6e;
   transition: color 0.2s ease-in-out;
 }
 
-.side-menu-info-item a:hover{
+.side-menu-info-item a:hover {
   text-decoration: none;
   color: #b4b4b4;
   transition: color 0.2s ease-in-out;
 }
 
-.overlay-hidden{
- display: none;
+.overlay-hidden {
+  display: none;
 }
 
 .overlay {
@@ -418,13 +422,13 @@ export default {
 }
 
 @media screen and (min-width: 1200px) {
-  .logo{
+  .logo {
     margin-right: 2rem;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .logo img{
+  .logo img {
     width: 140px;
     height: 40px;
   }
@@ -433,13 +437,13 @@ export default {
     font-size: 16px;
   }
 
-  .phone-number{
+  .phone-number {
     font-size: 14px;
   }
 }
 
-@media screen and (max-width: 1100px){
-  .menu{
+@media screen and (max-width: 1100px) {
+  .menu {
     gap: 15px;
   }
 }
@@ -454,16 +458,16 @@ export default {
     display: flex;
   }
 
-  .header-max{
+  .header-max {
     justify-content: space-between;
     margin: 0 4rem;
   }
 
-  .logo{
+  .logo {
     min-width: 15%;
   }
 
-  .menu-item{
+  .menu-item {
     color: white;
   }
 
@@ -491,13 +495,13 @@ export default {
   }
 }
 
-@media screen and (max-width: 640px){
-  .header-max{
+@media screen and (max-width: 640px) {
+  .header-max {
     margin-right: 2rem;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

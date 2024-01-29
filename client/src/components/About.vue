@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style scoped>
-.about{
+.about {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -110,7 +110,7 @@ export default {
   padding-bottom: 75px;
 }
 
-.about-max{
+.about-max {
   max-width: 67rem;
   /*height: 90%;*/
   /*border-radius: 30px;*/
@@ -120,14 +120,14 @@ export default {
   margin: 0 2rem;
 }
 
-.about-head{
+.about-head {
   display: flex;
   flex-direction: row;
   gap: 16px;
   align-items: center;
 }
 
-.about-image-container{
+.about-image-container {
   border-radius: 15px;
   height: 160px;
   width: 160px;
@@ -139,7 +139,7 @@ export default {
   object-fit: cover;
 }
 
-.about-description{
+.about-description {
   flex: 1;
   font-size: 16px;
   line-height: 25.2px;
@@ -147,19 +147,19 @@ export default {
   color: #000000;
 }
 
-.about-content{
+.about-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.about-content-row{
+.about-content-row {
   display: flex;
   flex-direction: row;
   gap: 16px;
 }
 
-.about-thick{
+.about-thick {
   width: 60%;
   flex-basis: 60%;
   height: 200px;
@@ -171,7 +171,7 @@ export default {
   justify-content: space-between;
 }
 
-.about-thin{
+.about-thin {
   width: 40%;
   flex-basis: 40%;
   height: 200px;
@@ -183,7 +183,7 @@ export default {
   justify-content: space-between;
 }
 
-.about-card-title{
+.about-card-title {
   color: #222222;
   font-family: 'OnestMedium', Inter, sans-serif;
   font-style: normal;
@@ -197,22 +197,22 @@ export default {
 /*  margin-block-end: 0;*/
 /*}*/
 
-.about-card-description{
- color: #686868;
+.about-card-description {
+  color: #686868;
 }
 
 @media screen and (max-width: 990px) {
-  .about-max{
+  .about-max {
     gap: 13rem;
   }
-  
-  .about-head{
+
+  .about-head {
     flex-direction: row;
     align-items: center;
     position: relative;
   }
 
-  .about-description{
+  .about-description {
     position: absolute;
     top: 190px;
     margin: 0;
@@ -235,16 +235,17 @@ export default {
     width: 150px;
   }
 
-  .about-head > div:nth-child(2){
+  .about-head > div:nth-child(2) {
     flex: 1;
   }
 }
 
-@media screen and (max-width: 640px){
-  .about-max{
+@media screen and (max-width: 640px) {
+  .about-max {
     gap: 17rem;
   }
-  .about-description{
+
+  .about-description {
     top: 130px;
     width: 100%;
   }
@@ -255,7 +256,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

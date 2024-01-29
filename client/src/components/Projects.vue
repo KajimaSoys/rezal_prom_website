@@ -14,7 +14,9 @@
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="30" cy="30" r="30" fill="white"/>
-                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                  <path
+                      d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z"
+                      fill="#DD1D1D"/>
                 </svg>
               </div>
               <div class="projects-item-preview-text">
@@ -34,7 +36,9 @@
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="30" cy="30" r="30" fill="white"/>
-                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                  <path
+                      d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z"
+                      fill="#DD1D1D"/>
                 </svg>
               </div>
               <div class="projects-item-preview-text">
@@ -55,7 +59,9 @@
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="30" cy="30" r="30" fill="white"/>
-                  <path d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z" fill="#DD1D1D"/>
+                  <path
+                      d="M39.8623 27.8782C41.1956 28.648 41.1956 30.5725 39.8623 31.3424L26.1748 39.2448C24.8415 40.0146 23.1748 39.0524 23.1748 37.5128L23.1748 21.7078C23.1748 20.1682 24.8415 19.206 26.1748 19.9758L39.8623 27.8782Z"
+                      fill="#DD1D1D"/>
                 </svg>
               </div>
               <div class="projects-item-preview-text">
@@ -84,13 +90,9 @@ export default {
   props: [
     'projects',
   ],
-  components: {
-
-  },
+  components: {},
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
     showVideoWrapper(video_link) {
@@ -102,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-.projects{
+.projects {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -111,12 +113,12 @@ export default {
   padding-bottom: 75px;
 }
 
-.projects-max{
+.projects-max {
   max-width: 67rem;
   margin: 0 2rem;
 }
 
-.projects-title{
+.projects-title {
   color: #000000;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -125,12 +127,12 @@ export default {
   margin-bottom: 80px;
 }
 
-.projects-content{
+.projects-content {
   display: flex;
   justify-content: space-between;
 }
 
-.projects-content-left{
+.projects-content-left {
   width: 55%;
   flex-basis: 55%;
   display: flex;
@@ -138,7 +140,7 @@ export default {
   gap: 170px;
 }
 
-.projects-content-right{
+.projects-content-right {
   width: 40%;
   flex-basis: 40%;
   display: flex;
@@ -147,7 +149,7 @@ export default {
   justify-content: center;
 }
 
-.projects-item{
+.projects-item {
 
 }
 
@@ -178,11 +180,11 @@ export default {
   margin: 20px;
 }
 
-svg path{
+svg path {
   transition: fill 0.2s ease-in-out;
 }
 
-svg:hover path{
+svg:hover path {
   fill: #EB7777;
 }
 
@@ -194,7 +196,7 @@ svg:hover path{
   color: #ffffff;
 }
 
-.projects-item-title{
+.projects-item-title {
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
   font-size: 22px;
@@ -204,16 +206,16 @@ svg:hover path{
   padding-bottom: 20px;
 }
 
-.projects-item-description{
+.projects-item-description {
   color: #686868;
   width: 90%;
 }
 
-.projects-button{
+.projects-button {
   padding-top: 5rem;
 }
 
-.projects-portfolio-button{
+.projects-portfolio-button {
   padding: 15px 25px;
   color: #FFFFFF;
   display: flex;
@@ -228,12 +230,12 @@ svg:hover path{
   text-decoration: none;
 }
 
-.projects-portfolio-button:hover{
+.projects-portfolio-button:hover {
   background-color: #C20D0D;
 }
 
-@media screen and (max-width: 990px){
-  .projects-content{
+@media screen and (max-width: 990px) {
+  .projects-content {
     flex-direction: column;
     gap: 4rem;
   }
@@ -243,15 +245,16 @@ svg:hover path{
     flex-basis: 100%;
     gap: 4rem;
   }
-  .projects-item-preview-first img{
+
+  .projects-item-preview-first img {
     width: 80%;
   }
 
-  .projects-item-preview-second img{
+  .projects-item-preview-second img {
     width: 100%;
   }
 
-  .projects-content-left > div:nth-child(2){
+  .projects-content-left > div:nth-child(2) {
     margin-left: 30%;
   }
 
@@ -261,22 +264,21 @@ svg:hover path{
 }
 
 
-
-@media screen and (max-width: 640px){
-  .projects-title{
+@media screen and (max-width: 640px) {
+  .projects-title {
     line-height: 38px;
     font-size: 30px;
   }
 
-  .projects-item-preview-first img{
+  .projects-item-preview-first img {
     width: 100%;
   }
 
-  .projects-item-preview-second img{
+  .projects-item-preview-second img {
     width: 100%;
   }
 
-  .projects-content-left > div:nth-child(2){
+  .projects-content-left > div:nth-child(2) {
     margin-left: 0;
   }
 
@@ -284,12 +286,12 @@ svg:hover path{
     width: 100%;
   }
 
-  .projects-button{
+  .projects-button {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 360px) {
 
 }
 </style>

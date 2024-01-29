@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 
+
 @admin.register(HeaderBlock)
 class HeaderBlockAdmin(admin.ModelAdmin):
     pass

@@ -2,7 +2,7 @@
   <div class="main">
     <div class="main-max"
          :style="{ 'background-image': `linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 48.37%, rgba(0, 0, 0, 0.8) 100%), url(${backendURL}${main.image})`, 'background-size': 'cover', 'background-position': 'center center', 'transform': 'scale(1)' }">
-      <div class="main-title" >
+      <div class="main-title">
         <h1 v-html="main.title"></h1>
       </div>
       <div class="main-secondary">
@@ -35,12 +35,12 @@ export default {
     'popUpCall'
   ],
   methods: {
-    requestClick(){
+    requestClick() {
       window.ym(93839626, 'reachGoal', 'Нажал на кнопку \'Оставить заявку\'');
       this.$emit('popUpCall')
     },
 
-    countClick(){
+    countClick() {
       window.ym(93839626, 'reachGoal', 'Нажал на кнопку \'Рассчитать стоимость\'');
       this.$emit('popUpCall')
     }
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style scoped>
-.main{
+.main {
   width: 100%;
   height: 88vh;
   display: flex;
@@ -59,7 +59,7 @@ export default {
   margin-top: 10vh;
 }
 
-.main-max{
+.main-max {
   max-width: 90rem;
   height: 95%;
   border-radius: 30px;
@@ -68,13 +68,13 @@ export default {
   margin: 0 2rem;
 }
 
-.main-title{
+.main-title {
   padding: 100px 175px 0 175px;
   flex: 1;
   width: 65%;
 }
 
-.main-title h1{
+.main-title h1 {
   color: white;
   font-family: OnestMedium, Inter, sans-serif;
   font-weight: 500;
@@ -82,7 +82,7 @@ export default {
   line-height: 55px;
 }
 
-.main-secondary{
+.main-secondary {
   padding: 0 175px 100px 175px;
   height: 20%;
   flex-basis: 20%;
@@ -92,7 +92,7 @@ export default {
   justify-content: space-evenly;
 }
 
-.main-description{
+.main-description {
   color: white;
   font-size: 22px;
   line-height: 33.6px;
@@ -100,7 +100,7 @@ export default {
   flex-basis: 50%;
 }
 
-.main-buttons{
+.main-buttons {
   width: 50%;
   flex-basis: 50%;
   display: flex;
@@ -110,7 +110,7 @@ export default {
   justify-content: flex-end;
 }
 
-.main-request-button{
+.main-request-button {
   width: 40%;
   flex-basis: 40%;
   color: #FFFFFF;
@@ -124,11 +124,11 @@ export default {
   transition: all .1s ease-in-out;
 }
 
-.main-request-button:hover{
+.main-request-button:hover {
   background-color: #C20D0D;
 }
 
-.main-count-button{
+.main-count-button {
   width: 50%;
   flex-basis: 50%;
   color: #FFFFFF;
@@ -142,27 +142,27 @@ export default {
   transition: all .2s ease-in-out;
 }
 
-.main-count-button:hover{
+.main-count-button:hover {
   border-color: #FFFFFF;
   background-color: #FFFFFF;
   color: #000000;
 }
 
-@media screen and (max-width: 1200px){
-  .main-title{
+@media screen and (max-width: 1200px) {
+  .main-title {
     padding: 100px 100px 0 100px;
     font-size: 40px;
   }
 
-  .main-title h1{
+  .main-title h1 {
     font-size: 36px;
   }
 
-  .main-secondary{
+  .main-secondary {
     padding: 0 100px 100px 100px;
   }
 
-  .main-description{
+  .main-description {
     font-size: 16px;
   }
 
@@ -172,6 +172,7 @@ export default {
   }
 
 }
+
 @media screen and (max-width: 990px) {
   .main-title {
     padding: 100px 50px 0 50px;
@@ -252,8 +253,9 @@ export default {
   .main-max {
     gap: 5%;
   }
+
   .main-title[data-v-3fa90f43] {
-      padding: 50px 25px 0 25px;
+    padding: 50px 25px 0 25px;
   }
 }
 </style>
