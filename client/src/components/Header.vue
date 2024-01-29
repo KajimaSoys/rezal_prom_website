@@ -3,7 +3,7 @@
     <div class="header-max">
 
       <a class="logo" href="/">
-        <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+        <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
       </a>
 
       <div class="menu nav-menu" :class="{ open: isBurgerMenuOpen }">
@@ -117,7 +117,7 @@
 <script>
 export default {
   name: "Header",
-  inject: ['backendURL'],
+  inject: ['backendURL', 'frontendURL'],
   props: [
     'header',
   ],
@@ -126,7 +126,13 @@ export default {
   ],
   data(){
     return{
-      isBurgerMenuOpen: false
+      isBurgerMenuOpen: false,
+      logo: this.frontendURL + '/image/logo.svg',
+    }
+  },
+  watch: {
+    header(newVal){
+      this.logo = this.backendURL + newVal.logo
     }
   },
   methods: {

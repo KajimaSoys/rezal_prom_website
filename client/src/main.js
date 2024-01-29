@@ -25,6 +25,8 @@ app.use(ElementPlus)
 //   })
 
 let backendURL = import.meta.env.VITE_BACKEND_HOST;
+let frontendURL = import.meta.env.VITE_FRONTEND_HOST;
+
 axios.defaults.baseURL = backendURL
 
 let api_key = import.meta.env.VITE_GOOGLE_API_KEY;
@@ -57,6 +59,7 @@ router.isReady().then(() => {
 })
 
 app.provide('backendURL', backendURL)
+app.provide('frontendURL', frontendURL)
 
 app.config.globalProperties.$projectVersion = '1.6'
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:5173'; // Set the allowed origin

@@ -3,7 +3,7 @@
     <div class="footer-max">
       <div class="footer-left">
         <a class="footer-logo" href="/">
-          <img :src="`${this.backendURL}${this.header.logo}`" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
+          <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
         </a>
 
         <div class="footer-left-content" v-if="this.meta">
@@ -52,7 +52,7 @@
 <script>
 export default {
   name: "Footer",
-  inject: ['backendURL'],
+  inject: ['backendURL', 'frontendURL'],
   props: [
     'header',
     'meta',
@@ -60,6 +60,16 @@ export default {
   emits: [
     'popUpCall'
   ],
+  data() {
+    return {
+      logo: this.frontendURL + '/image/logo.svg',
+    }
+  },
+  watch: {
+    header(newVal){
+      this.logo = this.backendURL + newVal.logo
+    }
+  },
   methods: {
     scrollToElement(elementId) {
       const element = document.getElementById(elementId);
