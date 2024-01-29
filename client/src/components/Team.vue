@@ -3,56 +3,56 @@
     <div class="team-max">
       <div class="team-introduce">
         <div class="team-block-title">
-          <h2 class="team-title" v-html="this.team.title"></h2>
-          <div class="team-description" v-html="this.team.description"></div>
+          <h2 class="team-title" v-html="team.title"></h2>
+          <div class="team-description" v-html="team.description"></div>
         </div>
 
         <div class="team-head-staff">
-          <div class="team-staff" v-if="this.staffArr.length > 0">
-            <div class="team-staff-image" v-if="this.staffArr[0].image !== null">
+          <div class="team-staff" v-if="staffArr.length > 0">
+            <div class="team-staff-image" v-if="staffArr[0].image !== null">
               <img
-                  :src="`${this.backendURL}${this.staffArr[0].image}`"
-                  :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                  :src="`${backendURL}${staffArr[0].image}`"
+                  :alt="`${staffArr[0].name} - ${staffArr[0].post}`"
                   loading="lazy"
               >
             </div>
             <div v-else class="team-staff-no-image">
               <img
                   src="/icons/icon-photo.svg"
-                  :alt="`${this.staffArr[0].name} - ${this.staffArr[0].post}`"
+                  :alt="`${staffArr[0].name} - ${staffArr[0].post}`"
                   loading="lazy"
               >
             </div>
-            <h3 class="team-staff-title" v-html="this.staffArr[0].name"></h3>
-            <div class="team-staff-post" v-html="this.staffArr[0].post"></div>
+            <h3 class="team-staff-title" v-html="staffArr[0].name"></h3>
+            <div class="team-staff-post" v-html="staffArr[0].post"></div>
           </div>
 
-          <div class="team-staff" v-if="this.staffArr.length > 0">
-            <div class="team-staff-image" v-if="this.staffArr[1].image !== null">
+          <div class="team-staff" v-if="staffArr.length > 0">
+            <div class="team-staff-image" v-if="staffArr[1].image !== null">
               <img
-                  :src="`${this.backendURL}${this.staffArr[1].image}`"
-                  :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                  :src="`${backendURL}${staffArr[1].image}`"
+                  :alt="`${staffArr[1].name} - ${staffArr[1].post}`"
                   loading="lazy"
               >
             </div>
             <div v-else class="team-staff-no-image">
               <img
                   src="/icons/icon-photo.svg"
-                  :alt="`${this.staffArr[1].name} - ${this.staffArr[1].post}`"
+                  :alt="`${staffArr[1].name} - ${staffArr[1].post}`"
                   loading="lazy"
               >
             </div>
-            <h3 class="team-staff-title" v-html="this.staffArr[1].name"></h3>
-            <div class="team-staff-post" v-html="this.staffArr[1].post"></div>
+            <h3 class="team-staff-title" v-html="staffArr[1].name"></h3>
+            <div class="team-staff-post" v-html="staffArr[1].post"></div>
           </div>
         </div>
       </div>
 
-      <div class="team-grid" v-if="this.staffArr.slice(2).length > 0">
-        <div class="team-staff" v-for="staff in this.staffArr.slice(2)">
+      <div class="team-grid" v-if="staffArr.slice(2).length > 0">
+        <div class="team-staff" v-for="staff in staffArr.slice(2)">
             <div class="team-staff-image" v-if="staff.image !== null">
               <img
-                  :src="`${this.backendURL}${staff.image}`"
+                  :src="`${backendURL}${staff.image}`"
                   :alt="`${staff.name} - ${staff.post}`"
                   loading="lazy"
               >

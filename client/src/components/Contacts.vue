@@ -2,14 +2,16 @@
   <div class="contacts" id="contacts">
     <div class="contacts-max">
       <div class="contacts-content">
-        <h2 class="contacts-title" v-html="this.contacts.title"></h2>
+        <h2 class="contacts-title" v-html="contacts.title"></h2>
         <div class="contacts-info">
           <div class="contacts-info-item">
             <div class="contacts-info-icon">
               <img src="/icons/icon-location.svg" loading="lazy">
             </div>
 
-            <div v-html="this.contacts.address"></div>
+            <a :href="contacts.yandex_map_link" target="_blank" class="contacts-link-default">
+              {{ contacts.address }}
+            </a>
           </div>
 
           <div class="contacts-info-item">
@@ -17,7 +19,9 @@
               <img src="/icons/icon-clock.svg" loading="lazy">
             </div>
 
-            <div v-html="this.contacts.schedule"></div>
+            <a :href="contacts.yandex_map_link" target="_blank" class="contacts-link-default">
+              {{ contacts.schedule }}
+            </a>
           </div>
 
           <div class="contacts-info-item">
@@ -25,13 +29,18 @@
               <img src="/icons/phone.svg" width="16" height="16" loading="lazy">
             </div>
 
-            <div v-html="this.contacts.number"></div>
+            <a :href="`tel:${contacts.number}`" target="_blank" class="contacts-link-default">
+              {{ contacts.number }}
+            </a>
           </div>
 
           <div class="contacts-info-links">
-            <a class="contacts-link" :href="this.contacts.inst_link" target="_blank">Instagram*</a>
-
-            <a class="contacts-link" :href="this.contacts.vk_link" target="_blank">ВКонтакте</a>
+            <a :href="contacts.instagram_link" target="_blank" class="contacts-link">
+              Instagram*
+            </a>
+            <a :href="contacts.vk_link" target="_blank" class="contacts-link">
+              ВКонтакте
+            </a>
           </div>
 
         </div>
@@ -138,11 +147,21 @@ export default {
 .contacts-info-links a{
   color: #DD1D1D;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .contacts-info-links a:hover{
-  color: #EB7777;
+  opacity: 0.5;
+}
+
+.contacts-link-default {
+  color: black;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.contacts-link-default:hover {
+  opacity: 0.5;
 }
 
 .contacts-photo{

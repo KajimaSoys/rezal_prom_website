@@ -54,10 +54,3 @@ class ReviewsBlockAdmin(admin.ModelAdmin):
 @admin.register(ContactsBlock)
 class ContactsBlockAdmin(admin.ModelAdmin):
     pass
-
-
-@admin.register(FooterBlock)
-class FooterBlockAdmin(admin.ModelAdmin):
-    pass
-
-

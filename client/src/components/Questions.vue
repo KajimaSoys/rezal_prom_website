@@ -1,9 +1,9 @@
 <template>
   <div class="questions">
     <div class="questions-max">
-      <h1 class="questions-title" v-html="this.questions.title"></h1>
+      <h1 class="questions-title" v-html="questions.title"></h1>
 
-      <div v-for="(question, index) in this.questionsArr" :key="question.order" class="questions-tile" @click="toggleQuestion(index)">
+      <div v-for="(question, index) in questionsArr" :key="question.order" class="questions-tile" @click="toggleQuestion(index)">
         <div class="questions-header">
           <div class="questions-text" v-html="question.question"></div>
           <img

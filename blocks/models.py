@@ -11,7 +11,16 @@ class HeaderBlock(models.Model):
         verbose_name_plural = 'Навигационная панель'
 
     logo = models.FileField(verbose_name='Лого', upload_to='header/', max_length=500)
+
+    address = models.CharField(verbose_name='Адрес компании', max_length=255, default='')
+    yandex_map_link = models.CharField(verbose_name='Ссылка на Яндекс Карты', max_length=500, default='')
+    schedule = models.CharField(verbose_name='Расписание', max_length=255, default='')
     number = models.CharField(verbose_name='Номер компании', max_length=18)
+
+    tg_link = models.CharField(verbose_name='Ссылка на Telegram', max_length=255, default='', blank=True)
+    whatsapp_link = models.CharField(verbose_name='Ссылка на Whatsapp', max_length=255, default='', blank=True)
+    instagram_link = models.CharField(verbose_name='Ссылка на Instagram', max_length=255, default='', blank=True)
+    vk_link = models.CharField(verbose_name='Ссылка на VK', max_length=255, default='', blank=True)
 
     def __str__(self):
         return 'Навигационная панель'
@@ -258,28 +267,14 @@ class ContactsBlock(models.Model):
         verbose_name_plural = 'Блок контактов'
 
     title = RichTextField(verbose_name='Заголовок блока')
-    address = RichTextField(verbose_name='Адрес')
-    schedule = RichTextField(verbose_name='Расписание')
-    number = RichTextField(verbose_name='Номер')
-    vk_link = models.CharField(verbose_name='Ссылка на вк', max_length=500)
-    inst_link = models.CharField(verbose_name='Ссылка на инстаграм', max_length=500, blank=True)
+
+    address = models.CharField(verbose_name='Адрес компании', max_length=255, default='')
+    yandex_map_link = models.CharField(verbose_name='Ссылка на Яндекс Карты', max_length=500, default='')
+    schedule = models.CharField(verbose_name='Расписание', max_length=255, default='')
+    number = models.CharField(verbose_name='Номер компании', max_length=18)
+
+    instagram_link = models.CharField(verbose_name='Ссылка на Instagram', max_length=255, default='')
+    vk_link = models.CharField(verbose_name='Ссылка на VK', max_length=255, default='')
 
     def __str__(self):
         return 'Блок контактов'
-
-
-class FooterBlock(models.Model):
-    """
-    Description of FooterBlock Model of Blocks App
-    """
-    class Meta:
-        verbose_name = 'Блок футера'
-        verbose_name_plural = 'Блок футера'
-
-    logo = models.FileField(verbose_name='Лого', upload_to='header/', max_length=500)
-    number = models.CharField(verbose_name='Номер компании', max_length=18)
-
-    def __str__(self):
-        return 'Блок футера'
-
-

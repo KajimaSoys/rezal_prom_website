@@ -1,6 +1,6 @@
 <template>
 
-  <div class="request" v-if="this.requestNum==1">
+  <div class="request" v-if="requestNum==1">
     <div class="request-max">
       <div class="request-background"></div>
 
@@ -21,7 +21,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request1.name"
+                  v-model="request1.name"
                   type="text"
                   name="input1"
                   placeholder="Введите имя"
@@ -41,7 +41,7 @@
                   placeholder="+7 (___) ___-__-__"
                   v-mask="'+7 (###) ###-##-##'"
                   required
-                  v-model="this.request1.phone"
+                  v-model="request1.phone"
               >
             </div>
           </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request1.message"
+                  v-model="request1.message"
                   type="text"
                   name="input1"
                   placeholder="Расскажите, что Вас интересует"
@@ -64,8 +64,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" :class="{ 'pending': request1.pending}" @click="this.sendRequest(this.request1)">
-              {{ this.request1.sendButton }}
+            <div class="request-form-submit" :class="{ 'pending': request1.pending}" @click="sendRequest(request1)">
+              {{ request1.sendButton }}
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
     </div>
   </div>
 
-  <div class="request" v-if="this.requestNum==2">
+  <div class="request" v-if="requestNum==2">
     <div class="request-max">
       <div class="request-background"></div>
 
@@ -107,7 +107,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request2.name"
+                  v-model="request2.name"
                   type="text"
                   name="input1"
                   placeholder="Введите имя"
@@ -121,7 +121,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request2.phone"
+                  v-model="request2.phone"
                   type="tel"
                   name="input1"
                   placeholder="+7 (___) ___-__-__"
@@ -136,7 +136,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request2.message"
+                  v-model="request2.message"
                   type="text"
                   name="input1"
                   placeholder="Расскажите, что Вас интересует"
@@ -148,8 +148,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" :class="{ 'pending': request2.pending}" @click="this.sendRequest(this.request2)">
-              {{ this.request2.sendButton }}
+            <div class="request-form-submit" :class="{ 'pending': request2.pending}" @click="sendRequest(request2)">
+              {{ request2.sendButton }}
             </div>
           </div>
         </div>
@@ -170,7 +170,7 @@
     </div>
   </div>
 
-  <div class="request" v-if="this.requestNum==3" id="request-time">
+  <div class="request" v-if="requestNum==3" id="request-time">
     <div class="request-max">
       <div class="request-background"></div>
 
@@ -191,7 +191,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request3.name"
+                  v-model="request3.name"
                   type="text"
                   name="input1"
                   placeholder="Введите имя"
@@ -205,7 +205,7 @@
             </div>
             <div class="request-form-input">
               <input
-                  v-model="this.request3.phone"
+                  v-model="request3.phone"
                   type="tel"
                   name="input1"
                   placeholder="+7 (___) ___-__-__"
@@ -220,7 +220,7 @@
             </div>
             <div class="request-form-input">
               <el-time-select
-                v-model="this.request3.selectedTime"
+                v-model="request3.selectedTime"
                 start="09:00"
                 step="00:30"
                 end="18:00"
@@ -233,8 +233,8 @@
             <div class="request-form-label">
 
             </div>
-            <div class="request-form-submit" :class="{ 'pending': request3.pending}" @click="this.sendRequest(this.request3)">
-              {{ this.request3.sendButton }}
+            <div class="request-form-submit" :class="{ 'pending': request3.pending}" @click="sendRequest(request3)">
+              {{ request3.sendButton }}
             </div>
           </div>
         </div>

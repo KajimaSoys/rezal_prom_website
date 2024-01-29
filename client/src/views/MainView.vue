@@ -138,8 +138,6 @@ export default {
                 this.reviews = block.data
               } else if (block.type === 'ContactsBlock') {
                 this.contacts = block.data
-              } else if (block.type === 'FooterBlock') {
-                this.footer = block.data
               }
             });
 

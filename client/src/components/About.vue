@@ -9,7 +9,7 @@
           <img src="/image/image-about-2.png" class="about-image-2" loading="lazy">
         </div>
         <div class="about-description">
-          <div v-html="this.about.description"></div>
+          <div v-html="about.description"></div>
         </div>
         <div class="about-image-container">
           <img src="/image/image-about-3.png" class="about-image-3" loading="lazy">
@@ -21,21 +21,21 @@
           <div class="about-thick">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_first"></div>
+                <div v-html="about.title_first"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_first"></div>
+              <div v-html="about.description_first"></div>
             </div>
           </div>
           <div class="about-thin">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_second"></div>
+                <div v-html="about.title_second"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_second"></div>
+              <div v-html="about.description_second"></div>
             </div>
           </div>
         </div>
@@ -44,21 +44,21 @@
           <div class="about-thin">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_third"></div>
+                <div v-html="about.title_third"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_third"></div>
+              <div v-html="about.description_third"></div>
             </div>
           </div>
           <div class="about-thick">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_fourth"></div>
+                <div v-html="about.title_fourth"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_fourth"></div>
+              <div v-html="about.description_fourth"></div>
             </div>
           </div>
         </div>
@@ -67,21 +67,21 @@
           <div class="about-thick">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_fifth"></div>
+                <div v-html="about.title_fifth"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_fifth"></div>
+              <div v-html="about.description_fifth"></div>
             </div>
           </div>
           <div class="about-thin">
             <div class="about-card-title">
               <h3>
-                <div v-html="this.about.title_sixth"></div>
+                <div v-html="about.title_sixth"></div>
               </h3>
             </div>
             <div class="about-card-description">
-              <div v-html="this.about.description_sixth"></div>
+              <div v-html="about.description_sixth"></div>
             </div>
           </div>
         </div>

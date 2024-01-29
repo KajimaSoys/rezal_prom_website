@@ -2,14 +2,14 @@
   <div class="stages">
     <div class="stages-max">
       <h2>
-        <div class="stages-title" v-html="this.stages.title"></div>
+        <div class="stages-title" v-html="stages.title"></div>
       </h2>
       <div class="stages-grid">
-        <div v-for="(stage, index) in this.stagesArr" :key="index" class="stage">
+        <div v-for="(stage, index) in stagesArr" :key="index" class="stage">
           <div class="stage-image">
             <div class="stage-count">{{ index + 1 }}</div>
             <img
-              :src="`${this.backendURL}${stage.image}`"
+              :src="`${backendURL}${stage.image}`"
               alt="stage image"
               loading="lazy"
             >
@@ -19,9 +19,9 @@
         </div>
       </div>
       <div class="stages-delivery" id="delivery">
-        <h2 class="stages-delivery-title" v-html="this.stages.delivery_title"></h2>
-        <div class="stages-delivery-first" v-html="this.stages.delivery_first"></div>
-        <div class="stages-delivery-second" v-html="this.stages.delivery_second"></div>
+        <h2 class="stages-delivery-title" v-html="stages.delivery_title"></h2>
+        <div class="stages-delivery-first" v-html="stages.delivery_first"></div>
+        <div class="stages-delivery-second" v-html="stages.delivery_second"></div>
       </div>
 
     </div>

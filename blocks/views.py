@@ -22,9 +22,8 @@ class AllBlocksView(APIView):
         questions = QuestionsBlock.objects.all()
         reviews = ReviewsBlock.objects.all()
         contacts = ContactsBlock.objects.all()
-        footer = FooterBlock.objects.all()
 
-        queryset = list(header) + list(main) + list(about) + list(production) + list(services) + list(projects) + list(stages) + list(team) + list(questions) + list(reviews) + list(contacts) + list(footer)
+        queryset = list(header) + list(main) + list(about) + list(production) + list(services) + list(projects) + list(stages) + list(team) + list(questions) + list(reviews) + list(contacts)
         return queryset
 
     def get(self, request):

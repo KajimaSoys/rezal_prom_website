@@ -67,7 +67,7 @@ iframe {
   font-size: 3rem;
   cursor: pointer;
   padding: 5px 10px;
-  transition: color 0.1s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .close-button:hover {

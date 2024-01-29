@@ -1,14 +1,14 @@
 <template>
   <div class="projects" id="projects">
     <div class="projects-max">
-      <h2 class="projects-title" v-html="this.projects.title"></h2>
+      <h2 class="projects-title" v-html="projects.title"></h2>
 
       <div class="projects-content">
         <div class="projects-content-left">
           <div class="projects-item">
-            <div class="projects-item-preview-first" @click="showVideoWrapper(this.projects.video_link_first)">
+            <div class="projects-item-preview-first" @click="showVideoWrapper(projects.video_link_first)">
               <img
-                  :src="`${this.backendURL}${this.projects.image_first}`"
+                  :src="`${backendURL}${projects.image_first}`"
                   loading="lazy"
               >
               <div class="projects-item-preview-icon">
@@ -21,14 +21,14 @@
                 Смотреть видеообзор
               </div>
             </div>
-            <h3 class="projects-item-title" v-html="this.projects.title_first"></h3>
-            <div class="projects-item-description" v-html="this.projects.description_first"></div>
+            <h3 class="projects-item-title" v-html="projects.title_first"></h3>
+            <div class="projects-item-description" v-html="projects.description_first"></div>
           </div>
 
           <div class="projects-item">
-            <div class="projects-item-preview-second" @click="showVideoWrapper(this.projects.video_link_second)">
+            <div class="projects-item-preview-second" @click="showVideoWrapper(projects.video_link_second)">
               <img
-                  :src="`${this.backendURL}${this.projects.image_second}`"
+                  :src="`${backendURL}${projects.image_second}`"
                   loading="lazy"
               >
               <div class="projects-item-preview-icon">
@@ -41,16 +41,16 @@
                 Смотреть видеообзор
               </div>
             </div>
-            <h3 class="projects-item-title" v-html="this.projects.title_second"></h3>
-            <div class="projects-item-description" v-html="this.projects.description_second"></div>
+            <h3 class="projects-item-title" v-html="projects.title_second"></h3>
+            <div class="projects-item-description" v-html="projects.description_second"></div>
           </div>
         </div>
 
         <div class="projects-content-right">
           <div class="projects-item">
-            <div class="projects-item-preview-third" @click="showVideoWrapper(this.projects.video_link_third)">
+            <div class="projects-item-preview-third" @click="showVideoWrapper(projects.video_link_third)">
               <img
-                  :src="`${this.backendURL}${this.projects.image_third}`"
+                  :src="`${backendURL}${projects.image_third}`"
               >
               <div class="projects-item-preview-icon">
                 <svg width="36" height="36" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,8 +62,8 @@
                 Смотреть видеообзор
               </div>
             </div>
-            <h3 class="projects-item-title" v-html="this.projects.title_third"></h3>
-            <div class="projects-item-description" v-html="this.projects.description_third"></div>
+            <h3 class="projects-item-title" v-html="projects.title_third"></h3>
+            <div class="projects-item-description" v-html="projects.description_third"></div>
           </div>
           <div class="projects-button">
             <a class="projects-portfolio-button" href="https://mebel-rezal.clients.site/" target="_blank">

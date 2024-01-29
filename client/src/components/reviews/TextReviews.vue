@@ -214,7 +214,7 @@ svg path{
   font-size: 15px;
   line-height: 23px;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .review-link a:hover {

@@ -1,16 +1,16 @@
 <template>
   <div class="reviews" id="reviews">
     <div class="reviews-max">
-      <h2 class="reviews-title" v-html="this.reviews.title"></h2>
+      <h2 class="reviews-title" v-html="reviews.title"></h2>
       <div class="reviews-content">
 
         <div class="reviews-text">
-          <TextReviews :reviewTextArr="this.reviewTextArr"></TextReviews>
+          <TextReviews :reviewTextArr="reviewTextArr"></TextReviews>
         </div>
 
 
         <div class="reviews-video">
-          <VideoReviews :reviewVideoArr="this.reviewVideoArr"></VideoReviews>
+          <VideoReviews :reviewVideoArr="reviewVideoArr"></VideoReviews>
         </div>
       </div>
     </div>

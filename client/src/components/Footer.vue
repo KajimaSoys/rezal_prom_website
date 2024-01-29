@@ -6,34 +6,34 @@
           <img :src="logo" alt="РезАль - Мебельная компания. Логотип." width="170" height="60" />
         </a>
 
-        <div class="footer-left-content" v-if="this.meta">
+        <div class="footer-left-content" v-if="meta">
           *организация «Meta» признана экстремистской и запрещена на территории России
         </div>
       </div>
 
       <div class="footer-center">
-        <a class="footer-menu-item" @click="this.scrollToElement('about')">
+        <a class="footer-menu-item" @click="scrollToElement('about')">
           О компании
         </a>
-        <a class="footer-menu-item" @click="this.scrollToElement('projects')">
+        <a class="footer-menu-item" @click="scrollToElement('projects')">
           Отзывы
         </a>
-        <a class="footer-menu-item" @click="this.scrollToElement('delivery')">
+        <a class="footer-menu-item" @click="scrollToElement('delivery')">
           Доставка и оплата
         </a>
-        <a class="footer-menu-item" @click="this.scrollToElement('reviews')">
+        <a class="footer-menu-item" @click="scrollToElement('reviews')">
           Портфолио
         </a>
-        <a class="footer-menu-item" @click="this.scrollToElement('contacts')">
+        <a class="footer-menu-item" @click="scrollToElement('contacts')">
           Контакты
         </a>
       </div>
 
       <div class="footer-right">
-        <div class="footer-call-block" @click="this.$emit('popUpCall')">
+        <div class="footer-call-block" @click="$emit('popUpCall')">
           <div class="phone-number">
             <img src="/icons/phone.svg" alt="" width="16" height="16" />
-            {{ this.header.number }}
+            {{ header.number }}
           </div>
 
           <div class="phone-text">
@@ -169,7 +169,7 @@ export default {
   font-size: 14px;
   line-height: 20px;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .footer-privacy:hover{

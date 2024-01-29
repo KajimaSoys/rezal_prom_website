@@ -32,8 +32,6 @@ class AllBlocksSerializer(serializers.Serializer):
             serializer = ReviewsBlockSerializer(obj)
         elif isinstance(obj, ContactsBlock):
             serializer = ContactsBlockSerializer(obj)
-        elif isinstance(obj, FooterBlock):
-            serializer = FooterBlockSerializer(obj)
         else:
             raise ValueError('Unexpected object type')
         return serializer.data
@@ -44,7 +42,14 @@ class HeaderBlockSerializer(serializers.HyperlinkedModelSerializer):
         model = HeaderBlock
         fields = (
                      'logo',
+                     'address',
+                     'yandex_map_link',
+                     'schedule',
                      'number',
+                     'tg_link',
+                     'whatsapp_link',
+                     'instagram_link',
+                     'vk_link',
                  )
 
 
@@ -166,19 +171,9 @@ class ContactsBlockSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
                     'title',
                     'address',
+                    'yandex_map_link',
                     'schedule',
                     'number',
+                    'instagram_link',
                     'vk_link',
-                    'inst_link',
                   )
-
-
-class FooterBlockSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = FooterBlock
-        fields = (
-                    'logo',
-                    'number',
-                  )
-
-

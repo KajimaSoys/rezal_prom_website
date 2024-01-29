@@ -1,20 +1,20 @@
 <template>
   <div class="main">
     <div class="main-max"
-         :style="{ 'background-image': `linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 48.37%, rgba(0, 0, 0, 0.8) 100%), url(${this.backendURL}${this.main.image})`, 'background-size': 'cover', 'background-position': 'center center', 'transform': 'scale(1)' }">
+         :style="{ 'background-image': `linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 48.37%, rgba(0, 0, 0, 0.8) 100%), url(${backendURL}${main.image})`, 'background-size': 'cover', 'background-position': 'center center', 'transform': 'scale(1)' }">
       <div class="main-title" >
-        <h1 v-html="this.main.title"></h1>
+        <h1 v-html="main.title"></h1>
       </div>
       <div class="main-secondary">
-        <div class="main-description" v-html="this.main.description">
+        <div class="main-description" v-html="main.description">
         </div>
 
         <div class="main-buttons">
-          <div class="main-request-button" @click="this.requestClick()">
+          <div class="main-request-button" @click="requestClick()">
             Оставить заявку
           </div>
 
-          <div class="main-count-button" @click="this.countClick()">
+          <div class="main-count-button" @click="countClick()">
             Рассчитать стоимость
           </div>
         </div>

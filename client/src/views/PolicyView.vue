@@ -1,5 +1,5 @@
 <template>
-  <Header :header="this.header" @popUpCall="popUpCall()"/>
+  <Header :header="header" @popUpCall="popUpCall()"/>
 
   <div class="privacy">
 
@@ -131,7 +131,7 @@
     <div class="enum-text">12.3. Актуальная версия Политики в свободном доступе расположена в сети Интернет по адресу https://mebel-rezal.com/policy.</div>
   </div>
 
-  <Footer :header="this.header" :meta="false" @popUpCall="popUpCall()"/>
+  <Footer :header="header" :meta="false" @popUpCall="popUpCall()"/>
 
   <PopUp :visible="popUpVisible" @close="hidePopUp" />
 </template>

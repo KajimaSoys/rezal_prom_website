@@ -6,7 +6,7 @@
       <div class="production-content">
         <div class="production-video" @click="showVideoWrapper">
           <img
-              :src="`${this.backendURL}${this.production.video_preview}`"
+              :src="`${backendURL}${production.video_preview}`"
               alt=""
               height="580"
               width="420"
@@ -23,17 +23,17 @@
           <div class="production-text">
             <div class="production-title">
               <h2>
-                <div v-html="this.production.title"></div>
+                <div v-html="production.title"></div>
               </h2>
             </div>
             <div class="production-description">
-              <div v-html="this.production.description"></div>
+              <div v-html="production.description"></div>
             </div>
           </div>
 
           <div class="production-photo">
             <img
-              :src="`${this.backendURL}${this.production.image_one}`"
+              :src="`${backendURL}${production.image_one}`"
               alt=""
               width="160"
               height="160"
@@ -41,7 +41,7 @@
               loading="lazy"
           >
             <img
-              :src="`${this.backendURL}${this.production.image_two}`"
+              :src="`${backendURL}${production.image_two}`"
               alt=""
               width="160"
               height="160"
@@ -49,7 +49,7 @@
               loading="lazy"
           >
             <img
-              :src="`${this.backendURL}${this.production.image_three}`"
+              :src="`${backendURL}${production.image_three}`"
               alt=""
               width="160"
               height="160"

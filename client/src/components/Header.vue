@@ -10,25 +10,25 @@
 <!--        <div class="menu">-->
 <!--          -->
 <!--        </div>-->
-        <a class="menu-item" @click="this.scrollToElement('about')">
+        <a class="menu-item" @click="scrollToElement('about')">
             О компании
           </a>
-          <a class="menu-item" @click="this.scrollToElement('projects')">
+          <a class="menu-item" @click="scrollToElement('projects')">
             Портфолио
           </a>
-          <a class="menu-item" @click="this.scrollToElement('delivery')">
+          <a class="menu-item" @click="scrollToElement('delivery')">
             Доставка и оплата
           </a>
-          <a class="menu-item" @click="this.scrollToElement('reviews')">
+          <a class="menu-item" @click="scrollToElement('reviews')">
             Отзывы
           </a>
-          <a class="menu-item" @click="this.scrollToElement('contacts')">
+          <a class="menu-item" @click="scrollToElement('contacts')">
             Контакты
           </a>
       </div>
 
       <div class="messenger nav-menu">
-        <a id="whatsapp" href="https://wa.me/79655937000" target="_blank">
+        <a id="whatsapp" :href="header.whatsapp_link" target="_blank">
           <svg height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
              viewBox="0 0 418.135 418.135" xml:space="preserve">
             <g>
@@ -48,17 +48,17 @@
           </svg>
         </a>
 
-        <a id="telegram" href="https://t.me/Mebel_RezAl_bot" target="_blank">
+        <a id="telegram" :href="header.tg_link" target="_blank">
           <svg width="26" height="26" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="#919191FF" stroke-width="12" d="M23.073 88.132s65.458-26.782 88.16-36.212c8.702-3.772 38.215-15.843 38.215-15.843s13.621-5.28 12.486 7.544c-.379 5.281-3.406 23.764-6.433 43.756-4.54 28.291-9.459 59.221-9.459 59.221s-.756 8.676-7.188 10.185c-6.433 1.509-17.027-5.281-18.919-6.79-1.513-1.132-28.377-18.106-38.214-26.404-2.649-2.263-5.676-6.79.378-12.071 13.621-12.447 29.891-27.913 39.728-37.72 4.54-4.527 9.081-15.089-9.837-2.264-26.864 18.483-53.35 35.835-53.35 35.835s-6.053 3.772-17.404.377c-11.351-3.395-24.594-7.921-24.594-7.921s-9.08-5.659 6.433-11.693Z"/></svg>
         </a>
       </div>
 
 
 
-      <div class="call-block nav-menu" @click="this.$emit('popUpCall')">
+      <div class="call-block nav-menu" @click="$emit('popUpCall')">
         <div class="phone-number">
           <img src="/icons/phone.svg" alt="" width="16" height="16" />
-          {{ this.header.number }}
+          {{ header.number }}
         </div>
 
         <div class="phone-text">
@@ -76,37 +76,50 @@
 
       <div class="burger-menu-items" :class="{ open: isBurgerMenuOpen }">
         <div class="side-menu">
-          <a class="menu-item" @click="this.scrollToElement('about')">
+          <div class="top-menu">
+            <a class="menu-item" @click="scrollToElement('about')">
             О компании
           </a>
-          <a class="menu-item" @click="this.scrollToElement('projects')">
+          <a class="menu-item" @click="scrollToElement('projects')">
             Портфолио
           </a>
-          <a class="menu-item" @click="this.scrollToElement('delivery')">
+          <a class="menu-item" @click="scrollToElement('delivery')">
             Доставка и оплата
           </a>
-          <a class="menu-item" @click="this.scrollToElement('reviews')">
+          <a class="menu-item" @click="scrollToElement('reviews')">
             Отзывы
           </a>
-          <a class="menu-item" @click="this.scrollToElement('contacts')">
+          <a class="menu-item" @click="scrollToElement('contacts')">
             Контакты
           </a>
-        </div>
-        <div class="side-menu-info">
-          <div class="side-menu-info-item">
-            г. Казань, ул. Мазита Гафури, 48, офис 206
+          </div>
+          <div class="bottom-menu">
+            <div class="side-menu-info-item">
+            <a :href="header.yandex_map_link" target="_blank">
+              {{ header.address }}
+            </a>
           </div>
 
           <div class="side-menu-info-item">
-            Пн-Вс 9:00-19:00, без выходных
+            <a :href="header.yandex_map_link" target="_blank">
+              {{ header.schedule }}
+            </a>
           </div>
 
           <div class="side-menu-info-item">
-            +7 (965) 593-70-00
+            <a :href="`tel:${header.number}`" target="_blank">
+              {{ header.number }}
+            </a>
           </div>
 
           <div class="side-menu-info-item">
-            <a target="_blank" href="https://www.instagram.com/mebel_rezal/">Instagram*</a>  <a target="_blank" href="https://vk.com">ВКонтакте</a>
+            <a :href="header.instagram_link" target="_blank">
+              Instagram*
+            </a>
+            <a :href="header.vk_link" target="_blank">
+              ВКонтакте
+            </a>
+          </div>
           </div>
         </div>
       </div>
@@ -135,6 +148,12 @@ export default {
       this.logo = this.backendURL + newVal.logo
     }
   },
+  mounted() {
+    window.addEventListener('resize', this.updateWindowWidth);
+  },
+  beforeUnmount() {
+    window.addEventListener('resize', this.updateWindowWidth);
+  },
   methods: {
     scrollToElement(elementId) {
       const element = document.getElementById(elementId);
@@ -150,6 +169,13 @@ export default {
         }
       } else {
         this.$router.push({ path: "/", hash: `#${elementId}` });
+      }
+    },
+
+    updateWindowWidth() {
+      if (window.innerWidth > 990) {
+        this.isBurgerMenuOpen = false
+        document.body.style.overflow = "";
       }
     },
 
@@ -242,7 +268,7 @@ export default {
 }
 
 #whatsapp svg g path{
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #whatsapp:hover svg g path {
@@ -250,7 +276,7 @@ export default {
 }
 
 #telegram svg path{
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #telegram:hover svg path[stroke] {
@@ -289,14 +315,14 @@ export default {
   width: 24px;
   height: 16px;
   cursor: pointer;
-  transition: z-index 0.3s ease-in-out;
+  transition: z-index 0.2s ease-in-out;
 }
 
 .burger-menu span {
   width: 100%;
   height: 2px;
   background-color: #DD1D1D;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .burger-menu.cross{
@@ -339,7 +365,7 @@ export default {
   z-index: 1000;
   overflow-y: auto;
   transform: translateX(100%); /* Add this line */
-  transition: transform 0.3s ease; /* Add this line */
+  transition: transform 0.2s ease; /* Add this line */
 }
 
 .burger-menu-items.open {
@@ -366,13 +392,13 @@ export default {
 .side-menu-info-item a{
   text-decoration: none;
   color: #6e6e6e;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .side-menu-info-item a:hover{
   text-decoration: none;
   color: #b4b4b4;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .overlay-hidden{
@@ -439,6 +465,29 @@ export default {
 
   .menu-item{
     color: white;
+  }
+
+  .burger-menu-items {
+    height: 670%;
+    padding: 7rem 2.5rem 5rem 2.5rem;
+  }
+
+  .side-menu {
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .top-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .bottom-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 

@@ -3,7 +3,7 @@
     <div class="services-max">
       <div class="services-title">
         <h2>
-          <div v-html="this.services.title"></div>
+          <div v-html="services.title"></div>
         </h2>
       </div>
       <div class="services-items">
@@ -19,7 +19,7 @@
           </div>
           <div class="services-item-title">
             <h3>
-              <div v-html="this.services.title_first"></div>
+              <div v-html="services.title_first"></div>
             </h3>
           </div>
         </div>
@@ -36,7 +36,7 @@
           </div>
           <div class="services-item-title">
             <h3>
-              <div v-html="this.services.title_second"></div>
+              <div v-html="services.title_second"></div>
             </h3>
           </div>
         </div>
@@ -53,7 +53,7 @@
           </div>
           <div class="services-item-title">
             <h3>
-              <div v-html="this.services.title_third"></div>
+              <div v-html="services.title_third"></div>
             </h3>
           </div>
         </div>

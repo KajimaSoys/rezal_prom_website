@@ -14,7 +14,7 @@
                 </div>
                 <div class="popup-form-input">
                   <input
-                      v-model="this.popup.name"
+                      v-model="popup.name"
                       type="text"
                       name="input1"
                       placeholder="Введите имя"
@@ -34,7 +34,7 @@
                       placeholder="+7 (___) ___-__-__"
                       v-mask="'+7 (###) ###-##-##'"
                       required
-                      v-model="this.popup.phone"
+                      v-model="popup.phone"
                   >
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="popup-form-input">
                   <input
-                      v-model="this.popup.message"
+                      v-model="popup.message"
                       type="text"
                       name="input1"
                       placeholder="Расскажите, что Вас интересует"
@@ -57,8 +57,8 @@
                 <div class="popup-form-label">
 
                 </div>
-                <div class="popup-form-submit" :class="{ 'pending': pending}" @click="this.sendPopUp(this.popup)">
-                  {{ this.sendButton }}
+                <div class="popup-form-submit" :class="{ 'pending': pending}" @click="sendPopUp(popup)">
+                  {{ sendButton }}
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default {
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
@@ -219,7 +219,7 @@ export default {
   font-size: 3rem;
   cursor: pointer;
   padding: 5px 10px;
-  transition: color 0.1s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .close-btn:hover {
