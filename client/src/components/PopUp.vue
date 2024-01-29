@@ -69,7 +69,7 @@
 
             <div class="popup-acceptance" v-if="!popup.isSubmitted">
               Нажимая кнопку «Оставить заявку» вы даете согласие на обработку персональных данных и принимаете условия
-              <router-link to="policy" class="popup-link">политики конфиденциальности</router-link>
+              <router-link to="policy" class="popup-link" @click="restoreOverflow()">политики конфиденциальности</router-link>
             </div>
             <div class="popup-success" v-else>
               <div class="popup-success-title">Ваша заявка <span style="color: #DD1D1D">принята!</span></div>
@@ -166,6 +166,10 @@ export default {
 
         popup.isSubmitted = true;
       }
+    },
+
+    restoreOverflow() {
+      document.body.style.overflow=''
     },
 
     close() {

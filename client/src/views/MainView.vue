@@ -190,6 +190,11 @@ export default {
     this.getObjectsData()
   },
 
+  mounted() {
+    document.body.style.overflow = "";
+    document.documentElement.scrollTop = 0;
+  },
+
 }
 </script>
 

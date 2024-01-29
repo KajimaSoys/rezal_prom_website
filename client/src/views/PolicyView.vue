@@ -185,6 +185,10 @@ export default {
   beforeMount() {
     this.getHeaderData()
   },
+  mounted() {
+    document.body.style.overflow = "";
+    document.documentElement.scrollTop = 0;
+  },
 }
 </script>
 
