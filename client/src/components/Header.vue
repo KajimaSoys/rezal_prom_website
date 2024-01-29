@@ -472,8 +472,8 @@ export default {
   }
 
   .burger-menu-items {
-    height: 670%;
-    padding: 7rem 2.5rem 5rem 2.5rem;
+    height: calc(100vh - 14rem);
+    padding: 7rem 2.5rem 7rem 2.5rem;
   }
 
   .side-menu {
