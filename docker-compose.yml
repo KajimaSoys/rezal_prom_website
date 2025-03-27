@@ -3,9 +3,9 @@
   services:
     django:
       build:
-        context: .        
+        context: .
         dockerfile: ./Dockerfile.backend
-      container_name: django-rezal
+      container_name: rezal-landing-django
       restart: always
       environment:
         - DEBUG=${DEBUG}
@@ -31,7 +31,7 @@
       build:
         context: .
         dockerfile: ./Dockerfile.frontend
-      container_name: nginx-rezal
+      container_name: rezal-landing-nginx
       restart: always
       ports:
         - "127.0.0.1:8081:80"
@@ -42,8 +42,8 @@
         - ./media:/app/media
 
     db:
-      image: postgres:13
-      container_name: db-rezal
+      image: postgres:17
+      container_name: rezal-landing-db
       restart: always
       environment:
         - POSTGRES_DB=${DB_NAME}
@@ -51,11 +51,11 @@
         - POSTGRES_PASSWORD=${DB_PASSWORD}
       volumes:
         - db_data:/var/lib/postgresql/data
-      
+
   volumes:
     db_data:
 
   networks:
     default:
-        name: rezal_network
+        name: rezal-landing-network
         external: true
