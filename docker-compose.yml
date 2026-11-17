@@ -1,61 +1,66 @@
-  version: '3.8'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.backend
+    image: rezal_prom_website-django
+    container_name: rezal-landing-django
+    restart: always
+    environment:
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - CSRF_COOKIE_SECURE=${CSRF_COOKIE_SECURE}
+      - SESSION_COOKIE_SECURE=${SESSION_COOKIE_SECURE}
+      - CSRF_TRUSTED=${CSRF_TRUSTED}
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+    volumes:
+      - ./:/app
+    depends_on:
+      db:
+        condition: service_healthy
 
-  services:
-    django:
-      build:
-        context: .
-        dockerfile: ./Dockerfile.backend
-      container_name: rezal-landing-django
-      restart: always
-      environment:
-        - DEBUG=${DEBUG}
-        - SECRET_KEY=${SECRET_KEY}
-        - ALLOWED_HOSTS=${ALLOWED_HOSTS}
-        - DB_NAME=${DB_NAME}
-        - DB_USER=${DB_USER}
-        - DB_PASSWORD=${DB_PASSWORD}
-        - DB_HOST=${DB_HOST}
-        - DB_PORT=${DB_PORT}
-        - CSRF_COOKIE_SECURE=${CSRF_COOKIE_SECURE}
-        - SESSION_COOKIE_SECURE=${SESSION_COOKIE_SECURE}
-        - CSRF_TRUSTED=${CSRF_TRUSTED}
-        - EMAIL_HOST_USER=${EMAIL_HOST_USER}
-        - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
-      volumes:
-        - ./:/app
-        - ./media:/app/media
-      depends_on:
-        - db
+  nginx:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.frontend
+    image: rezal_prom_website-nginx
+    container_name: rezal-landing-nginx
+    restart: always
+    ports:
+      - "127.0.0.1:8081:8080"
+    depends_on:
+      - django
+    volumes:
+      - ./static:/app/static:ro
+      - ./media:/app/media:ro
 
-    nginx:
-      build:
-        context: .
-        dockerfile: ./Dockerfile.frontend
-      container_name: rezal-landing-nginx
-      restart: always
-      ports:
-        - "127.0.0.1:8081:80"
-      depends_on:
-        - django
-      volumes:
-        - ./static:/app/static
-        - ./media:/app/media
+  db:
+    image: postgres:17-alpine
+    container_name: rezal-landing-db
+    restart: always
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--locale-provider=builtin --builtin-locale=C.UTF-8 --encoding=UTF8
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
 
-    db:
-      image: postgres:17
-      container_name: rezal-landing-db
-      restart: always
-      environment:
-        - POSTGRES_DB=${DB_NAME}
-        - POSTGRES_USER=${DB_USER}
-        - POSTGRES_PASSWORD=${DB_PASSWORD}
-      volumes:
-        - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
 
-  volumes:
-    db_data:
-
-  networks:
-    default:
-        name: rezal-landing-network
-        external: true
+networks:
+  default:
+    name: rezal-landing-network
